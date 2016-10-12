@@ -74,10 +74,10 @@
                     		 <div class="form-group">
                             	<div class="col-lg-12 col-md-12">
                            			 <div class="middle">
-		                                <input type="submit" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Login">
+		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Login" onclick="location='list'">
 		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Join" onclick="location='join'">
-		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Find ID">
-		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Find Password">
+		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Find ID" onclick="location='id_find'">
+		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Find Password" onclick="location='pw_find'">
                             		</div>
                            		 </div>
                           	 </div>
