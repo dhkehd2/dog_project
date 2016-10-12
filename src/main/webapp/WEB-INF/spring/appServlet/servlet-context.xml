@@ -19,6 +19,7 @@
 	
 	<!-- 이 태그로 html, jsp파일을 직접 호추 할 수 있다. -->
 	<default-servlet-handler/>
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
