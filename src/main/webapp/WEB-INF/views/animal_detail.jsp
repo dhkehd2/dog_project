@@ -61,31 +61,23 @@
 			<div class="container">
 				<div class="row sub_content">
 					<tr></tr>
-					<div class="col-lg-8 col-md-8 col-sm-8">
-						(유기번호를 가져오는 el 테그) <img
-							src="resources/images/portfolio/portfolio_slider1.png" alt="">
-						<!-- src = 사진주소를 가져오는 el테그 입력 -->
-						<!-- <div class="porDetCarousel">
-							<div class="carousel-content">
-								<img class="carousel-item" src="resources/images/portfolio/portfolio_slider1.png" alt="">
-								<img class="carousel-item" src="resources/images/portfolio/portfolio_slider2.png" alt="">
-								<img class="carousel-item" src="resources/images/portfolio/portfolio_slider3.png" alt="">
-							</div>
-						</div> -->
-
-
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<div class="middle">
+							<img src="resources/images/portfolio/portfolio_slider1.png" alt="">
+							<!-- src = 사진주소를 가져오는 el테그 입력 -->
+							<!-- <div class="porDetCarousel">
+								<div class="carousel-content">
+									<img class="carousel-item" src="resources/images/portfolio/portfolio_slider1.png" alt="">
+									<img class="carousel-item" src="resources/images/portfolio/portfolio_slider2.png" alt="">
+									<img class="carousel-item" src="resources/images/portfolio/portfolio_slider3.png" alt="">
+								</div>
+							</div> -->
+						</div>
 					</div>
-					<div class="col-lg-2 col-md-2 col-xs-12">
-						<!-- Indicates a successful or positive action -->
-						<button class="btn btn-success btn-lg btn-block" type="button"
-							onclick="location='adoption_req_form'">
-							<i class="fa fa-check-circle"></i> 입양신청 하기
-						</button>
-					</div>
-
+					
 				</div>
-				as
-				<div class="col-lg-4 col-md-4 col-sm-4">
+				
+				<div class="col-lg-12 col-md-12 col-sm-12">
 					<div class="project_description">
 						<div class="widget_title">
 							<h4>
@@ -96,44 +88,66 @@
 						<p>(noticeComment를 가져오는 el테그)</p>
 
 					</div>
-
-					<div class="project_details">
-						<div class="widget_title">
-							<h4>
-								<span>유기견 세부사항</span>
-							</h4>
+				</div>
+				
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="widget_title">
+						<h4>
+							<span>유기견 세부사항</span>
+						</h4>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						
+						<div class="project_details">
+							
+							<tr>
+								<td><ul class="details">
+										<li><span>유기번호 :</span>(desertionNo를 가져오는 el테그)</li>
+										<li><span>접수일 :</span>(happenDt를 가져오는 el테그)</li>
+										<li><span>발견장소 :</span>(happenPlace를 가져오는 el테그)</li>
+										<li><span>품종 :</span>(kindCd를 가져오는 el테그)</li>
+										<li><span>색상 :</span>(colorCd를 가져오는 el테그)</li>
+										<li><span>나이 :</span>(age를 가져오는 el테그)</li>
+										<li><span>체중 :</span>(weight를 가져오는 el테그)</li>
+										<li><span>공고번호 :</span>(noticeNo를 가져오는 el테그)</li>
+										<li><span>공고시작일 :</span>(noticeSdt를 가져오는 el테그)</li>
+										<li><span>공고종료일 :</span>(noticeEdt를 가져오는 el테그)</li>
+	
+									</ul></td>
+								<td>
+							</tr>
 						</div>
-						<tr>
-							<td><ul class="details">
-									<li><span>유기번호 :</span>(desertionNo를 가져오는 el테그)</li>
-									<li><span>접수일 :</span>(happenDt를 가져오는 el테그)</li>
-									<li><span>발견장소 :</span>(happenPlace를 가져오는 el테그)</li>
-									<li><span>품종 :</span>(kindCd를 가져오는 el테그)</li>
-									<li><span>색상 :</span>(colorCd를 가져오는 el테그)</li>
-									<li><span>나이 :</span>(age를 가져오는 el테그)</li>
-									<li><span>체중 :</span>(weight를 가져오는 el테그)</li>
-									<li><span>공고번호 :</span>(noticeNo를 가져오는 el테그)</li>
-									<li><span>공고시작일 :</span>(noticeSdt를 가져오는 el테그)</li>
-
-								</ul></td>
-							<td><ul class="details">
-									<li><span>공고종료일 :</span>(noticeEdt를 가져오는 el테그)</li>
-									<li><span>상태 :</span>(processState를 가져오는 el테그)</li>
-									<li><span>성별 :</span>(sexCd를 가져오는 el테그)</li>
-									<li><span>중성화여부 :</span>(neuterYn 를 가져오는 el테그)</li>
-									<li><span>특징 :</span>(specialMark를 가져오는 el테그)</li>
-									<li><span>보호소이름 :</span>(careNm를 가져오는 el테그)</li>
-									<li><span>보호소전화번호 :</span>(careTel를 가져오는 el테그)</li>
-									<li><span>보호장소 :</span>(careAddr를 가져오는 el테그)</li>
-									<li><span>보호장소 :</span>(orgNm를 가져오는 el테그)</li>
-									<li><span>담당자 :</span>(chargeNm를 가져오는 el테그)</li>
-									<li><span>담당자연락처 :</span>(officetel를 가져오는 el테그)</li></td>
-							</ul>
-						</tr>
+					</div>
+					
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="project_details">
+							<tr>
+								<td><ul class="details">
+										<li><span>상태 :</span>(processState를 가져오는 el테그)</li>
+										<li><span>성별 :</span>(sexCd를 가져오는 el테그)</li>
+										<li><span>중성화여부 :</span>(neuterYn 를 가져오는 el테그)</li>
+										<li><span>특징 :</span>(specialMark를 가져오는 el테그)</li>
+										<li><span>보호소이름 :</span>(careNm를 가져오는 el테그)</li>
+										<li><span>보호소전화번호 :</span>(careTel를 가져오는 el테그)</li>
+										<li><span>보호장소 :</span>(careAddr를 가져오는 el테그)</li>
+										<li><span>보호장소 :</span>(orgNm를 가져오는 el테그)</li>
+										<li><span>담당자 :</span>(chargeNm를 가져오는 el테그)</li>
+										<li><span>담당자연락처 :</span>(officetel를 가져오는 el테그)</li></td>
+								</ul>
+							</tr>
+						</div>
+					
 					</div>
 				</div>
+				<div class="col-lg-12 col-md-12 col-xs-12">
+					
+						<!-- Indicates a successful or positive action -->
+						<button class="btn btn-success btn-lg btn-block" type="button"
+							onclick="location='adoption_req_form'">
+							<i class="fa fa-check-circle"></i> 입양신청 하기
+						</button>
+				</div>
 
-			</div>
 			</div>
 		</section>
 	</section>
