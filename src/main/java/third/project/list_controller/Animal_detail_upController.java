@@ -22,7 +22,7 @@ public class Animal_detail_upController {
 	@RequestMapping(value = "/animal_detail", method = RequestMethod.GET)
 	public String info_up() {
 		
-		System.out.println("Animal_detai.animal_detail()");
+		System.out.println("Animal_detail.animal_detail()");
 		return "animal_detail";
 	}
 	
