@@ -59,4 +59,9 @@
 	)
 	</insert>
 	
+	<select id="selectAnimalInfo" parameterType="string" resultType="AnimalInfo">
+		select * from animals_info_tb
+		where desertionNo=#{desertionNo}
+	</select>
+	
 </mapper>

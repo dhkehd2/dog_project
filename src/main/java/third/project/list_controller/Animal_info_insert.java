@@ -25,7 +25,7 @@ public class Animal_info_insert {
 			+ "bgnde=" + "20160301"// 유기날짜(검색시작일)
 			+ "&endde=" + "20160430"// 유기날짜(검색 종료일)
 			+ "&pageNo=" + "1" 
-			+ "&numOfRows=" + "30"// 검색수
+			+ "&numOfRows=" + "500"// 검색수
 			+ "&ServiceKey=" + key;
 
 	@RequestMapping(value = "/animal_info_insert")

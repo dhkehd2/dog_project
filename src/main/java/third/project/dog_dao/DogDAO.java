@@ -23,5 +23,11 @@ public class DogDAO {
 		System.out.println("DogDAO.animal_info_insert()");
 		sqlSessionTemplate.insert("AnimalInfo_ns.insertAnimalInfo", animalInfo);
 	}
+	 
+	public AnimalInfo animal_info_select(String desertionNo) {//동물 정보 desertionNo 로 찾기
+		System.out.println("DogDAO.animal_info_select()");
+		return sqlSessionTemplate.selectOne("AnimalInfo_ns.selectAnimalInfo", desertionNo);
+
+	}
 	
 }

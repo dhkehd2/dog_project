@@ -18,20 +18,20 @@ import org.w3c.dom.Node;
  
 public class XmlParsering {
    String key = "MjOcp7r0zWThoEX%2BdW0edQi4Qcpjoa5HpSS%2FmDN7EikCFSMWjlgCH4V5HvgduYtXB0fhUY5b%2BE3jLawrAG4I8A%3D%3D";
-   //À¯±âµ¿¹°Á¶È¸ Á¶È¸Á¶°ÇÀÇ '½Ãµµ'Á¶°ÇÀ» °¡Á®¿Ã ¼ö ÀÖ´Ù.
+   //ï¿½ï¿½ï¿½âµ¿ï¿½ï¿½ï¿½ï¿½È¸ ï¿½ï¿½È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 'ï¿½Ãµï¿½'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
    String sido = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/sido?"
          + "ServiceKey="
          + key 
          + "&numOfRows=999&pageSize=999&pageNo=1&startPage=1";
    
-   //À¯±âµ¿¹°Á¶È¸ Á¶È¸Á¶°ÇÀÇ '½Ã±º±¸'Á¶°ÇÀ» °¡Á®¿Ã ¼ö ÀÖ´Ù.
+   //ï¿½ï¿½ï¿½âµ¿ï¿½ï¿½ï¿½ï¿½È¸ ï¿½ï¿½È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 'ï¿½Ã±ï¿½ï¿½ï¿½'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
    String sigungu = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/sigungu?"
          + "upr_cd="
          + "6480000"
          + "&ServiceKey="
          + key;
    
-   //À¯±âµ¿¹°Á¶È¸ Á¶È¸Á¶°ÇÀÇ 'º¸È£¼Ò'Á¶°ÇÀ» °¡Á®¿Ã ¼ö ÀÖ´Ù.
+   //ï¿½ï¿½ï¿½âµ¿ï¿½ï¿½ï¿½ï¿½È¸ ï¿½ï¿½È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 'ï¿½ï¿½È£ï¿½ï¿½'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
    String shelter = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/shelter?"
          + "upr_cd="
          + "6110000"
@@ -40,12 +40,12 @@ public class XmlParsering {
          + "0&ServiceKey="
          + key;
    
-   //À¯±âµ¿¹°Á¶È¸ Á¶È¸Á¶°ÇÀÇ 'Ç°Á¾'Á¶°ÇÀ» °¡Á®¿Ã ¼ö ÀÖ´Ù.
+   //ï¿½ï¿½ï¿½âµ¿ï¿½ï¿½ï¿½ï¿½È¸ ï¿½ï¿½È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 'Ç°ï¿½ï¿½'ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
    /*
-   ÃàÁ¾ÄÚµå
-    - °³ : 417000
-    - °í¾çÀÌ : 422400
-    - ±âÅ¸ : 429900
+   ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½
+    - ï¿½ï¿½ : 417000
+    - ï¿½ï¿½ï¿½ï¿½ï¿½ : 422400
+    - ï¿½ï¿½Å¸ : 429900
    */
    String kind = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/kind?"
          + "up_kind_cd="
@@ -53,16 +53,16 @@ public class XmlParsering {
          + "&ServiceKey="
          + key;
    
-   //À¯±âµ¿¹° Á¤º¸¸¦ Á¶È¸ÇÑ´Ù.
+   //ï¿½ï¿½ï¿½âµ¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ñ´ï¿½.
    String abandonmentPublic = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/abandonmentPublic?"
          + "bgnde="
-         + "20160301"//À¯±â³¯Â¥(°Ë»ö½ÃÀÛÀÏ)
+         + "20160301"//ï¿½ï¿½ï¿½â³¯Â¥(ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
          + "&endde="
-         + "20160430"//À¯±â³¯Â¥(°Ë»ö Á¾·áÀÏ)
+         + "20160430"//ï¿½ï¿½ï¿½â³¯Â¥(ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
          + "&pageNo="
          + "1"
          + "&numOfRows="
-         + "30"//°Ë»ö¼ö
+         + "30"//ï¿½Ë»ï¿½ï¿½ï¿½
          + "&ServiceKey="
          + key;
    
@@ -97,7 +97,7 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //Ã¹¹øÂ° ÀÚ½ÄÀ» ½ÃÀÛÀ¸·Î ¸¶Áö¸·±îÁö ´ÙÀ½ ÇüÁ¦¸¦ ½ÇÇà
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //Ã¹ï¿½ï¿½Â° ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  
                 if(node.getNodeName().equals("orgCd")){
                     System.out.println(node.getTextContent());
@@ -121,7 +121,7 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //Ã¹¹øÂ° ÀÚ½ÄÀ» ½ÃÀÛÀ¸·Î ¸¶Áö¸·±îÁö ´ÙÀ½ ÇüÁ¦¸¦ ½ÇÇà
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //Ã¹ï¿½ï¿½Â° ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  
                 if(node.getNodeName().equals("careNm")){
                     System.out.println(node.getTextContent());
@@ -142,7 +142,7 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //Ã¹¹øÂ° ÀÚ½ÄÀ» ½ÃÀÛÀ¸·Î ¸¶Áö¸·±îÁö ´ÙÀ½ ÇüÁ¦¸¦ ½ÇÇà
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //Ã¹ï¿½ï¿½Â° ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  
                 if(node.getNodeName().equals("KNm")){
                     System.out.println(node.getTextContent());
@@ -156,7 +156,7 @@ public class XmlParsering {
     
     public List<AnimalInfo> start4(String str) throws Exception{
        System.out.println("XmlParsering.start4()");
-       //api¿¡¼­ Á¦°øÇØÁÖ´Â ¸ðµç µ¿¹°µ¥ÀÌÅÍÁß »óÅÂ°¡'º¸È£Áß'ÀÎ °Í¸¸ °¡Á®¿Â´Ù.
+       //apiï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½'ï¿½ï¿½È£ï¿½ï¿½'ï¿½ï¿½ ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â´ï¿½.
         URL url = new URL(str);
         URLConnection connection = url.openConnection();
  
@@ -166,117 +166,117 @@ public class XmlParsering {
         List<AnimalInfo> list = new ArrayList<AnimalInfo>();
        
         
-        String desertionNo; //À¯±â¹øÈ£
+        String desertionNo; //ï¿½ï¿½ï¿½ï¿½ï¿½È£
        String filename; //Thumbnail Image
-       String happenDt; //Á¢¼öÀÏ
-       String happenPlace; //¹ß°ßÀå¼Ò
-       String kindCd; //Ç°Á¾
-       String colorCd; //»ö»ó
-       String age; //³ªÀÌ
-       String weight; //Ã¼Áß
-       String noticeNo; //°ø°í¹øÈ£
-       String noticeSdt; //°ø°í½ÃÀÛÀÏ
-       String noticeEdt; //°ø°í Á¾·áÀÏ
-       String popfile; //¿øº» Image
-       String processState; //»óÅÂ
-       String sexCd; //¼ºº°
-       String neuterYn; //Áß¼ºÈ­¿©ºÎ
+       String happenDt; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+       String happenPlace; //ï¿½ß°ï¿½ï¿½ï¿½ï¿½
+       String kindCd; //Ç°ï¿½ï¿½
+       String colorCd; //ï¿½ï¿½ï¿½ï¿½
+       String age; //ï¿½ï¿½ï¿½ï¿½
+       String weight; //Ã¼ï¿½ï¿½
+       String noticeNo; //ï¿½ï¿½ï¿½ï¿½ï¿½È£
+       String noticeSdt; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+       String noticeEdt; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+       String popfile; //ï¿½ï¿½ï¿½ï¿½ Image
+       String processState; //ï¿½ï¿½ï¿½ï¿½
+       String sexCd; //ï¿½ï¿½ï¿½ï¿½
+       String neuterYn; //ï¿½ß¼ï¿½È­ï¿½ï¿½ï¿½ï¿½
        String specialMark; //Æ¯Â¡
-       String careNm; //º¸È£¼ÒÀÌ¸§
-       String careTel; //º¸È£¼ÒÀüÈ­¹øÈ£
-       String careAddr; //º¸È£Àå¼Ò
-       String orgNm; //°üÇÒ±â°ü
-       String chargeNm; //´ã´çÀÚ
-       String officetel; //´ã´çÀÚ¿¬¶ôÃ³
-       String noticeComment; //Æ¯ÀÌ»çÇ×
+       String careNm; //ï¿½ï¿½È£ï¿½ï¿½ï¿½Ì¸ï¿½
+       String careTel; //ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½È£
+       String careAddr; //ï¿½ï¿½È£ï¿½ï¿½ï¿½
+       String orgNm; //ï¿½ï¿½ï¿½Ò±ï¿½ï¿½
+       String chargeNm; //ï¿½ï¿½ï¿½ï¿½ï¿½
+       String officetel; //ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½Ã³
+       String noticeComment; //Æ¯ï¿½Ì»ï¿½ï¿½ï¿½
         
         for(int i=0; i<descNodes.getLength();i++){
            
            AnimalInfo info = new AnimalInfo();
            
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //Ã¹¹øÂ° ÀÚ½ÄÀ» ½ÃÀÛÀ¸·Î ¸¶Áö¸·±îÁö ´ÙÀ½ ÇüÁ¦¸¦ ½ÇÇà
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //Ã¹ï¿½ï¿½Â° ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                
                
                 
-               if(node.getNodeName().equals("desertionNo")){//À¯±â¹øÈ£
+               if(node.getNodeName().equals("desertionNo")){//ï¿½ï¿½ï¿½ï¿½ï¿½È£
                    desertionNo = node.getTextContent();
                     info.setDesertionNo(desertionNo);
                 }else if(node.getNodeName().equals("filename")){//Thumbnail Image
                    filename = node.getTextContent();
                    info.setFilename(filename);
-                }else if(node.getNodeName().equals("happenDt")){//Á¢¼öÀÏ
+                }else if(node.getNodeName().equals("happenDt")){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                    happenDt = node.getTextContent();
                    info.setHappenDt(happenDt);
-                }else if(node.getNodeName().equals("happenPlace")){//¹ß°ßÀå¼Ò
+                }else if(node.getNodeName().equals("happenPlace")){//ï¿½ß°ï¿½ï¿½ï¿½ï¿½
                    happenPlace = node.getTextContent();
                    info.setHappenPlace(happenPlace);
-                }else if(node.getNodeName().equals("kindCd")){//Ç°Á¾
+                }else if(node.getNodeName().equals("kindCd")){//Ç°ï¿½ï¿½
                    kindCd = node.getTextContent();
                    info.setKindCd(kindCd);
-                }else if(node.getNodeName().equals("colorCd")){//»ö»ó
+                }else if(node.getNodeName().equals("colorCd")){//ï¿½ï¿½ï¿½ï¿½
                    colorCd = node.getTextContent();
                    info.setColorCd(colorCd);
-                }else if(node.getNodeName().equals("age")){//³ªÀÌ
+                }else if(node.getNodeName().equals("age")){//ï¿½ï¿½ï¿½ï¿½
                    age = node.getTextContent();
                    info.setAge(age);
-                }else if(node.getNodeName().equals("weight")){//Ã¼Áß
+                }else if(node.getNodeName().equals("weight")){//Ã¼ï¿½ï¿½
                    weight = node.getTextContent();
                    info.setWeight(weight);
-                }else if(node.getNodeName().equals("noticeNo")){//°ø°í¹øÈ£
+                }else if(node.getNodeName().equals("noticeNo")){//ï¿½ï¿½ï¿½ï¿½ï¿½È£
                    noticeNo = node.getTextContent();
                    info.setNoticeNo(noticeNo);
-                }else if(node.getNodeName().equals("noticeSdt")){//°ø°í½ÃÀÛÀÏ
+                }else if(node.getNodeName().equals("noticeSdt")){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                    noticeSdt = node.getTextContent();
                    info.setNoticeSdt(noticeSdt);
-                }else if(node.getNodeName().equals("noticeEdt")){//°ø°í Á¾·áÀÏ
+                }else if(node.getNodeName().equals("noticeEdt")){//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                    noticeEdt = node.getTextContent();
                    info.setNoticeEdt(noticeEdt);
-                }else if(node.getNodeName().equals("popfile")){//¿øº» Image
+                }else if(node.getNodeName().equals("popfile")){//ï¿½ï¿½ï¿½ï¿½ Image
                    popfile = node.getTextContent();
                    info.setPopfile(popfile);
-                }else if(node.getNodeName().equals("processState")){//»óÅÂ
+                }else if(node.getNodeName().equals("processState")){//ï¿½ï¿½ï¿½ï¿½
                    processState = node.getTextContent();
                    info.setProcessState(processState);
-                }else if(node.getNodeName().equals("sexCd")){//¼ºº°
+                }else if(node.getNodeName().equals("sexCd")){//ï¿½ï¿½ï¿½ï¿½
                    sexCd = node.getTextContent();
                    info.setSexCd(sexCd);
-                }else if(node.getNodeName().equals("neuterYn")){//Áß¼ºÈ­¿©ºÎ
+                }else if(node.getNodeName().equals("neuterYn")){//ï¿½ß¼ï¿½È­ï¿½ï¿½ï¿½ï¿½
                    neuterYn = node.getTextContent();
                    info.setNeuterYn(neuterYn);
                 }else if(node.getNodeName().equals("specialMark")){//Æ¯Â¡
                    specialMark = node.getTextContent();
                    info.setSpecialMark(specialMark);
-                }else if(node.getNodeName().equals("careNm")){//º¸È£¼ÒÀÌ¸§
+                }else if(node.getNodeName().equals("careNm")){//ï¿½ï¿½È£ï¿½ï¿½ï¿½Ì¸ï¿½
                    careNm = node.getTextContent();
                    info.setCareNm(careNm);
-                }else if(node.getNodeName().equals("careTel")){//º¸È£¼ÒÀüÈ­¹øÈ£
+                }else if(node.getNodeName().equals("careTel")){//ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½È£
                    careTel = node.getTextContent();
                    info.setCareTel(careTel);
-                }else if(node.getNodeName().equals("careAddr")){//º¸È£Àå¼Ò
+                }else if(node.getNodeName().equals("careAddr")){//ï¿½ï¿½È£ï¿½ï¿½ï¿½
                    careAddr = node.getTextContent();
                    info.setCareAddr(careAddr);
-                }else if(node.getNodeName().equals("orgNm")){//°üÇÒ±â°ü
+                }else if(node.getNodeName().equals("orgNm")){//ï¿½ï¿½ï¿½Ò±ï¿½ï¿½
                    orgNm = node.getTextContent();
                    info.setOrgNm(orgNm);
-                }else if(node.getNodeName().equals("chargeNm")){//´ã´çÀÚ
+                }else if(node.getNodeName().equals("chargeNm")){//ï¿½ï¿½ï¿½ï¿½ï¿½
                    chargeNm = node.getTextContent();
                    info.setChargeNm(chargeNm);
-                }else if(node.getNodeName().equals("officetel")){//´ã´çÀÚ¿¬¶ôÃ³
+                }else if(node.getNodeName().equals("officetel")){//ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½Ã³
                    officetel = node.getTextContent();
                    info.setOfficetel(officetel);
-                }else if(node.getNodeName().equals("noticeComment")){//Æ¯ÀÌ»çÇ×
+                }else if(node.getNodeName().equals("noticeComment")){//Æ¯ï¿½Ì»ï¿½ï¿½ï¿½
                    noticeComment = node.getTextContent();
                    info.setNoticeComment(noticeComment);
                 } 
             }
-            if(info.getProcessState().contains("º¸È£Áß")){
+            if(info.getProcessState().contains("ë³´í˜¸ì¤‘")){
                //System.out.println(info.toString());
                list.add(info);
                info = null;
-               System.out.println("[º¸È£ÁßÀÎ µ¿¹° ¼ö] : "+list.size());
+               System.out.println("[ï¿½ï¿½È£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½] : "+list.size());
                System.out.println("=======================================================");
             }else{
-               //System.out.println("[ÀÔ¾ç or ¾È¶ô»ç]");
+               //System.out.println("[ï¿½Ô¾ï¿½ or ï¿½È¶ï¿½ï¿½ï¿½]");
             }
             //System.out.println("["+i+"]");
             

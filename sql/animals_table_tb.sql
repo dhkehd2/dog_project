@@ -428,10 +428,10 @@ popfile VARCHAR2(800),
 processState VARCHAR2(100),
 sexCd VARCHAR2(100),
 neuterYn VARCHAR2(100),
-specialMark VARCHAR2(100),
+specialMark VARCHAR2(800),
 careNm VARCHAR2(100),
 careTel VARCHAR2(100),
-careAddr VARCHAR2(100),
+careAddr VARCHAR2(800),
 orgNm VARCHAR2(100),
 chargeNm VARCHAR2(100),
 officetel VARCHAR2(100),
@@ -440,7 +440,7 @@ noticeComment VARCHAR2(100)
 
 select * from animals_info_tb;
 delete from animals_info_tb;
-
+drop table animals_info_tb;
 
 -- ------------------------------------------------이 이후로 아직 만들면 안됨
 create table tblBoard(

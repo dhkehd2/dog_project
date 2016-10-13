@@ -22,9 +22,7 @@ public class ListController {
 	
 		System.out.println("ListController.list()");
 		List<AnimalInfo> animalList = dogDAO.animal_list();
-		
-		
-		
+		System.out.println(animalList);
 		return new ModelAndView("list","animalList", animalList);
 	}
 	
