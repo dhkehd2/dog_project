@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../../top_bottom/top.jsp"%>
+
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" class="no-js" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
@@ -24,9 +24,21 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
+	<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>   
+	<script>
+	$(function() {
+		  $( "#Datepicker" ).datepicker({
+		         changeMonth: true, 
+		         changeYear: true,
+		         nextText: '다음 달',
+		         prevText: '이전 달' 
+		  });
+		});
+	</script>
 </head>
 <body>
-
 
 <!--start wrapper-->
 <section class="wrapper">
@@ -106,7 +118,7 @@
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="Birth" >
+                                    <input type="text" id="Datepicker" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="Birth">
                                 	</div>
                                 </div>
                             </div>
@@ -172,13 +184,12 @@
 
 
 
-
-<script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
+<!-- <script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script> -->
 <script src="resources/js/bootstrap.min.js"></script>
 <script src="resources/js/jquery.easing.1.3.js"></script>
 <script src="resources/js/retina-1.1.0.min.js"></script>
-<script type="text/javascript" src="resources/js/jquery.cookie.js"></script> <!-- jQuery cookie -->
-<script type="text/javascript" src="resources/js/styleswitch.js"></script> <!-- Style Colors Switcher -->
+<script type="text/javascript" src="resources/js/jquery.cookie.js"></script> jQuery cookie
+<script type="text/javascript" src="resources/js/styleswitch.js"></script> Style Colors Switcher
 <script type="text/javascript" src="resources/js/jquery.smartmenus.min.js"></script>
 <script type="text/javascript" src="resources/js/jquery.smartmenus.bootstrap.min.js"></script>
 <script type="text/javascript" src="resources/js/jquery.jcarousel.js"></script>
@@ -193,10 +204,11 @@
 
 <script src="resources/js/main.js"></script>
 
+
+
 <!-- Start Style Switcher -->
 <div class="switcher"></div>
 <!-- End Style Switcher -->
 </body>
 </html>
 
-<%@ include file="../../top_bottom/bottom.jsp"%>
