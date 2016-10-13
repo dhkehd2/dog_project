@@ -59,12 +59,12 @@
                             <div class="form-group">
                                 <div class="col-lg-12 ">
                                 	<div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="ID" >
+                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="아이디" >
                                 	</div>
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="Password" >
+                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="비밀번호" >
                                 	</div>
                                 </div>
                             </div>
@@ -74,10 +74,10 @@
                     		 <div class="form-group">
                             	<div class="col-lg-12 col-md-12">
                            			 <div class="middle">
-		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Login" onclick="location='list'">
-		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Join" onclick="location='join'">
-		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Find ID" onclick="location='id_find'">
-		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Find Password" onclick="location='pw_find'">
+		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="로그인" onclick="location='loginProcess'">
+		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="회원가입" onclick="location='join'">
+		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="아이디 찾기" onclick="location='id_find'">
+		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="비밀번호 찾기" onclick="location='pw_find'">
                             		</div>
                            		 </div>
                           	 </div>

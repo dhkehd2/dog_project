@@ -139,7 +139,7 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <div class="middle">
-                                    <label for="Question" style="text-align: left;">Question for Password</label>
+                                    <label for="Question" style="text-align: left;">비밀번호 찾기 질문</label>
                                     <select id="Question" name="question" class="form-control">
                                     	<option value="1" class="form-control">당신의 보물 1호는?</option>
                                     	<option value="2" class="form-control">당신의 출신 초등학교는?</option>
@@ -160,9 +160,9 @@
                                 </div>
                                 <div class="col-lg-12 ">
                                    <div class="expMiddle">
-	                                   <h3>Do you have an Experience with an Animal? &nbsp;
-		                                   <input type="radio" name="exp" value="yes">&nbsp;yes&nbsp;
-		                                   <input type="radio" name="exp" value="no">&nbsp;no
+	                                   <h3>동물을 키워 본 경험이 있습니까? &nbsp;
+		                                   <input type="radio" name="exp" value="yes">&nbsp;예&nbsp;
+		                                   <input type="radio" name="exp" value="no">&nbsp;아니오
 	                                   </h3>
                                    </div>
                                 </div>
@@ -170,8 +170,8 @@
                             
                         </div>
                         <div class="row">
-                            <div class="col-md-12 text-right">
-                                <input type="submit" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Send Message">
+                            <div class="col-md-11 text-right">
+                                <input type="submit" data-loading-text="Loading..." class="btn btn-default btn-lg" value="회원가입">
                             </div>
                         </div>
                     </form>
