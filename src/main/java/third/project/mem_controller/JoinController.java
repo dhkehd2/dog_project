@@ -12,9 +12,11 @@ public class JoinController {
 	
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public String join(Locale locale, Model model) {
-	
+		
 		System.out.println("JoinController.join()");
 		return "join";
 	}
+	
+	
 	
 }
