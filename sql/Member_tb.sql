@@ -19,8 +19,8 @@ insert into member_tb values
 '1990-08-22','male','yes','당신의 보물 1호는?','아이폰6')
 
 insert into member_tb values
-('yyk9111','yyk','KimYeyeong','010-1111-1111','yyk9111@naver.com','안양',
-'1990-11-17','female','no','당신의 어릴적 별명은?','??????')
+('yyk9111','yyk','KimYeyoung','010-1111-1111','yyk9111@naver.com','안양',
+'1990-11-19','female','no','당신의 어릴적 별명은?','??????')
 
 select * from member_tb
 
