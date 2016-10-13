@@ -15,12 +15,12 @@ create table member_tb(
 )
 
 insert into member_tb values
-('gogoy2643','seo','SeoYoonho','010-6330-2643','gogoy2643@naver.com','¾È»ê',
-'1990-08-22','male','yes','´ç½ÅÀÇ º¸¹° 1È£´Â?','¾ÆÀÌÆù6')
+('gogoy2643','seo','SeoYoonho','010-6330-2643','gogoy2643@naver.com','ì•ˆì‚°',
+'1990-08-22','male','yes','ë‹¹ì‹ ì˜ ë³´ë¬¼ 1í˜¸ëŠ”?','ì•„ì´í°6')
 
 insert into member_tb values
-('yyk9111','yyk','KimYeyeong','010-1111-1111','yyk9111@naver.com','¾È¾ç',
-'1990-11-17','female','no','´ç½ÅÀÇ ¾î¸±Àû º°¸íÀº?','??????')
+('yyk9111','yyk','KimYeyeong','010-1111-1111','yyk9111@naver.com','ì•ˆì–‘',
+'1990-11-17','female','no','ë‹¹ì‹ ì˜ ì–´ë¦´ì  ë³„ëª…ì€?','??????')
 
 select * from member_tb
 
