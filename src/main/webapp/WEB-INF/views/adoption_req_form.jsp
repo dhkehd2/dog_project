@@ -157,7 +157,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<input type="submit" data-loading-text="Loading..."
-										class="btn btn-default btn-lg" value="Send Message">
+										class="btn btn-default btn-lg" value="입양신청하기">
 								</div>
 							</div>
 						</form>
