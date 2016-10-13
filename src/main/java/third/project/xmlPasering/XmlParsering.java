@@ -17,71 +17,71 @@ import third.project.dog.bean.AnimalInfo;
 import org.w3c.dom.Node;
  
 public class XmlParsering {
-	String key = "MjOcp7r0zWThoEX%2BdW0edQi4Qcpjoa5HpSS%2FmDN7EikCFSMWjlgCH4V5HvgduYtXB0fhUY5b%2BE3jLawrAG4I8A%3D%3D";
-	//ìœ ê¸°ë™ë¬¼ì¡°íšŒ ì¡°íšŒì¡°ê±´ì˜ 'ì‹œë„'ì¡°ê±´ì„ ê°€ì ¸ì˜¬ ìˆ˜ ìˆë‹¤.
-	String sido = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/sido?"
-			+ "ServiceKey="
-			+ key 
-			+ "&numOfRows=999&pageSize=999&pageNo=1&startPage=1";
-	
-	//ìœ ê¸°ë™ë¬¼ì¡°íšŒ ì¡°íšŒì¡°ê±´ì˜ 'ì‹œêµ°êµ¬'ì¡°ê±´ì„ ê°€ì ¸ì˜¬ ìˆ˜ ìˆë‹¤.
-	String sigungu = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/sigungu?"
-			+ "upr_cd="
-			+ "6480000"
-			+ "&ServiceKey="
-			+ key;
-	
-	//ìœ ê¸°ë™ë¬¼ì¡°íšŒ ì¡°íšŒì¡°ê±´ì˜ 'ë³´í˜¸ì†Œ'ì¡°ê±´ì„ ê°€ì ¸ì˜¬ ìˆ˜ ìˆë‹¤.
-	String shelter = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/shelter?"
-			+ "upr_cd="
-			+ "6110000"
-			+ "&org_cd="
-			+ "322000"
-			+ "0&ServiceKey="
-			+ key;
-	
-	//ìœ ê¸°ë™ë¬¼ì¡°íšŒ ì¡°íšŒì¡°ê±´ì˜ 'í’ˆì¢…'ì¡°ê±´ì„ ê°€ì ¸ì˜¬ ìˆ˜ ìˆë‹¤.
-	/*
-	ì¶•ì¢…ì½”ë“œ
- 	- ê°œ : 417000
- 	- ê³ ì–‘ì´ : 422400
- 	- ê¸°íƒ€ : 429900
-	*/
-	String kind = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/kind?"
-			+ "up_kind_cd="
-			+ "417000"
-			+ "&ServiceKey="
-			+ key;
-	
-	//ìœ ê¸°ë™ë¬¼ ì •ë³´ë¥¼ ì¡°íšŒí•œë‹¤.
-	String abandonmentPublic = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/abandonmentPublic?"
-			+ "bgnde="
-			+ "20160301"//ìœ ê¸°ë‚ ì§œ(ê²€ìƒ‰ì‹œì‘ì¼)
-			+ "&endde="
-			+ "20160430"//ìœ ê¸°ë‚ ì§œ(ê²€ìƒ‰ ì¢…ë£Œì¼)
-			+ "&pageNo="
-			+ "1"
-			+ "&numOfRows="
-			+ "30"//ê²€ìƒ‰ìˆ˜
-			+ "&ServiceKey="
-			+ key;
-	
+   String key = "MjOcp7r0zWThoEX%2BdW0edQi4Qcpjoa5HpSS%2FmDN7EikCFSMWjlgCH4V5HvgduYtXB0fhUY5b%2BE3jLawrAG4I8A%3D%3D";
+   //À¯±âµ¿¹°Á¶È¸ Á¶È¸Á¶°ÇÀÇ '½Ãµµ'Á¶°ÇÀ» °¡Á®¿Ã ¼ö ÀÖ´Ù.
+   String sido = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/sido?"
+         + "ServiceKey="
+         + key 
+         + "&numOfRows=999&pageSize=999&pageNo=1&startPage=1";
+   
+   //À¯±âµ¿¹°Á¶È¸ Á¶È¸Á¶°ÇÀÇ '½Ã±º±¸'Á¶°ÇÀ» °¡Á®¿Ã ¼ö ÀÖ´Ù.
+   String sigungu = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/sigungu?"
+         + "upr_cd="
+         + "6480000"
+         + "&ServiceKey="
+         + key;
+   
+   //À¯±âµ¿¹°Á¶È¸ Á¶È¸Á¶°ÇÀÇ 'º¸È£¼Ò'Á¶°ÇÀ» °¡Á®¿Ã ¼ö ÀÖ´Ù.
+   String shelter = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/shelter?"
+         + "upr_cd="
+         + "6110000"
+         + "&org_cd="
+         + "322000"
+         + "0&ServiceKey="
+         + key;
+   
+   //À¯±âµ¿¹°Á¶È¸ Á¶È¸Á¶°ÇÀÇ 'Ç°Á¾'Á¶°ÇÀ» °¡Á®¿Ã ¼ö ÀÖ´Ù.
+   /*
+   ÃàÁ¾ÄÚµå
+    - °³ : 417000
+    - °í¾çÀÌ : 422400
+    - ±âÅ¸ : 429900
+   */
+   String kind = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/kind?"
+         + "up_kind_cd="
+         + "417000"
+         + "&ServiceKey="
+         + key;
+   
+   //À¯±âµ¿¹° Á¤º¸¸¦ Á¶È¸ÇÑ´Ù.
+   String abandonmentPublic = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/abandonmentPublic?"
+         + "bgnde="
+         + "20160301"//À¯±â³¯Â¥(°Ë»ö½ÃÀÛÀÏ)
+         + "&endde="
+         + "20160430"//À¯±â³¯Â¥(°Ë»ö Á¾·áÀÏ)
+         + "&pageNo="
+         + "1"
+         + "&numOfRows="
+         + "30"//°Ë»ö¼ö
+         + "&ServiceKey="
+         + key;
+   
  /*   public static void main(String[] args) {
  
         try{
  
-        	XmlParsering xmlParsering = new XmlParsering();
-        	
-        	//xmlParsering.start(xmlParsering.sido);
-        	
-        	//xmlParsering.start(xmlParsering.sigungu);
-        	
-        	//xmlParsering.start2(xmlParsering.shelter);
-        	
-        	//xmlParsering.start3(xmlParsering.kind);
-        	
-        	xmlParsering.start4(xmlParsering.abandonmentPublic);
-        	
+           XmlParsering xmlParsering = new XmlParsering();
+           
+           //xmlParsering.start(xmlParsering.sido);
+           
+           //xmlParsering.start(xmlParsering.sigungu);
+           
+           //xmlParsering.start2(xmlParsering.shelter);
+           
+           //xmlParsering.start3(xmlParsering.kind);
+           
+           xmlParsering.start4(xmlParsering.abandonmentPublic);
+           
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -97,7 +97,7 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //ì²«ë²ˆì§¸ ìì‹ì„ ì‹œì‘ìœ¼ë¡œ ë§ˆì§€ë§‰ê¹Œì§€ ë‹¤ìŒ í˜•ì œë¥¼ ì‹¤í–‰
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //Ã¹¹øÂ° ÀÚ½ÄÀ» ½ÃÀÛÀ¸·Î ¸¶Áö¸·±îÁö ´ÙÀ½ ÇüÁ¦¸¦ ½ÇÇà
  
                 if(node.getNodeName().equals("orgCd")){
                     System.out.println(node.getTextContent());
@@ -121,7 +121,7 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //ì²«ë²ˆì§¸ ìì‹ì„ ì‹œì‘ìœ¼ë¡œ ë§ˆì§€ë§‰ê¹Œì§€ ë‹¤ìŒ í˜•ì œë¥¼ ì‹¤í–‰
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //Ã¹¹øÂ° ÀÚ½ÄÀ» ½ÃÀÛÀ¸·Î ¸¶Áö¸·±îÁö ´ÙÀ½ ÇüÁ¦¸¦ ½ÇÇà
  
                 if(node.getNodeName().equals("careNm")){
                     System.out.println(node.getTextContent());
@@ -142,7 +142,7 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //ì²«ë²ˆì§¸ ìì‹ì„ ì‹œì‘ìœ¼ë¡œ ë§ˆì§€ë§‰ê¹Œì§€ ë‹¤ìŒ í˜•ì œë¥¼ ì‹¤í–‰
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //Ã¹¹øÂ° ÀÚ½ÄÀ» ½ÃÀÛÀ¸·Î ¸¶Áö¸·±îÁö ´ÙÀ½ ÇüÁ¦¸¦ ½ÇÇà
  
                 if(node.getNodeName().equals("KNm")){
                     System.out.println(node.getTextContent());
@@ -155,8 +155,8 @@ public class XmlParsering {
     }
     
     public List<AnimalInfo> start4(String str) throws Exception{
-    	System.out.println("XmlParsering.start4()");
-    	//apiì—ì„œ ì œê³µí•´ì£¼ëŠ” ëª¨ë“  ë™ë¬¼ë°ì´í„°ì¤‘ ìƒíƒœê°€'ë³´í˜¸ì¤‘'ì¸ ê²ƒë§Œ ê°€ì ¸ì˜¨ë‹¤.
+       System.out.println("XmlParsering.start4()");
+       //api¿¡¼­ Á¦°øÇØÁÖ´Â ¸ğµç µ¿¹°µ¥ÀÌÅÍÁß »óÅÂ°¡'º¸È£Áß'ÀÎ °Í¸¸ °¡Á®¿Â´Ù.
         URL url = new URL(str);
         URLConnection connection = url.openConnection();
  
@@ -166,117 +166,117 @@ public class XmlParsering {
         List<AnimalInfo> list = new ArrayList<AnimalInfo>();
        
         
-        String desertionNo; //ìœ ê¸°ë²ˆí˜¸
-    	String filename; //Thumbnail Image
-    	String happenDt; //ì ‘ìˆ˜ì¼
-    	String happenPlace; //ë°œê²¬ì¥ì†Œ
-    	String kindCd; //í’ˆì¢…
-    	String colorCd; //ìƒ‰ìƒ
-    	String age; //ë‚˜ì´
-    	String weight; //ì²´ì¤‘
-    	String noticeNo; //ê³µê³ ë²ˆí˜¸
-    	String noticeSdt; //ê³µê³ ì‹œì‘ì¼
-    	String noticeEdt; //ê³µê³  ì¢…ë£Œì¼
-    	String popfile; //ì›ë³¸ Image
-    	String processState; //ìƒíƒœ
-    	String sexCd; //ì„±ë³„
-    	String neuterYn; //ì¤‘ì„±í™”ì—¬ë¶€
-    	String specialMark; //íŠ¹ì§•
-    	String careNm; //ë³´í˜¸ì†Œì´ë¦„
-    	String careTel; //ë³´í˜¸ì†Œì „í™”ë²ˆí˜¸
-    	String careAddr; //ë³´í˜¸ì¥ì†Œ
-    	String orgNm; //ê´€í• ê¸°ê´€
-    	String chargeNm; //ë‹´ë‹¹ì
-    	String officetel; //ë‹´ë‹¹ìì—°ë½ì²˜
-    	String noticeComment; //íŠ¹ì´ì‚¬í•­
+        String desertionNo; //À¯±â¹øÈ£
+       String filename; //Thumbnail Image
+       String happenDt; //Á¢¼öÀÏ
+       String happenPlace; //¹ß°ßÀå¼Ò
+       String kindCd; //Ç°Á¾
+       String colorCd; //»ö»ó
+       String age; //³ªÀÌ
+       String weight; //Ã¼Áß
+       String noticeNo; //°ø°í¹øÈ£
+       String noticeSdt; //°ø°í½ÃÀÛÀÏ
+       String noticeEdt; //°ø°í Á¾·áÀÏ
+       String popfile; //¿øº» Image
+       String processState; //»óÅÂ
+       String sexCd; //¼ºº°
+       String neuterYn; //Áß¼ºÈ­¿©ºÎ
+       String specialMark; //Æ¯Â¡
+       String careNm; //º¸È£¼ÒÀÌ¸§
+       String careTel; //º¸È£¼ÒÀüÈ­¹øÈ£
+       String careAddr; //º¸È£Àå¼Ò
+       String orgNm; //°üÇÒ±â°ü
+       String chargeNm; //´ã´çÀÚ
+       String officetel; //´ã´çÀÚ¿¬¶ôÃ³
+       String noticeComment; //Æ¯ÀÌ»çÇ×
         
         for(int i=0; i<descNodes.getLength();i++){
-        	
-        	AnimalInfo info = new AnimalInfo();
-        	
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //ì²«ë²ˆì§¸ ìì‹ì„ ì‹œì‘ìœ¼ë¡œ ë§ˆì§€ë§‰ê¹Œì§€ ë‹¤ìŒ í˜•ì œë¥¼ ì‹¤í–‰
-            	
-            	
+           
+           AnimalInfo info = new AnimalInfo();
+           
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //Ã¹¹øÂ° ÀÚ½ÄÀ» ½ÃÀÛÀ¸·Î ¸¶Áö¸·±îÁö ´ÙÀ½ ÇüÁ¦¸¦ ½ÇÇà
+               
+               
                 
-            	if(node.getNodeName().equals("desertionNo")){//ìœ ê¸°ë²ˆí˜¸
-                	desertionNo = node.getTextContent();
+               if(node.getNodeName().equals("desertionNo")){//À¯±â¹øÈ£
+                   desertionNo = node.getTextContent();
                     info.setDesertionNo(desertionNo);
                 }else if(node.getNodeName().equals("filename")){//Thumbnail Image
-                	filename = node.getTextContent();
-                	info.setFilename(filename);
-                }else if(node.getNodeName().equals("happenDt")){//ì ‘ìˆ˜ì¼
-                	happenDt = node.getTextContent();
-                	info.setHappenDt(happenDt);
-                }else if(node.getNodeName().equals("happenPlace")){//ë°œê²¬ì¥ì†Œ
-                	happenPlace = node.getTextContent();
-                	info.setHappenPlace(happenPlace);
-                }else if(node.getNodeName().equals("kindCd")){//í’ˆì¢…
-                	kindCd = node.getTextContent();
-                	info.setKindCd(kindCd);
-                }else if(node.getNodeName().equals("colorCd")){//ìƒ‰ìƒ
-                	colorCd = node.getTextContent();
-                	info.setColorCd(colorCd);
-                }else if(node.getNodeName().equals("age")){//ë‚˜ì´
-                	age = node.getTextContent();
-                	info.setAge(age);
-                }else if(node.getNodeName().equals("weight")){//ì²´ì¤‘
-                	weight = node.getTextContent();
-                	info.setWeight(weight);
-                }else if(node.getNodeName().equals("noticeNo")){//ê³µê³ ë²ˆí˜¸
-                	noticeNo = node.getTextContent();
-                	info.setNoticeNo(noticeNo);
-                }else if(node.getNodeName().equals("noticeSdt")){//ê³µê³ ì‹œì‘ì¼
-                	noticeSdt = node.getTextContent();
-                	info.setNoticeSdt(noticeSdt);
-                }else if(node.getNodeName().equals("noticeEdt")){//ê³µê³  ì¢…ë£Œì¼
-                	noticeEdt = node.getTextContent();
-                	info.setNoticeEdt(noticeEdt);
-                }else if(node.getNodeName().equals("popfile")){//ì›ë³¸ Image
-                	popfile = node.getTextContent();
-                	info.setPopfile(popfile);
-                }else if(node.getNodeName().equals("processState")){//ìƒíƒœ
-                	processState = node.getTextContent();
-                	info.setProcessState(processState);
-                }else if(node.getNodeName().equals("sexCd")){//ì„±ë³„
-                	sexCd = node.getTextContent();
-                	info.setSexCd(sexCd);
-                }else if(node.getNodeName().equals("neuterYn")){//ì¤‘ì„±í™”ì—¬ë¶€
-                	neuterYn = node.getTextContent();
-                	info.setNeuterYn(neuterYn);
-                }else if(node.getNodeName().equals("specialMark")){//íŠ¹ì§•
-                	specialMark = node.getTextContent();
-                	info.setSpecialMark(specialMark);
-                }else if(node.getNodeName().equals("careNm")){//ë³´í˜¸ì†Œì´ë¦„
-                	careNm = node.getTextContent();
-                	info.setCareNm(careNm);
-                }else if(node.getNodeName().equals("careTel")){//ë³´í˜¸ì†Œì „í™”ë²ˆí˜¸
-                	careTel = node.getTextContent();
-                	info.setCareTel(careTel);
-                }else if(node.getNodeName().equals("careAddr")){//ë³´í˜¸ì¥ì†Œ
-                	careAddr = node.getTextContent();
-                	info.setCareAddr(careAddr);
-                }else if(node.getNodeName().equals("orgNm")){//ê´€í• ê¸°ê´€
-                	orgNm = node.getTextContent();
-                	info.setOrgNm(orgNm);
-                }else if(node.getNodeName().equals("chargeNm")){//ë‹´ë‹¹ì
-                	chargeNm = node.getTextContent();
-                	info.setChargeNm(chargeNm);
-                }else if(node.getNodeName().equals("officetel")){//ë‹´ë‹¹ìì—°ë½ì²˜
-                	officetel = node.getTextContent();
-                	info.setOfficetel(officetel);
-                }else if(node.getNodeName().equals("noticeComment")){//íŠ¹ì´ì‚¬í•­
-                	noticeComment = node.getTextContent();
-                	info.setNoticeComment(noticeComment);
+                   filename = node.getTextContent();
+                   info.setFilename(filename);
+                }else if(node.getNodeName().equals("happenDt")){//Á¢¼öÀÏ
+                   happenDt = node.getTextContent();
+                   info.setHappenDt(happenDt);
+                }else if(node.getNodeName().equals("happenPlace")){//¹ß°ßÀå¼Ò
+                   happenPlace = node.getTextContent();
+                   info.setHappenPlace(happenPlace);
+                }else if(node.getNodeName().equals("kindCd")){//Ç°Á¾
+                   kindCd = node.getTextContent();
+                   info.setKindCd(kindCd);
+                }else if(node.getNodeName().equals("colorCd")){//»ö»ó
+                   colorCd = node.getTextContent();
+                   info.setColorCd(colorCd);
+                }else if(node.getNodeName().equals("age")){//³ªÀÌ
+                   age = node.getTextContent();
+                   info.setAge(age);
+                }else if(node.getNodeName().equals("weight")){//Ã¼Áß
+                   weight = node.getTextContent();
+                   info.setWeight(weight);
+                }else if(node.getNodeName().equals("noticeNo")){//°ø°í¹øÈ£
+                   noticeNo = node.getTextContent();
+                   info.setNoticeNo(noticeNo);
+                }else if(node.getNodeName().equals("noticeSdt")){//°ø°í½ÃÀÛÀÏ
+                   noticeSdt = node.getTextContent();
+                   info.setNoticeSdt(noticeSdt);
+                }else if(node.getNodeName().equals("noticeEdt")){//°ø°í Á¾·áÀÏ
+                   noticeEdt = node.getTextContent();
+                   info.setNoticeEdt(noticeEdt);
+                }else if(node.getNodeName().equals("popfile")){//¿øº» Image
+                   popfile = node.getTextContent();
+                   info.setPopfile(popfile);
+                }else if(node.getNodeName().equals("processState")){//»óÅÂ
+                   processState = node.getTextContent();
+                   info.setProcessState(processState);
+                }else if(node.getNodeName().equals("sexCd")){//¼ºº°
+                   sexCd = node.getTextContent();
+                   info.setSexCd(sexCd);
+                }else if(node.getNodeName().equals("neuterYn")){//Áß¼ºÈ­¿©ºÎ
+                   neuterYn = node.getTextContent();
+                   info.setNeuterYn(neuterYn);
+                }else if(node.getNodeName().equals("specialMark")){//Æ¯Â¡
+                   specialMark = node.getTextContent();
+                   info.setSpecialMark(specialMark);
+                }else if(node.getNodeName().equals("careNm")){//º¸È£¼ÒÀÌ¸§
+                   careNm = node.getTextContent();
+                   info.setCareNm(careNm);
+                }else if(node.getNodeName().equals("careTel")){//º¸È£¼ÒÀüÈ­¹øÈ£
+                   careTel = node.getTextContent();
+                   info.setCareTel(careTel);
+                }else if(node.getNodeName().equals("careAddr")){//º¸È£Àå¼Ò
+                   careAddr = node.getTextContent();
+                   info.setCareAddr(careAddr);
+                }else if(node.getNodeName().equals("orgNm")){//°üÇÒ±â°ü
+                   orgNm = node.getTextContent();
+                   info.setOrgNm(orgNm);
+                }else if(node.getNodeName().equals("chargeNm")){//´ã´çÀÚ
+                   chargeNm = node.getTextContent();
+                   info.setChargeNm(chargeNm);
+                }else if(node.getNodeName().equals("officetel")){//´ã´çÀÚ¿¬¶ôÃ³
+                   officetel = node.getTextContent();
+                   info.setOfficetel(officetel);
+                }else if(node.getNodeName().equals("noticeComment")){//Æ¯ÀÌ»çÇ×
+                   noticeComment = node.getTextContent();
+                   info.setNoticeComment(noticeComment);
                 } 
             }
-            if(info.getProcessState().contains("ë³´í˜¸ì¤‘")){
-            	//System.out.println(info.toString());
-            	list.add(info);
-            	info = null;
-            	System.out.println("[ë³´í˜¸ì¤‘ì¸ ë™ë¬¼ ìˆ˜] : "+list.size());
-            	System.out.println("=======================================================");
+            if(info.getProcessState().contains("º¸È£Áß")){
+               //System.out.println(info.toString());
+               list.add(info);
+               info = null;
+               System.out.println("[º¸È£ÁßÀÎ µ¿¹° ¼ö] : "+list.size());
+               System.out.println("=======================================================");
             }else{
-            	//System.out.println("[ì…ì–‘ or ì•ˆë½ì‚¬]");
+               //System.out.println("[ÀÔ¾ç or ¾È¶ô»ç]");
             }
             //System.out.println("["+i+"]");
             

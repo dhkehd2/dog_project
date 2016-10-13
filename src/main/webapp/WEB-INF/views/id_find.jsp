@@ -61,12 +61,12 @@
                             <div class="form-group">
                                 <div class="col-lg-12 ">
                                 	<div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="Name" >
+                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="이름" >
                                 	</div>
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="Birth" >
+                                    <input type="text" id="birth" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="생년월일" >
                                 	</div>
                                 </div>
                             </div>
@@ -76,8 +76,8 @@
                     		 <div class="form-group">
                             	<div class="col-lg-12 col-md-12">
                            			 <div class="middle">
-		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Find ID" onclick="">
-		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="Back to Login" onclick="location='login'">
+		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="아이디 찾기" onclick="">
+		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="로그인 화면으로" onclick="location='login'">
 		                             </div>
                            		 </div>
                           	 </div>
