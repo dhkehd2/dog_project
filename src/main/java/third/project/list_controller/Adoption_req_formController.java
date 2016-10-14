@@ -29,7 +29,9 @@ public class Adoption_req_formController {
 	@RequestMapping(value = "/adoption_req_form", method = RequestMethod.GET)
 	public ModelAndView info_up(String id) {
 		System.out.println("신청자 아이디 = "+id);
-		//MemberBean memberInfo = memdao.member_info_select(id);
+		MemberBean m = new MemberBean();
+		m.setMem_id(id);
+		MemberBean memberInfo = memdao.loginMember(m);
 		System.out.println("Adoption_req_formController.adoption_req_form()");
 		
 		return new ModelAndView("adoption_req_form","memberInfo", memberInfo);
