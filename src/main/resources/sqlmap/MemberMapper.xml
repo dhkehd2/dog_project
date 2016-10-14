@@ -45,6 +45,11 @@
 	mem_id=#{mem_id}
 	</select>
 	
-	
+	<!-- 이름,생년월일이 일치하면 저장된 아이디를 불러오도록 select -->
+	<select id="selectIdByNameAndTel" parameterType="MemberBean" resultType="string">
+	select mem_id from member_tb
+	where
+	mem_name=#{mem_name} and mem_tel=#{mem_tel}
+	</select>
 		
 </mapper>

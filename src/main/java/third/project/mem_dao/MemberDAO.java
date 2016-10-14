@@ -13,26 +13,27 @@ public class MemberDAO {
 	private SqlSessionTemplate sqlSessionTemplate;
 	
 	public void joinMember(MemberBean mb) {
-		//DB�� mb�� �ִ� �������� ����(insert)
+		//DB占쏙옙 mb占쏙옙 占쌍댐옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙(insert)
 		int count = sqlSessionTemplate.insert("Member_ns.insertMember", mb);
 		System.out.println(count);
 	}
 	
 	public MemberBean loginMember(MemberBean mb) {
-		//DB�� ����Ǿ� �ִ� ������ �Է��� ���̵�, ��й�ȣ ������ ��
+		//DB占쏙옙 占쏙옙占쏙옙퓸占� 占쌍댐옙 占쏙옙占쏙옙占쏙옙 占쌉뤄옙占쏙옙 占쏙옙占싱듸옙, 占쏙옙橘占싫� 占쏙옙占쏙옙占쏙옙 占쏙옙
 		String mem_id = mb.getMem_id();
 		MemberBean selectByIdBean = sqlSessionTemplate.selectOne("Member_ns.selectMemberById", mem_id);
 		return selectByIdBean;
 		
 	}
 	
-	public void id_findMember(MemberBean mb) {
-		//DB�� ����Ǿ� �ִ� �̸��� ������ϰ� ��ġ�ϸ�, DB�� ����Ǿ� �ִ� ���̵� �ҷ��´�.
-		
+	public String id_findMember(MemberBean mb) {
+		//DB占쏙옙 占쏙옙占쏙옙퓸占� 占쌍댐옙 占싱몌옙占쏙옙 占쏙옙占쏙옙占쏙옙構占� 占쏙옙치占싹몌옙, DB占쏙옙 占쏙옙占쏙옙퓸占� 占쌍댐옙 占쏙옙占싱듸옙 占쌀뤄옙占승댐옙.	
+		String selectIdByNameAndTelStr = sqlSessionTemplate.selectOne("Member_ns.selectIdByNameAndTel", mb);
+		return selectIdByNameAndTelStr;
 	}
 	
 	public void pw_findMember(MemberBean mb) {
-		//DB�� ����Ǿ� �ִ� ���̵�,�̸�,�������,��й�ȣ������ ��ġ�ϸ�, DB�� ����Ǿ� �ִ� ��й�ȣ�� �ҷ��´�.
+		//DB占쏙옙 占쏙옙占쏙옙퓸占� 占쌍댐옙 占쏙옙占싱듸옙,占싱몌옙,占쏙옙占쏙옙占쏙옙占�,占쏙옙橘占싫ｏ옙占쏙옙占쏙옙占� 占쏙옙치占싹몌옙, DB占쏙옙 占쏙옙占쏙옙퓸占� 占쌍댐옙 占쏙옙橘占싫ｏ옙占� 占쌀뤄옙占승댐옙.
 		
 	}
 	

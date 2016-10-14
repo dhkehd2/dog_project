@@ -7,13 +7,14 @@ import third.project.bean.MemberBean;
 import third.project.mem_dao.MemberDAO;
 
 @Service
-public class Id_FindSvc {
+public class Id_FindProcessSvc {
 
 	@Autowired
 	MemberDAO dao;
 	
-	public void execute(MemberBean mb) {
-		dao.id_findMember(mb);
+	public String execute(MemberBean mb) {
+		String id = dao.id_findMember(mb);
+		return id;
 	}
 	
 }
