@@ -56,7 +56,7 @@
                         <strong>Error!</strong> There was an error sending your message.
                     </div>
 
-                    <form id="contactForm" action="" novalidate="novalidate">
+                    <form id="contactForm" action="id_findProcess" novalidate="novalidate">
                         <div class="row">
                             <div class="form-group">
                                 <div class="col-lg-12 ">
@@ -66,7 +66,7 @@
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="mem_bir" name="mem_bir" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="생년월일" >
+                                    <input type="text" id="mem_tel" name="mem_tel" class="form-control" maxlength="100" data-msg-required="Please enter your phoneNumber." value="" placeholder="전화번호" >
                                 	</div>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                     		 <div class="form-group">
                             	<div class="col-lg-12 col-md-12">
                            			 <div class="middle">
-		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="아이디 찾기" onclick="">
+		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="아이디 찾기" onclick="document.getElementById('contactForm').submit()">
 		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="로그인 화면으로" onclick="location='login'">
 		                             </div>
                            		 </div>

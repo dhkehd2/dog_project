@@ -14,8 +14,12 @@ public class LoginProcessSvc {
 	
 	public boolean execute(MemberBean mb) {
 		MemberBean selectById = dao.loginMember(mb);
-		if(mb.getMem_pw().equals(selectById.getMem_pw())){
-			return true;
+		if(selectById != null) {
+			if(mb.getMem_pw().equals(selectById.getMem_pw())){
+				return true;
+			}else {
+				return false;
+			}
 		}else {
 			return false;
 		}

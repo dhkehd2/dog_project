@@ -7,7 +7,7 @@ import third.project.bean.MemberBean;
 import third.project.mem_dao.MemberDAO;
 
 @Service
-public class Pw_FindSvc {
+public class Pw_FindProcessSvc {
 
 	@Autowired
 	MemberDAO dao;
