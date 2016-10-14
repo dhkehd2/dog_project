@@ -1,25 +1,28 @@
 package third.project.mem_dao;
 
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import third.project.bean.MemberBean;
-import third.project.dog.bean.AnimalInfo;
 
 @Repository
 public class MemberDAO {
 
-	/*@Autowired
-	private SqlSessionTemplate sqlSessionTemplate;*/
+	@Autowired
+	private SqlSessionTemplate sqlSessionTemplate;
 	
 	public void joinMember(MemberBean mb) {
 		//DB�� mb�� �ִ� �������� ����(insert)
-				
+		int count = sqlSessionTemplate.insert("Member_ns.insertMember", mb);
+		System.out.println(count);
 	}
 	
-	public void loginMember(MemberBean mb) {
+	public MemberBean loginMember(MemberBean mb) {
 		//DB�� ����Ǿ� �ִ� ������ �Է��� ���̵�, ��й�ȣ ������ ��
-
+		String mem_id = mb.getMem_id();
+		MemberBean selectByIdBean = sqlSessionTemplate.selectOne("Member_ns.selectMemberById", mem_id);
+		return selectByIdBean;
 		
 	}
 	
