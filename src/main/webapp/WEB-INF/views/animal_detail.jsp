@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../../top_bottom/top.jsp"%>
-<%
- String id=(String)session.getAttribute("mem_id");
-	String id2 = "gogoy2643";
-	request.setAttribute("id2", id2);
-%>
+
 	<!--start wrapper-->
 	<section class="wrapper">
 		<section class="page_head">
@@ -106,7 +102,7 @@
 					
 						<!-- Indicates a successful or positive action -->
 						<button class="btn btn-success btn-lg btn-block" type="button"
-							onclick="location='adoption_req_form?id=${id2}'">
+							onclick="location='adoption_req_form?id=${mem_id}'">
 							<i class="fa fa-check-circle"></i> 입양신청 하기
 						</button>
 				</div>
