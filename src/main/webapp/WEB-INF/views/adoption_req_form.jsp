@@ -101,33 +101,33 @@
 									<div class="col-lg-6 ">
 										신청자 이름 <input type="text" id="name" name="name"
 											class="form-control" maxlength="100"
-											data-msg-required="Please enter your name." value=""
-											placeholder="(로그인정보에서 이름 가져오기 el테그)">
+											data-msg-required="Please enter your name." value="${memberInfo.mem_name}"
+											placeholder="이름을 입력하세요.">
 									</div>
 									<div class="col-lg-6 ">
 										e-mail <input type="email" id="email" name="email"
 											class="form-control" maxlength="100"
 											data-msg-email="Please enter a valid email address."
-											data-msg-required="Please enter your email address." value=""
-											placeholder="(로그인정보에서 이메일 가져오기 el테그)">
+											data-msg-required="Please enter your email address." value="${memberInfo.mem_email}"
+											placeholder="E-mail을 입력하세요.">
 									</div>
 									<div class="col-lg-6 ">
 										전화번호 <input type="text" id="tel" name="tel"
 											class="form-control" maxlength="100"
-											data-msg-required="Please enter your tel" value=""
-											placeholder="(로그인정보에서 전화번호 가져오기 el테그)">
+											data-msg-required="Please enter your tel" value="${memberInfo.mem_tel}"
+											placeholder="연락처를 입력하세요.">
 									</div>
 									<div class="col-lg-6 ">
-										입양지역 <input type="text" id="tel" name="tel"
+										입양지역 <input type="text" id="dep" name="tel"
 											class="form-control" maxlength="100"
 											data-msg-required="Please enter your tel" value=""
-											placeholder="(DB정보에서 입양지역 가져오기 el테그)">
+											placeholder="입양지역을 입력하세요.">
 									</div>
 									<div class="col-lg-6 ">
 										유기번호 <input type="text" id="tel" name="tel"
 											class="form-control" maxlength="100"
-											data-msg-required="Please enter your tel" value=""
-											placeholder="(유기번호를 넘겨받으며 유기번호 가져오기 el테그)">
+											data-msg-required="Please enter your tel" value="${animalInfo.desertionNo}"
+											placeholder="유기번호">
 									</div>
 								</div>
 							</div>
@@ -137,7 +137,7 @@
 										보육환경을 설명해주세요. <input type="text" id="subject" name="subject"
 											class="form-control" maxlength="100"
 											data-msg-required="Please enter the subject." value=""
-											placeholder="보육환경">
+											placeholder="보육환경을 입력하세요.">
 									</div>
 								</div>
 							</div>

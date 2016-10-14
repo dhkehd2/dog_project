@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import third.project.bean.MemberBean;
+import third.project.dog.bean.AnimalInfo;
 
 @Repository
 public class MemberDAO {
@@ -12,22 +13,24 @@ public class MemberDAO {
 	private SqlSessionTemplate sqlSessionTemplate;*/
 	
 	public void joinMember(MemberBean mb) {
-		//DB¿¡ mb¿¡ ÀÖ´Â Á¤º¸µéÀ» ÀúÀå(insert)
+		//DBï¿½ï¿½ mbï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(insert)
 				
 	}
 	
 	public void loginMember(MemberBean mb) {
-		//DB¿¡ ÀúÀåµÇ¾î ÀÖ´Â Á¤º¸¿Í ÀÔ·ÂÇÑ ¾ÆÀÌµð, ºñ¹Ð¹øÈ£ Á¤º¸¸¦ ºñ±³
+		//DBï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½, ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		
 	}
 	
 	public void id_findMember(MemberBean mb) {
-		//DB¿¡ ÀúÀåµÇ¾î ÀÖ´Â ÀÌ¸§°ú »ý³â¿ùÀÏ°ú ÀÏÄ¡ÇÏ¸é, DB¿¡ ÀúÀåµÇ¾î ÀÖ´Â ¾ÆÀÌµð¸¦ ºÒ·¯¿Â´Ù.
+		//DBï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½Ä¡ï¿½Ï¸ï¿½, DBï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ò·ï¿½ï¿½Â´ï¿½.
 		
 	}
 	
 	public void pw_findMember(MemberBean mb) {
-		//DB¿¡ ÀúÀåµÇ¾î ÀÖ´Â ¾ÆÀÌµð,ÀÌ¸§,»ý³â¿ùÀÏ,ºñ¹Ð¹øÈ£Áú¹®°ú ÀÏÄ¡ÇÏ¸é, DB¿¡ ÀúÀåµÇ¾î ÀÖ´Â ºñ¹Ð¹øÈ£¸¦ ºÒ·¯¿Â´Ù.
+		//DBï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Ìµï¿½,ï¿½Ì¸ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½Ï¸ï¿½, DBï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½Â´ï¿½.
 		
 	}
+	
+	
 }
