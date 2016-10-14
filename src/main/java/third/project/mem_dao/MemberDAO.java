@@ -19,6 +19,7 @@ public class MemberDAO {
 	
 	public void loginMember(MemberBean mb) {
 		//DB�� ����Ǿ� �ִ� ������ �Է��� ���̵�, ��й�ȣ ������ ��
+
 		
 	}
 	

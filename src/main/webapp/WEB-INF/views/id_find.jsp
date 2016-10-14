@@ -61,12 +61,12 @@
                             <div class="form-group">
                                 <div class="col-lg-12 ">
                                 	<div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="이름" >
+                                    <input type="text" id="mem_name" name="mem_name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="이름" >
                                 	</div>
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="birth" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="생년월일" >
+                                    <input type="text" id="mem_bir" name="mem_bir" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="생년월일" >
                                 	</div>
                                 </div>
                             </div>
