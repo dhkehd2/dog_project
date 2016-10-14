@@ -5,6 +5,7 @@ public class SendInfo {
 	int send_seq; //글번호
 	String send_title; //글제목
 	String send_emall; //접수일
+	String send_name;//접수자 이름
 	String send_tel; //발견장소
 	String send_arae; //품종
 	String send_desertionNo; //색상

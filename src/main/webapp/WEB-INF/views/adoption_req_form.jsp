@@ -65,12 +65,12 @@
 				<div class="row sub_content">
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						<div class="dividerHeading">
-							<span><form id="contactForm" action=""
+							<span><form id="contactForm" action="adoption_req_send"
 									novalidate="novalidate">
 									<div class="row">
 										<div class="form-group">
 											<div class="col-md-12">
-												제목 <input type="text" id="subject" name="subject"
+												제목 <input type="text" id="send_title" name="send_title"
 													class="form-control" maxlength="100"
 													data-msg-required="Please enter the subject." value=""
 													placeholder="제목을 입력하세요.">
@@ -99,34 +99,34 @@
 							<div class="row">
 								<div class="form-group">
 									<div class="col-lg-6 ">
-										신청자 이름 <input type="text" id="name" name="name"
+										신청자 이름 <input type="text" id="send_name" name="send_name"
 											class="form-control" maxlength="100"
 											data-msg-required="Please enter your name." value="${memberInfo.mem_name}"
 											placeholder="이름을 입력하세요.">
 									</div>
 									<div class="col-lg-6 ">
-										e-mail <input type="email" id="email" name="email"
+										e-mail <input type="email" id="send_email" name="send_email"
 											class="form-control" maxlength="100"
 											data-msg-email="Please enter a valid email address."
 											data-msg-required="Please enter your email address." value="${memberInfo.mem_email}"
 											placeholder="E-mail을 입력하세요.">
 									</div>
 									<div class="col-lg-6 ">
-										전화번호 <input type="text" id="tel" name="tel"
+										전화번호 <input type="text" id="send_tel" name="send_tel"
 											class="form-control" maxlength="100"
 											data-msg-required="Please enter your tel" value="${memberInfo.mem_tel}"
 											placeholder="연락처를 입력하세요.">
 									</div>
 									<div class="col-lg-6 ">
-										입양지역 <input type="text" id="dep" name="tel"
+										입양지역 <input type="text" id="send_arae" name="send_arae"
 											class="form-control" maxlength="100"
 											data-msg-required="Please enter your tel" value=""
 											placeholder="입양지역을 입력하세요.">
 									</div>
 									<div class="col-lg-6 ">
-										유기번호 <input type="text" id="tel" name="tel"
+										유기번호 <input type="text" id="send_desertionNo" name="send_desertionNo"
 											class="form-control" maxlength="100"
-											data-msg-required="Please enter your tel" value="${animalInfo.desertionNo}"
+											data-msg-required="Please enter your tel" value="${num}"
 											placeholder="유기번호">
 									</div>
 								</div>
@@ -134,7 +134,7 @@
 							<div class="row">
 								<div class="form-group">
 									<div class="col-md-12">
-										보육환경을 설명해주세요. <input type="text" id="subject" name="subject"
+										보육환경을 설명해주세요. <input type="text" id="send_how" name="send_how"
 											class="form-control" maxlength="100"
 											data-msg-required="Please enter the subject." value=""
 											placeholder="보육환경을 입력하세요.">
@@ -146,7 +146,7 @@
 
 									<div class="col-md-12">
 										입양신청이유
-										<textarea id="message" class="form-control" name="message"
+										<textarea id="send_why" class="form-control" name="send_why"
 											rows="10" cols="50"
 											data-msg-required="Please enter your 입양신청이유를 작성해 주세요."
 											maxlength="5000" placeholder="입양신청이유"></textarea>

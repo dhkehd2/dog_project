@@ -102,7 +102,7 @@
 					
 						<!-- Indicates a successful or positive action -->
 						<button class="btn btn-success btn-lg btn-block" type="button"
-							onclick="location='adoption_req_form?id=${mem_id}'">
+							onclick="location='adoption_req_form?id=${mem_id}&num=${animalInfo.desertionNo}'">
 							<i class="fa fa-check-circle"></i> 입양신청 하기
 						</button>
 				</div>

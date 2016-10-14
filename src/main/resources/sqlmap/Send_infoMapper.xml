@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<!-- 매핑파일 역할 : 매핑의 목적 -> DB의 데이터인 SQL문(DB의 테이블)을 자바의 객체로 전환하는 것이 목적 sql-오브젝트 
+	사이의 매핑정보는 xml파일로 만들어두면 된다. 메핑 정보에는 사용할 sql문과 sql 파라미터, 실행결과를 어떻게 자바오브젝트로 
+	변환하는 지가 담겨있다. -->
+<mapper namespace="send_ns">
+	
+	<resultMap type="SendInfo" id="SendInfoResult">
+		<!-- 필드 속성과 컬럼명이 일치하는 경우 컬럼명 생략 가능. -->
+		<result property="send_title" column="send_title" /><!-- 제목 -->
+		<result property="send_emall" column="send_emall"/><!-- 이메일 -->
+		<result property="send_tel" column="send_tel" /><!-- 전화 -->
+		<result property="send_arae" column="send_arae"/><!-- 입양지역 -->
+		<result property="send_desertionNo" column="send_desertionNo"/><!-- 유기번호 -->
+		<result property="send_how" column="send_how"/><!-- 입양환경 -->
+		<result property="send_why" column="send_why"/><!--입양사유 -->
+	
+	</resultMap>
+	
+	<!-- 회원가입정보 DB insert -->
+	<insert id="insertSend" parameterType="SendInfo">
+	
+	insert into
+	send_tb values(
+	send_seq,
+	#{send_title},
+	#{send_emall},#{send_tel},
+	#{send_arae},#{send_desertionNo},
+	#{send_how},
+	#{send_why},
+	)
+	</insert>
+	
+	
+	
+	
+		
+</mapper>

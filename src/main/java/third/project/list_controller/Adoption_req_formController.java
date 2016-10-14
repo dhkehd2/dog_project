@@ -27,13 +27,14 @@ public class Adoption_req_formController {
 	MemberDAO memdao;
 	
 	@RequestMapping(value = "/adoption_req_form", method = RequestMethod.GET)
-	public ModelAndView info_up(String id) {
+	public ModelAndView info_up(String id,String num, Model model) {
 		System.out.println("신청자 아이디 = "+id);
 		MemberBean m = new MemberBean();
 		m.setMem_id(id);
 		MemberBean memberInfo = memdao.loginMember(m);
 		System.out.println("Adoption_req_formController.adoption_req_form()");
-		
+		model.addAttribute("num",num);
+		System.out.println("신청유기번호 = "+num);
 		return new ModelAndView("adoption_req_form","memberInfo", memberInfo);
 	}
 	
