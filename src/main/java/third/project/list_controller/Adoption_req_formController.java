@@ -26,13 +26,13 @@ public class Adoption_req_formController {
 	@Autowired
 	MemberDAO memdao;
 	
-	//@RequestMapping(value = "/adoption_req_form", method = RequestMethod.GET)
-/*	public ModelAndView info_up(String id) {
+	@RequestMapping(value = "/adoption_req_form", method = RequestMethod.GET)
+	public ModelAndView info_up(String id) {
 		System.out.println("신청자 아이디 = "+id);
 		//MemberBean memberInfo = memdao.member_info_select(id);
 		System.out.println("Adoption_req_formController.adoption_req_form()");
 		
 		return new ModelAndView("adoption_req_form","memberInfo", memberInfo);
-	}*/
+	}
 	
 }
