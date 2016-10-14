@@ -5,6 +5,7 @@
 	<!-- alias(별명) = type의 긴 클래스명에 대한 짧은 이름 -->
 	<typeAliases>
 		<typeAlias type="third.project.dog.bean.AnimalInfo" alias="AnimalInfo" />
+		<typeAlias type="third.project.bean.MemberBean" alias="MemberBean" />
 	</typeAliases>
 
 	<!-- 환경 구성 -->
@@ -26,6 +27,7 @@
 	<!-- 3. SQL 매퍼(매핑)파일 경로구성 -->
 	<mappers>
 		<mapper resource="sqlmap/Animals_infoMapper.xml" />
+		<mapper resource="sqlmap/MemberMapper.xml" />
 	</mappers>
 
 

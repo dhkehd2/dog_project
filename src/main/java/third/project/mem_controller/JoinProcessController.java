@@ -15,7 +15,7 @@ public class JoinProcessController {
 
 	@RequestMapping("/joinProcess")
 	public String joinProcess(MemberBean mb) {
-
+		
 		svc.execute(mb);
 		
 		return "redirect:/login";

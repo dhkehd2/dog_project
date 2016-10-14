@@ -29,7 +29,7 @@
 	<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>   
 	<script>
 	$(function() {
-		  $( "#Datepicker" ).datepicker({
+		  $( "#mem_bir" ).datepicker({
 		         changeMonth: true, 
 		         changeYear: true,
 		         nextText: '다음 달',
@@ -71,26 +71,12 @@
                             <div class="form-group">
                                 <div class="col-lg-12 ">
                                 	<div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="아이디를 입력해주세요." value="" placeholder="아이디" >
+                                    <input type="text" id="mem_id" name="mem_id" class="form-control" maxlength="100" data-msg-required="아이디를 입력해주세요." value="" placeholder="아이디" >
                                 	</div>
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="비밀번호를 입력해주세요." value="" placeholder="비밀번호" >
-                                	</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group">
-                                <div class="col-lg-12 ">
-                                    <div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="비밀번호를 한번 더 입력해주세요." value="" placeholder="비밀번호 확인" >
-                                	</div>
-                                </div>
-                                <div class="col-lg-12 ">
-                                    <div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="이름을 입력해주세요." value="" placeholder="이름" >
+                                    <input type="text" id="mem_pw" name="mem_pw" class="form-control" maxlength="100" data-msg-required="비밀번호를 입력해주세요." value="" placeholder="비밀번호" >
                                 	</div>
                                 </div>
                             </div>
@@ -99,28 +85,12 @@
                             <div class="form-group">
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="전화번호를 입력해주세요." value="" placeholder="전화번호" >
+                                    <input type="text" id="mem_pwCheck" name="mem_pwCheck" class="form-control" maxlength="100" data-msg-required="비밀번호를 한번 더 입력해주세요." value="" placeholder="비밀번호 확인" >
                                 	</div>
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="이메일 주소를 입력해주세요." value="" placeholder="이메일" >
-                                	</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group">
-                                <div class="col-lg-12 ">
-                                    <div class="middle">
-                                    <input type="text" id="sample4_roadAddress"class="form-control"  onclick="sample4_execDaumPostcode()" data-msg-required="도로명 주소를 입력해주세요." placeholder="도로명주소">
-									<input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="상세주소를 입력해주세요." value="" placeholder="상세주소" >
-
-                                	</div>
-                                </div>
-                                <div class="col-lg-12 ">
-                                    <div class="middle">
-                                    <input type="text" id="Datepicker" name="name" class="form-control" maxlength="100" data-msg-required="생년월일을 입력해주세요." value="" placeholder="생년월일">
+                                    <input type="text" id="mem_name" name="mem_name" class="form-control" maxlength="100" data-msg-required="이름을 입력해주세요." value="" placeholder="이름" >
                                 	</div>
                                 </div>
                             </div>
@@ -129,8 +99,42 @@
                             <div class="form-group">
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="성별을 입력해주세요." value="" placeholder="성별" >
+                                    <input type="text" id="mem_tel" name="mem_tel" class="form-control" maxlength="100" data-msg-required="전화번호를 입력해주세요." value="" placeholder="전화번호" >
                                 	</div>
+                                </div>
+                                <div class="col-lg-12 ">
+                                    <div class="middle">
+                                    <input type="text" id="mem_email" name="mem_email" class="form-control" maxlength="100" data-msg-required="이메일 주소를 입력해주세요." value="" placeholder="이메일" >
+                                	</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-lg-12 ">
+                                    <div class="middle">
+                                    <input type="text" id="sample4_roadAddress" name="sample4_roadAddress" class="form-control"  onclick="sample4_execDaumPostcode()" data-msg-required="도로명 주소를 입력해주세요." placeholder="도로명주소">
+									<input type="text" id="detail" name="detail" class="form-control" maxlength="100" onchange="add_address()" data-msg-required="상세주소를 입력해주세요." value="" placeholder="상세주소" >
+									<input type="hidden" id="mem_add" name="mem_add">
+									
+                                	</div>
+                                </div>
+                                <div class="col-lg-12 ">
+                                    <div class="middle">
+                                    <input type="text" id="mem_bir" name="mem_bir" class="form-control" maxlength="100" data-msg-required="생년월일을 입력해주세요." value="" placeholder="생년월일" onchange="rearrange_bir()">
+                                	</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-lg-12 ">
+                                   <div class="expMiddle">
+	                                   <h3>성별을 체크해 주세요. &nbsp;
+		                                   <input type="radio" name="mem_gen" value="male">&nbsp;남성&nbsp;
+		                                   <input type="radio" name="mem_gen" value="female">&nbsp;여성
+	                                   </h3>
+                                   </div>
                                 </div>
                                 
                             </div>
@@ -139,11 +143,11 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <div class="middle">
-                                    <label for="Question" style="text-align: left;">비밀번호 찾기 질문</label>
-                                    <select id="Question" name="question" class="form-control">
-                                    	<option value="1" class="form-control">당신의 보물 1호는?</option>
-                                    	<option value="2" class="form-control">당신의 출신 초등학교는?</option>
-                                    	<option value="3" class="form-control">당신의 어릴적 별명은?</option>
+                                    <label for="mem_q" style="text-align: left;">비밀번호 찾기 질문</label>
+                                    <select id="mem_q" name="mem_q" class="form-control">
+                                    	<option value="당신의 보물 1호는?" class="form-control">당신의 보물 1호는?</option>
+                                    	<option value="당신의 출신 초등학교는?" class="form-control">당신의 출신 초등학교는?</option>
+                                    	<option value="당신의 어릴적 별명은?" class="form-control">당신의 어릴적 별명은?</option>
                                     </select>
                                 	</div>
                                 </div>
@@ -155,23 +159,24 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                 	<div class="middle">
-                                    	<textarea id="message" class="form-control" name="message" rows="10" cols="50" data-msg-required="비밀번호 질문에 답변을 입력해주세요." maxlength="5000" placeholder="비밀번호 질문 답변"></textarea>
+                                    	<textarea id="mem_a" name="mem_a" class="form-control" rows="10" cols="50" data-msg-required="비밀번호 질문에 답변을 입력해주세요." maxlength="5000" placeholder="비밀번호 질문 답변"></textarea>
 									</div>
                                 </div>
                                 <div class="col-lg-12 ">
                                    <div class="expMiddle">
 	                                   <h3>동물을 키워 본 경험이 있습니까? &nbsp;
-		                                   <input type="radio" name="exp" value="yes">&nbsp;예&nbsp;
-		                                   <input type="radio" name="exp" value="no">&nbsp;아니오
+		                                   <input type="radio" name="mem_exp" value="yes">&nbsp;예&nbsp;
+		                                   <input type="radio" name="mem_exp" value="no">&nbsp;아니오
 	                                   </h3>
                                    </div>
                                 </div>
                             </div>
-                            
                         </div>
                         <div class="row">
                             <div class="col-md-11 text-right">
-                                <input type="submit" data-loading-text="Loading..." class="btn btn-default btn-lg" value="회원가입">
+                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="회원가입"
+                                onclick="document.getElementById('contactForm').submit();">
+                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="로그인 화면으로">
                             </div>
                         </div>
                     </form>
@@ -208,6 +213,27 @@
 
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
+	function rearrange_bir() {
+		var str = document.getElementById('mem_bir').value;
+		var newStr="";
+		for (var i = 0; i < 4;  i++) {
+			newStr += str[6+i];
+		}
+		newStr += "/"
+		for (var i=0;i<5;i++){
+			newStr += str[i];
+		}
+		
+		document.getElementById('mem_bir').value = newStr;
+	}
+
+	//도로명주소와 상세주소의 더한 정보를 MemberBean의 mem_add에 전달한다.
+	function add_address() {
+		document.getElementById('mem_add').value = 
+			document.getElementById('sample4_roadAddress').value +
+			document.getElementById('detail').value;
+	}
+
     //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
     function sample4_execDaumPostcode() {
         new daum.Postcode({

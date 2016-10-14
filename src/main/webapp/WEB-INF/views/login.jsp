@@ -54,17 +54,17 @@
                         <strong>Error!</strong> There was an error sending your message.
                     </div>
 
-                    <form id="contactForm" action="" novalidate="novalidate">
+                    <form id="contactForm" action="loginProcess" novalidate="novalidate">
                         <div class="row">
                             <div class="form-group">
                                 <div class="col-lg-12 ">
                                 	<div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="아이디" >
+                                    <input type="text" id="mem_id" name="mem_id" class="form-control" maxlength="100" data-msg-required="Please enter your name."placeholder="아이디" >
                                 	</div>
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="name" name="name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="" placeholder="비밀번호" >
+                                    <input type="text" id="mem_pw" name="mem_pw" class="form-control" maxlength="100" data-msg-required="Please enter your name."  placeholder="비밀번호" >
                                 	</div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                     		 <div class="form-group">
                             	<div class="col-lg-12 col-md-12">
                            			 <div class="middle">
-		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="로그인" onclick="location='loginProcess'">
+		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="로그인" onclick="document.getElementById('contactForm').submit()">
 		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="회원가입" onclick="location='join'">
 		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="아이디 찾기" onclick="location='id_find'">
 		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="비밀번호 찾기" onclick="location='pw_find'">

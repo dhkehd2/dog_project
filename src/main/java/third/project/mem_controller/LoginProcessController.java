@@ -15,9 +15,16 @@ public class LoginProcessController {
 	
 	@RequestMapping(value="loginProcess")
 	public String loginProcess(MemberBean mb) {
-		svc.execute(mb);
 		System.out.println("LoginProcessController.loginProcess()");
+		System.out.println(mb);
+		boolean isCorrectPw = svc.execute(mb);
+		if(isCorrectPw){
+			//로그인이 성공
+			return "redirect:/list";
+		}else {
+			//로그인이 실패
+			return "redirect:/login";
+		}
 		
-		return "redirect:/list";
 	}
 }

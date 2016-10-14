@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<!-- 매핑파일 역할 : 매핑의 목적 -> DB의 데이터인 SQL문(DB의 테이블)을 자바의 객체로 전환하는 것이 목적 sql-오브젝트 
+	사이의 매핑정보는 xml파일로 만들어두면 된다. 메핑 정보에는 사용할 sql문과 sql 파라미터, 실행결과를 어떻게 자바오브젝트로 
+	변환하는 지가 담겨있다. -->
+<mapper namespace="Member_ns">
+	
+	<resultMap type="MemberBean" id="MemberBeanResult">
+		<!-- 필드 속성과 컬럼명이 일치하는 경우 컬럼명 생략 가능. -->
+		<result property="mem_id" column="mem_id" /><!-- 아이디 -->
+		<result property="mem_pw" column="mem_pw"/><!-- 비밀번호 -->
+		<result property="mem_name" column="mem_name" /><!-- 이름 -->
+		<result property="mem_tel" column="mem_tel"/><!-- 전화번호 -->
+		<result property="mem_email" column="mem_email"/><!-- 이메일 -->
+		<result property="mem_add" column="mem_add"/><!-- 주소 -->
+		<result property="mem_bir" column="mem_bir"/><!--생년월일 -->
+		<result property="mem_gen" column="mem_gen"/><!-- 성별 -->
+		<result property="mem_exp" column="mem_exp"/><!-- 동물키워본 경험유무 -->
+		<result property="mem_q" column="mem_q"/><!-- 비밀번호 질문 -->
+		<result property="mem_a" column="mem_a"/><!-- 비밀번호 답변 -->
+	</resultMap>
+	
+	<!-- 회원가입정보 DB insert -->
+	<insert id="insertMember" parameterType="MemberBean">
+	<!-- <selectKey keyProperty="desertionNo"> #{desertionNo} </selectKey> -->
+	insert into
+	member_tb values(
+	#{mem_id},
+	#{mem_pw},#{mem_name},
+	#{mem_tel},#{mem_email},
+	#{mem_add},
+	#{mem_bir},
+	#{mem_gen},
+	#{mem_exp},#{mem_q},#{mem_a})
+	</insert>
+	
+	<!-- 로그인하면 아이디가 일치하는 MemberBean을 select -->
+	<select id="selectMemberById" parameterType="string" resultType="MemberBean">
+	select * from member_tb 
+	where
+	mem_id=#{mem_id}
+	</select>
+	
+	
+		
+</mapper>
