@@ -26,6 +26,7 @@ public class AnimalInfo {
 	String officetel; //담당자연락처
 	String noticeComment; //특이사항
 	
+	String kindNum;//필터위한 품종 번호
 	
 	
 	@Override
@@ -53,8 +54,15 @@ public class AnimalInfo {
 				+ "\n orgNm=" + orgNm 
 				+ "\n chargeNm=" + chargeNm 
 				+ "\n officetel=" + officetel 
-				+ "\n noticeComment=" + noticeComment 
+				+ "\n noticeComment=" + noticeComment
+				+ "\n kindNum="+ kindNum
 				+ "\n]";
+	}
+	public String getKindNum() {
+		return kindNum;
+	}
+	public void setKindNum(String kindNum) {
+		this.kindNum = kindNum;
 	}
 	public String getDesertionNo() {
 		return desertionNo;

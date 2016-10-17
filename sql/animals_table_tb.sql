@@ -353,11 +353,10 @@ drop sequence shelter_tb_seq;
 select * from shelter_tb;
 -- ---------------------------------------------------------------------------------
 
---강아지 품종 코드
+--품종 코드
 CREATE TABLE kind_tb(
 kind_seq NUMBER primary key,
-kind_name VARCHAR2(200),
-kind_code VARCHAR2(100)
+kind_name VARCHAR2(200)
 );
 
 drop table kind_tb;
@@ -365,48 +364,48 @@ create sequence kind_tb_seq;
 drop sequence kind_tb_seq;
 
 
-insert into kind_tb values(kind_tb_seq.nextval,'골든 리트리버','000054');
-insert into kind_tb values(kind_tb_seq.nextval,'그레이 하운드','000056');
-insert into kind_tb values(kind_tb_seq.nextval,'그레이트 피레니즈','000118');
-insert into kind_tb values(kind_tb_seq.nextval,'닥스훈트','000038');
-insert into kind_tb values(kind_tb_seq.nextval,'도베르만','000041');
-insert into kind_tb values(kind_tb_seq.nextval,'도사','000120');
-insert into kind_tb values(kind_tb_seq.nextval,'롯트와일러','000121');
-insert into kind_tb values(kind_tb_seq.nextval,'말티즈','000072');
-insert into kind_tb values(kind_tb_seq.nextval,'미니어쳐 핀셔','000077');
-insert into kind_tb values(kind_tb_seq.nextval,'믹스견','000114');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 비글');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 그레이트 피레니즈');
+insert into kind_tb values(kind_tb_seq.nextval,'[기타축종] 토끼');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 사모예드');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 도사');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 시베리안 허스키');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 삽살개');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 스피츠');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 셰퍼드');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 닥스훈트');
 
-insert into kind_tb values(kind_tb_seq.nextval,'바셋 하운드','000012');
-insert into kind_tb values(kind_tb_seq.nextval,'보스턴 테리어','000022');
-insert into kind_tb values(kind_tb_seq.nextval,'복서','000024');
-insert into kind_tb values(kind_tb_seq.nextval,'불독','000027');
-insert into kind_tb values(kind_tb_seq.nextval,'비글','000013');
-insert into kind_tb values(kind_tb_seq.nextval,'사모예드','000096');
-insert into kind_tb values(kind_tb_seq.nextval,'삽살개','000001');
-insert into kind_tb values(kind_tb_seq.nextval,'샤페이','000034');
-insert into kind_tb values(kind_tb_seq.nextval,'세인트 버나드','000104');
-insert into kind_tb values(kind_tb_seq.nextval,'셰퍼드','000122');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 코카 스파니엘');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 발바리');
+insert into kind_tb values(kind_tb_seq.nextval,'[고양이]');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 시바견');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 말티즈');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 진도견');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 핏플');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 포인터');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 시츄');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 요크셔 테리어');
 
-insert into kind_tb values(kind_tb_seq.nextval,'슈나우져','000123');
-insert into kind_tb values(kind_tb_seq.nextval,'스피츠','000124');
-insert into kind_tb values(kind_tb_seq.nextval,'시베리안 허스키','000103');
-insert into kind_tb values(kind_tb_seq.nextval,'시츄','000101');
-insert into kind_tb values(kind_tb_seq.nextval,'알라스칸 말라뮤트','000007');
-insert into kind_tb values(kind_tb_seq.nextval,'요크셔 테리어','000113');
-insert into kind_tb values(kind_tb_seq.nextval,'웰시 코기 펨브로크','000108');
-insert into kind_tb values(kind_tb_seq.nextval,'진도견','000067');
-insert into kind_tb values(kind_tb_seq.nextval,'차우차우','000035');
-insert into kind_tb values(kind_tb_seq.nextval,'치와와','000032');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 그레이 하운드');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 미니어쳐 핀셔');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 보스턴 테리어');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 슈나우져');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 골든 리트리버');
+insert into kind_tb values(kind_tb_seq.nextval,'[기타축종] 흑염소');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 포메라니안');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 말리노이즈');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 잉글리쉬 쉽독');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 울프독');
 
-insert into kind_tb values(kind_tb_seq.nextval,'코카 스파니엘','000125');
-insert into kind_tb values(kind_tb_seq.nextval,'콜리','000036');
-insert into kind_tb values(kind_tb_seq.nextval,'퍼그','000090');
-insert into kind_tb values(kind_tb_seq.nextval,'페키니즈','000087');
-insert into kind_tb values(kind_tb_seq.nextval,'포메라니안','000089');
-insert into kind_tb values(kind_tb_seq.nextval,'포인터','000126');
-insert into kind_tb values(kind_tb_seq.nextval,'폭스테리어','000127');
-insert into kind_tb values(kind_tb_seq.nextval,'푸들','000128');
-insert into kind_tb values(kind_tb_seq.nextval,'기타','000115');
+insert into kind_tb values(kind_tb_seq.nextval,'[기타축종] 염소');
+insert into kind_tb values(kind_tb_seq.nextval,'[기타축종] 개-블랙탄 시바');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 페키니즈');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 불독');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 롯트와일러');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 치와와');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 믹스견');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 푸들');
+insert into kind_tb values(kind_tb_seq.nextval,'[개] 불테리어');
 --총39
 select * from kind_tb;
 -- ---------------------------------------------------------------------------------
@@ -435,7 +434,8 @@ careAddr VARCHAR2(800),
 orgNm VARCHAR2(100),
 chargeNm VARCHAR2(100),
 officetel VARCHAR2(100),
-noticeComment VARCHAR2(100)
+noticeComment VARCHAR2(100),
+kindNum NUMBER
 );
 
 select * from animals_info_tb;
