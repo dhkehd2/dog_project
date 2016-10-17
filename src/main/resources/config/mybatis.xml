@@ -5,6 +5,8 @@
 	<!-- alias(별명) = type의 긴 클래스명에 대한 짧은 이름 -->
 	<typeAliases>
 		<typeAlias type="third.project.dog.bean.AnimalInfo" alias="AnimalInfo" />
+		<typeAlias type="third.project.dog.bean.KindInfo" alias="KindInfo" />
+		
 		<typeAlias type="third.project.bean.MemberBean" alias="MemberBean" />
 		<typeAlias type="third.project.send.bean.SendInfo" alias="SendInfo" />
 	</typeAliases>

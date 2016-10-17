@@ -1,3 +1,4 @@
+<%@page import="org.springframework.web.bind.annotation.SessionAttributes"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -5,10 +6,16 @@
 
 <%@ include file="../../top_bottom/top.jsp"%>
 
-<%String str = "aaaa"; 
-request.setAttribute("str", str);
-%>
 list
+<%
+	int listcount=((Integer)request.getAttribute("listcount")).intValue(); //동물 수
+	int nowpage=((Integer)request.getAttribute("page")).intValue();//현재페이지 수
+	int maxpage=((Integer)request.getAttribute("maxpage")).intValue();//최대 페이지 수
+	int startpage=((Integer)request.getAttribute("startpage")).intValue();//현재 페이지에 표시할 첫 페이지 수
+	int endpage=((Integer)request.getAttribute("endpage")).intValue(); //현재 페이지에 표시할 끝 페이지 수
+	String now_kind=(String)request.getAttribute("kind");//현재 페이지의 견종
+	
+%>
 
 <br>
 
@@ -31,10 +38,52 @@ list
 
 <section class="wrapper">
 	<section class="page_head">
+        <div class="container">
+			<div class="widget widget_search">
+				<div class="site-search-area">
+				
+					<form method="get" id="site-searchform" action="list">
+					
+						<div style="display: inline;">
+							
+							
+							<select name="kind">
+								
+								<c:if test="${now_kind == null}">
+									<option class="input-text" value="all" >all</option>
+								</c:if>
+								
+								<c:if test="${now_kind != null}">
+									<option class="input-text" value="${now_kind }" >${now_kind }</option>
+								</c:if>
+						
+								<option class="input-text" value="all" >all</option>
+								
+								<c:forEach var="kind" items="${kindList}">
+									
+									<option class="input-text" value="${kind.kind_name}" >${kind.kind_name}</option>
+																		
+								</c:forEach>
+							   							
+							</select>
+							
+							<input type="submit" value="검색" />
+														
+						</div>
+						
+					</form>
+					
+				</div><!-- end site search -->
+			</div>
+	   </div>
+	   
+<!-- 	</section>
+	<section class="page_head"> -->
+	
 		<div class="container">
 			<!--본 메뉴 아래 무늬영역 -->
 		</div>
-	</section>
+	
 
 	<section class="content portfolio small-images">
 		<div class="container">
@@ -42,52 +91,47 @@ list
 				<!-- begin isotope -->
 				<div class="col-lg-12 isotope">
 					<!-- 카테고리 필터 -->
-					<ul id="filter">
+				<%-- 	<ul id="filter">
+					
 						<li data-filter="*" class="selected"><a href="#">All</a></li>
-						<li data-filter=".${str}"><a href="#">aaaa</a></li>
-						<li data-filter=".개"><a href="#">개</a></li>
-						<li data-filter=".branding"><a href="#">Branding</a></li>
-					</ul>
+
+						<c:forEach var="kind" items="${kindList}">
+							
+							<li data-filter=".${kind.kind_num}"><a href="#">${kind.kind_name}</a></li>
+							
+						</c:forEach>
+						
+					</ul> --%>
 					<!-- 카테고리 필터 끝 -->
 
 					<!-- 이미지 리스트 시작 -->
 					<div class="mixed-container masonry_wrapper">
 						
-						<div class="item ${str}">
-							<figure class="touching effect-bubba">
-								<img src="${vo.popfile}" alt="" class="img-responsive" >
-
-								<div class="option">
-									<a href="animal_detail" class="fa fa-link"></a> 
-									<a href="animal_detail" class="fa fa-search mfp-image"></a>
-								</div>
-								
-								<figcaption class="item-description">
-									<h5>입양신청하기</h5>
-									<p>dog</p>
-								</figcaption>
-								
-							</figure>
-						</div>
-						
 						<c:forEach var="vo" items="${animalList}">
-						
-							<div class="item dog">
-							<figure class="touching effect-bubba">
-								<img src="${vo.popfile}" alt="" class="img-responsive" >
+														
+							<div class="item ${vo.kindNum}">
+							
+								<figure class="touching effect-bubba">
 								
-								<div class="option">
-									<a href="animal_detail?desertionNo=${vo.desertionNo }" class="fa fa-link"></a> 
-									<a href="${vo.popfile}" class="fa fa-search mfp-image"></a>
-								</div>
+									<img src="${vo.popfile}" alt="" class="img-responsive" >
 								
-								<figcaption class="item-description">
-									<h5>입양신청하기</h5>
-									<p>dog</p>
-								</figcaption>
+									<div class="option" >
+										<a href="animal_detail?desertionNo=${vo.desertionNo }" class="fa fa-link"></a> 
+										<a href="${vo.popfile}" class="fa fa-search mfp-image"></a>
+										<p style="color: white;">${vo.kindCd}</p>
+										<p style="color: white;">${vo.orgNm}</p>
+									</div>
+									
+									
+									<figcaption class="item-description" >
+										<p>${vo.kindCd}</p>
+										<p>${vo.orgNm}</p>
+									</figcaption>
+									
+									
+								</figure>
 								
-							</figure>
-						</div>
+							</div>
 						</c:forEach>
 
 					</div>
@@ -95,18 +139,36 @@ list
 				</div>
 				<!--end isotope -->
 				
-				<!-- 페이징 -->
+				<!-- 페이징 시작 -->
 				<div class="col-sm-12 text-center">
+	
 					<ul class="pagination">
-						<li><a href="#">&laquo;</a></li>
-						<li class="active"><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">&raquo;</a></li>
+		
+						<%if(nowpage<=1){ %>
+							<li><a href="#">&laquo;</a></li>
+						<%}else{ %>
+							<li><a href="./list?page=<%=nowpage-1 %>&kind=${now_kind }">&laquo;</a></li>
+						<%} %>
+			
+						<%for(int a=startpage;a<=endpage;a++){%>
+				
+							<%if(a==nowpage){%>
+								<li class="active"><a href="./list?page=<%=a %>&kind=${now_kind }">[<%=a %>]</a></li>
+							<%}else{ %>
+								<li><a href="./list?page=<%=a %>&kind=${now_kind }">[<%=a %>]</a></li>
+							<%} %>
+						<%} %>
+			
+						<%if(nowpage>=maxpage){ %>
+							<li><a href="#">&raquo;</a></li>
+						<%}else{ %>	
+							<li><a href="./list?page=<%=nowpage+1 %>&kind=${now_kind }">&raquo;</a></li>
+						<%} %>
+				
 					</ul>
+							
 				</div>
+				<!-- 페이징 끝-->
 				
 			</div>
 			<!--./row-->
@@ -114,7 +176,7 @@ list
 		<!--./div-->
 	</section>
 </section>
-
+ </section>
 <script type="text/javascript" src="./resources/js/jquery-1.10.2.min.js"></script>
 <script src="./resources/js/bootstrap.min.js"></script>
 <script src="./resources/js/jquery.easing.1.3.js"></script>
