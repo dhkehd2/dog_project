@@ -26,9 +26,34 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+<script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		//frm 폼이 전송시 전송이벤트 처리
+		$('#contactForm1').submit(function(e){ //e = 이벤트 객체
+			e.preventDefault(); //섭밋 기본이벤트 처리 방지
+			// 폼기반 요청			
+			var params =$('#contactForm1').serialize(); //폼에 입력된 요청파라미터구성
+			
+			alert("요청");
+			
+			$.ajax("/app/pw_findProcess", {			 
+				type:'get', //요청방식
+				data:params, //요청파라미터 전송
+				//data:'id=hong&name='+encodeURIComponent('홍길동'), //쿼리스트링
+				//정상처리
+				success : function(respdata) { //respdata=응답데이터
+					var r= decodeURIComponent(respdata); //UTF-8 한글 디코딩
+					$('#firstSubmit').hide();
+					$('#contactForm2').show("slow");
+				} // ---end success
+			}); //---end ajax()
+		});//-- end function(e)
+		
+	});
+</script>
 </head>
 <body>
-
 
 <!--start wrapper-->
 <section class="wrapper">
@@ -56,7 +81,7 @@
                         <strong>Error!</strong> There was an error sending your message.
                     </div>
 
-                    <form id="contactForm" action="pw_findProcess" novalidate="novalidate">
+                    <form id="contactForm1" action="" novalidate="novalidate">
                         <div class="row">
                             <div class="form-group">
                                 <div class="col-lg-12 ">
@@ -76,35 +101,55 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="firstSubmit" class="row">
+							<div class="form-group">
+								<div class="col-lg-12 col-md-12">
+									<div class="middle" id="div1">
+										<input id="button1" type="submit" data-loading-text="Loading..."
+											class="btn btn-default btn-lg" value="입력완료">
+										<input type="button" data-loading-text="Loading..."
+											class="btn btn-default btn-lg" value="로그인 화면으로"
+											onclick="location='login'">
+									</div>
+								</div>
+							</div>
+						</div>
+                    </form>
                         
+                    <form id="contactForm2" action="" novalidate="novalidate"  style="display:none">
                         <div class="row">
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <div class="middle">
-                                    <label for="Question" style="text-align: left;">비밀번호 찾기 질문</label>
-                                    <select id="Question" name="question" class="form-control">
-                                    	<option value="1" class="form-control">당신의 보물 1호는?</option>
-                                    	<option value="2" class="form-control">당신의 출신 초등학교는?</option>
-                                    	<option value="3" class="form-control">당신의 어릴적 별명은?</option>
-                                    </select>
+	                                    <label for="Question" style="text-align: left;">비밀번호 찾기 질문</label>
+	                                    
+	                                    <input type="text" id="mem_name" name="mem_name" class="form-control" maxlength="100" data-msg-required="Please enter your name." value="${mbByDB}" >
+	                                    <select id="Question" name="question" class="form-control">
+	                                    	<option value="1" class="form-control">당신의 보물 1호는?</option>
+	                                    	<option value="2" class="form-control">당신의 출신 초등학교는?</option>
+	                                    	<option value="3" class="form-control">당신의 어릴적 별명은?</option>
+	                                    </select>
+	
+	                                   	<textarea id="mem_a" name="mem_a" class="form-control" rows="10" cols="50" data-msg-required="비밀번호 질문에 답변을 입력해주세요." maxlength="5000" placeholder="비밀번호 질문 답변"></textarea>
                                 	</div>
                                 </div>
                              </div>
                         </div>
-                        
-                        <div class="row">
-                    		 <div class="form-group">
-                            	<div class="col-lg-12 col-md-12">
-                           			 <div class="middle">
-		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="비밀번호 찾기" onclick="document.getElementById('contactForm').submit()">
-		                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="로그인 화면으로" onclick="location='login'">
-		                             </div>
-                           		 </div>
-                          	 </div>
-  
-                        </div>
+                        <div id="secondSubmit" class="row">
+							<div class="form-group">
+								<div class="col-lg-12 col-md-12">
+									<div class="middle" id="div1">
+										<input id="button1" type="submit" data-loading-text="Loading..."
+											class="btn btn-default btn-lg" value="입력완료">
+										<input type="button" data-loading-text="Loading..."
+											class="btn btn-default btn-lg" value="로그인 화면으로"
+											onclick="location='login'">
+									</div>
+								</div>
+							</div>
+						</div>                  
                     </form>
-                </div>
+					</div>
 
 
             </div>
