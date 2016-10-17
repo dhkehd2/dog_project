@@ -3,14 +3,9 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-
-<!-- 매핑파일 역할 : 매핑의 목적 -> DB의 데이터인 SQL문(DB의 테이블)을 자바의 객체로 전환하는 것이 목적 sql-오브젝트 
-	사이의 매핑정보는 xml파일로 만들어두면 된다. 메핑 정보에는 사용할 sql문과 sql 파라미터, 실행결과를 어떻게 자바오브젝트로 
-	변환하는 지가 담겨있다. -->
 <mapper namespace="AnimalInfo_ns">
-	
+	<!-- 동물 정보 -->
 	<resultMap type="AnimalInfo" id="AnimalInfoResult">
-		<!-- 필드 속성과 컬럼명이 일치하는 경우 컬럼명 생략 가능. -->
 		<result property="desertionNo" column="desertionNo" /><!-- 유기번호 -->
 		<result property="filename" column="filename"/><!-- Thumbnail Image -->
 		<result property="happenDt" column="happenDt" /><!-- 접수일 -->
@@ -44,14 +39,20 @@
 		
 	</resultMap>
 	
+	<!-- 전체  조회 -->
+	<select id="selectAllAnimalInfo" resultMap="AnimalInfoResult">
+		select * from animals_info_tb
+	</select>
+
 	<!-- 품종 조회(필터 위한) -->
 	<select id="selectAllKindInfo" resultMap="KindInfoResult">
 		select * from kind_tb
 	</select>
 	
-	<!-- 전체  조회 -->
-	<select id="selectAllAnimalInfo" resultMap="AnimalInfoResult">
+	<!-- 동물 한마디 정보 : desertionNo 로 찾음-->
+	<select id="selectAnimalInfo" parameterType="string" resultType="AnimalInfo">
 		select * from animals_info_tb
+		where desertionNo=#{desertionNo}
 	</select>
 	
 	<!-- 동물정보 DB insert -->
@@ -59,22 +60,45 @@
 	<!-- <selectKey keyProperty="desertionNo"> #{desertionNo} </selectKey> -->
 	insert into
 	animals_info_tb	values(
-	#{desertionNo},#{filename},#{happenDt},#{happenPlace},#{kindCd},#{colorCd}
-	,#{age},#{weight},#{noticeNo},#{noticeSdt},#{noticeEdt},#{popfile},#{processState}
-	,#{sexCd},#{neuterYn},#{specialMark},#{careNm},#{careTel},#{careAddr},#{orgNm}
-	,#{chargeNm},#{officetel}
-	<if test="noticeComment !=null">
+	#{desertionNo, jdbcType=VARCHAR},
+	#{filename, jdbcType=VARCHAR},
+	#{happenDt, jdbcType=VARCHAR},
+	#{happenPlace, jdbcType=VARCHAR},
+	#{kindCd, jdbcType=VARCHAR},
+	#{colorCd, jdbcType=VARCHAR},
+	#{age, jdbcType=VARCHAR},
+	#{weight, jdbcType=VARCHAR},
+	#{noticeNo, jdbcType=VARCHAR},
+	#{noticeSdt, jdbcType=VARCHAR},
+	#{noticeEdt, jdbcType=VARCHAR},
+	#{popfile, jdbcType=VARCHAR},
+	#{processState, jdbcType=VARCHAR},
+	#{sexCd, jdbcType=VARCHAR},
+	#{neuterYn, jdbcType=VARCHAR},
+	#{specialMark, jdbcType=VARCHAR},
+	#{careNm, jdbcType=VARCHAR},
+	#{careTel, jdbcType=VARCHAR},
+	#{careAddr, jdbcType=VARCHAR},
+	#{orgNm, jdbcType=VARCHAR},
+	#{chargeNm, jdbcType=VARCHAR},
+	#{officetel, jdbcType=VARCHAR}
+		<if test="noticeComment !=null">
 			,#{noticeComment}
 		</if>
 		<if test="noticeComment ==null">
 			,''
 		</if>
+		<if test="kindNum !=null">
+			,#{kindNum}
+		</if>
+		<if test="kindNum == null">
+			,''
+		</if>
 	)
 	</insert>
 	
-	<select id="selectAnimalInfo" parameterType="string" resultType="AnimalInfo">
-		select * from animals_info_tb
-		where desertionNo=#{desertionNo}
-	</select>
+
+	
+
 	
 </mapper>
