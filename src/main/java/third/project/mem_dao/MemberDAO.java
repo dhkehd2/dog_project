@@ -38,6 +38,9 @@ public class MemberDAO {
 		return mbByDB;
 	}
 	
-	
+	public MemberBean info_upMember(String id) {
+		MemberBean selectIdByDB = sqlSessionTemplate.selectOne("Member_ns.selectMemberById", id);
+		return selectIdByDB;
+	}
 	
 }

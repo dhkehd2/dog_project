@@ -28,18 +28,18 @@ public class Pw_FindProcessSvc {
 		boolean res;
 
 		if (a.equals(b)) {
-			// 답변 일치하므로 비밀번호 이메일로 보내는 코드 작성
-			SimpleMailMessage message = new SimpleMailMessage();
+			// �듬� �쇱���誘�濡� 鍮�諛�踰��� �대��쇰� 蹂대�대�� 肄��� ����
+			/*SimpleMailMessage message = new SimpleMailMessage();
 			message.setSubject("hahaha");
 			message.setFrom("yyk1119@gmail.com");
 			message.setText("hihi");
 			message.setTo("gogoy2643@gmail.com");
 			
 			System.out.println(mailSender);
-			mailSender.send(message);
+			mailSender.send(message);*/
 			res = true;
 		} else {
-			// 답변 불일치하므로 비밀번호를 이메일로 보내지 않는다.
+			// �듬� 遺��쇱���誘�濡� 鍮�諛�踰��몃�� �대��쇰� 蹂대�댁� ������.
 			res = false;
 		}
 
