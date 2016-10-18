@@ -25,6 +25,13 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<!-- mail bean -->
+	<beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<beans:property name="host" value="192.168.0.24"/>
+		<beans:property name="port" value="25"/>
+		<beans:property name="defaultEncoding" value="utf-8"/>
+	</beans:bean>
+	
 	<context:component-scan base-package="third.project.*" />
 	
 	
