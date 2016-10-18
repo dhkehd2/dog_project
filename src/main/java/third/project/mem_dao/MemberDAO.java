@@ -35,7 +35,6 @@ public class MemberDAO {
 	public MemberBean pw_findMember(MemberBean mb) {
 		//DB占쏙옙 占쏙옙占쏙옙퓸占� 占쌍댐옙 占쏙옙占싱듸옙,占싱몌옙,占쏙옙占쏙옙占쏙옙占�,占쏙옙橘占싫ｏ옙占쏙옙占쏙옙占� 占쏙옙치占싹몌옙, DB占쏙옙 占쏙옙占쏙옙퓸占� 占쌍댐옙 占쏙옙橘占싫ｏ옙占� 占쌀뤄옙占승댐옙.
 		MemberBean mbByDB = sqlSessionTemplate.selectOne("Member_ns.selectMemberById",mb.getMem_id());
-		System.out.println(mbByDB);
 		return mbByDB;
 	}
 	

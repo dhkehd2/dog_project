@@ -29,6 +29,23 @@
     	if(id != null){
     		out.println("<script>alert('"+id+"');</script>");
     	}
+    	
+    	
+    	Boolean isEqual = (Boolean)request.getAttribute("isCorrectAnswer");
+    	if(isEqual != null){
+    		if(isEqual){
+    			//답변이 정확하다
+    			out.println("<script type='text/javascript'>");
+    			out.println("alert('정확하다')");
+    			out.println("</script>");
+    		}else{
+    			//답변이 틀리다
+    			out.println("<script type='text/javascript'>");
+    			out.println("alert('틀리다')");
+    			out.println("</script>");
+    		}
+    		request.setAttribute("isCorrectAnswer",null);
+    	}
     	    
     %>
 </head>

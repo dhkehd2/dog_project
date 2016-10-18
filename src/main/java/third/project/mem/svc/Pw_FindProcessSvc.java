@@ -14,24 +14,20 @@ public class Pw_FindProcessSvc {
 	@Autowired
 	MemberDAO dao;
 	
-	public boolean execute(MemberBean mb,HttpServletRequest request) {
-		boolean res;
+	public MemberBean execute(MemberBean mb) {
 		mb.setMem_bir(mb.getMem_bir() + " 00:00:00");
-		MemberBean mbByDB = dao.pw_findMember(mb);
+		MemberBean mbByDB = dao.pw_findMember(mb);	
+		return mbByDB;
+	}
+	
+	public boolean isEqualAndPassEmail(String a,String b){
+		boolean res;
 		
-		request.setAttribute("mbByDB", mbByDB);
-		
-		if(mbByDB != null){
-			//id에 해당하는 회원정보 데이터베이스가 있다.
-			if(mb.getMem_name().equals(mbByDB.getMem_name()) && mb.getMem_bir().equals(mbByDB.getMem_bir())){
-				//둘다 같다면 통과
-				res = true;
-			}else{
-				//역시 잘못된 정보
-				res = false;
-			}
+		if(a.equals(b)){
+			//답변 일치하므로 비밀번호 이메일로 보내는 코드 작성
+			res = true;
 		}else{
-			//id에 해당하는 회원정보가 데이터베이스에 없다.
+			//답변 불일치하므로 비밀번호를 이메일로 보내지 않는다.
 			res = false;
 		}
 		

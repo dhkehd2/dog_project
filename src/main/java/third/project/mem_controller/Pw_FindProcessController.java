@@ -20,22 +20,30 @@ public class Pw_FindProcessController {
 	@Autowired
 	Pw_FindProcessSvc svc;
 	
+	//사용자 질문 얻어오는 컨트롤러
 	@RequestMapping(value = "/pw_findProcess", method = RequestMethod.GET)
-	@ResponseBody
-	public String getQuestion(MemberBean mb,HttpServletRequest request,Model model) {
+	public @ResponseBody MemberBean getQuestion(MemberBean mb) {
 		System.out.println("Pw_FindProcessController.pw_findProcess()");
-		boolean isCorrect = svc.execute(mb,request);
+		MemberBean mbByDB = svc.execute(mb);
 		
-		System.out.println(request.getAttribute("mbByDB"));
-		model.addAttribute("mbByDB", request.getAttribute("mbByDB"));
-		
-		if(isCorrect){
-			//비밀번호 질문 출력
-			return "correct";
-		}else{
-			//입력한 정보가 올바르지 않다
-			return "incorrect";
-		}
+		return mbByDB;
 	}
 	
+	//사용자 답변 맞는지 확인하는 컨트롤러
+	@RequestMapping(value = "/pw_findProcess_final", method = RequestMethod.GET)
+	public String isCorrectAnswer(String mem_a,String cli_a,HttpServletRequest request) {
+		System.out.println("Pw_FindProcessController.isCorrectAnswer()");
+		
+		boolean isEqual = svc.isEqualAndPassEmail(mem_a, cli_a);
+		
+		request.setAttribute("isCorrectAnswer", new Boolean(isEqual));
+		
+		if(isEqual){
+			return "login";
+		}else{
+			return "pw_find";
+		}
+		
+		
+	}
 }
