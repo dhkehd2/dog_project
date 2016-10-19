@@ -38,6 +38,26 @@
 		         prevText: '이전 달' 
 		  });
 		});
+	
+	
+	function update_add() {
+		$('#sample4_roadAddress').show("slow");
+		
+	}
+	
+	function pw_show() {
+		$("#mem_pwCheck").show("fast");
+	}
+	
+	function pw_check() {
+		
+		if(document.getElementById("mem_pw").value == document.getElementById("mem_pwCheck").value){
+			alert("비밀번호 일치");
+		}else {
+			alert("비밀번호 불일치");
+			document.getElementById("mem_pwCheck").value="";
+		}
+	}
 	</script>
 </head>
 <body>
@@ -68,7 +88,7 @@
                         <strong>Error!</strong> There was an error sending your message.
                     </div>
 
-                    <form id="contactForm" action="joinProcess" novalidate="novalidate">
+                    <form id="contactForm" action="info_UpProcess" novalidate="novalidate">
                         <div class="row">
                             <div class="form-group">
                                 <div class="col-lg-12 ">
@@ -78,7 +98,7 @@
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="mem_pw" name="mem_pw" class="form-control" maxlength="100" data-msg-required="비밀번호를 입력해주세요." value="" placeholder="비밀번호" >
+                                    <input type="password" id="mem_pw" name="mem_pw" class="form-control" maxlength="100" data-msg-required="비밀번호를 입력해주세요." value="" placeholder="비밀번호" onblur="pw_show()">
                                 	</div>
                                 </div>
                             </div>
@@ -87,26 +107,12 @@
                             <div class="form-group">
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="mem_pwCheck" name="mem_pwCheck" class="form-control" maxlength="100" data-msg-required="비밀번호를 한번 더 입력해주세요." value="" placeholder="비밀번호 확인" >
+                                    <input type="password" id="mem_pwCheck" name="mem_pwCheck" class="form-control" maxlength="100" data-msg-required="비밀번호를 한번 더 입력해주세요." value="" placeholder="비밀번호 확인" onblur="pw_check()">
                                 	</div>
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="mem_name" name="mem_name" class="form-control" maxlength="100" data-msg-required="이름을 입력해주세요." value="" placeholder="이름" >
-                                	</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group">
-                                <div class="col-lg-12 ">
-                                    <div class="middle">
-                                    <input type="text" id="mem_tel" name="mem_tel" class="form-control" maxlength="100" data-msg-required="전화번호를 입력해주세요." value="${mb.mem_tel}" placeholder="전화번호" readonly>
-                                	</div>
-                                </div>
-                                <div class="col-lg-12 ">
-                                    <div class="middle">
-                                    <input type="text" id="mem_email" name="mem_email" class="form-control" maxlength="100" data-msg-required="이메일 주소를 입력해주세요." value="${mb.mem_email}" placeholder="이메일" readonly>
+                                    <input type="text" id="mem_name" name="mem_name" class="form-control" maxlength="100" data-msg-required="이름을 입력해주세요." value="${mb.mem_name}" placeholder="이름" >
                                 	</div>
                                 </div>
                             </div>
@@ -115,15 +121,29 @@
                             <div class="form-group">
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="sample4_roadAddress" name="sample4_roadAddress" class="form-control"  onclick="sample4_execDaumPostcode()" data-msg-required="도로명 주소를 입력해주세요." placeholder="도로명주소">
-									<input type="text" id="detail" name="detail" class="form-control" maxlength="100" onchange="add_address()" data-msg-required="상세주소를 입력해주세요." value="${mb.mem_add}" placeholder="상세주소" >
-									<input type="hidden" id="mem_add" name="mem_add">
+                                    <input type="text" id="mem_tel" name="mem_tel" class="form-control" maxlength="100" data-msg-required="전화번호를 입력해주세요." value="${mb.mem_tel}" placeholder="전화번호" >
+                                	</div>
+                                </div>
+                                <div class="col-lg-12 ">
+                                    <div class="middle">
+                                    <input type="text" id="mem_email" name="mem_email" class="form-control" maxlength="100" data-msg-required="이메일 주소를 입력해주세요." value="${mb.mem_email}" placeholder="이메일" >
+                                	</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="col-lg-12 ">
+                                    <div class="middle">
+                                    <input type="text" id="sample4_roadAddress" name="sample4_roadAddress" class="form-control"  onclick="sample4_execDaumPostcode()" data-msg-required="도로명 주소를 입력해주세요." placeholder="도로명주소" style="display: none;" readonly>
+									<input type="text" id="mem_add" name="mem_add" class="form-control" maxlength="100" onchange="add_address()" data-msg-required="상세주소를 입력해주세요." value="${mb.mem_add}" placeholder="상세주소" onclick="update_add()">
+									<!-- <input type="hidden" id="mem_add" name="mem_add"> -->
 									
                                 	</div>
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="mem_bir" name="mem_bir" class="form-control" maxlength="100" data-msg-required="생년월일을 입력해주세요." value="${mb.mem_bir}" placeholder="생년월일" onchange="rearrange_bir()">
+                                    <input type="text" id="mem_bir" name="mem_bir" class="form-control" maxlength="100" data-msg-required="생년월일을 입력해주세요." value="${mb.mem_bir}" placeholder="생년월일" onchange="rearrange_bir()" readonly>
                                 	</div>
                                 </div>
                             </div>
@@ -268,6 +288,8 @@
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
 
                 document.getElementById('sample4_roadAddress').value = fullRoadAddr;
+                document.getElementById('mem_add').value = fullRoadAddr;
+                
             }
         }).open();
     }

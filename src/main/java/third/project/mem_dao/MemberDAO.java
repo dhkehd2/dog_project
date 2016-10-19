@@ -43,4 +43,9 @@ public class MemberDAO {
 		return selectIdByDB;
 	}
 	
+	public int info_upProcess(MemberBean mb) {
+		int updateByDB = sqlSessionTemplate.update("Member_ns.updateMemberById", mb);
+		return updateByDB;
+	}
+	
 }

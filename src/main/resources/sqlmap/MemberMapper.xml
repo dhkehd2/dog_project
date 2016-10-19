@@ -52,4 +52,13 @@
 	mem_name=#{mem_name} and mem_tel=#{mem_tel}
 	</select>
 		
+	<update id="updateMemberById" parameterType="MemberBean">
+		update member_tb 
+		set
+		mem_pw=#{mem_pw},mem_name=#{mem_name},mem_tel=#{mem_tel},
+		mem_email=#{mem_email},mem_add=#{mem_add},mem_gen=#{mem_gen},
+		mem_q=#{mem_q},mem_a=#{mem_a},mem_exp=#{mem_exp}
+		WHERE
+		mem_id=#{mem_id}
+	</update>
 </mapper>

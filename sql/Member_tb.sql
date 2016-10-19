@@ -22,6 +22,6 @@ insert into member_tb values
 ('yyk9111','yyk','KimYeyoung','010-1111-1111','yyk9111@naver.com','안양',
 '1990-11-19','female','no','당신의 어릴적 별명은?','??????');
 
-select * from member_tb
+select * from member_tb;
 
 drop table member_tb;

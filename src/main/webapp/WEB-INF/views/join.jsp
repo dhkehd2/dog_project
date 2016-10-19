@@ -36,6 +36,20 @@
 		         prevText: '이전 달' 
 		  });
 		});
+	
+	function pw_show() {
+		$("#mem_pwCheck").show("fast");
+	}
+	
+	function pw_check() {
+		
+		if(document.getElementById("mem_pw").value == document.getElementById("mem_pwCheck").value){
+			alert("비밀번호 일치");
+		}else {
+			alert("비밀번호 불일치");
+			document.getElementById("mem_pwCheck").value="";
+		}
+	}
 	</script>
 </head>
 <body>
@@ -76,7 +90,7 @@
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="mem_pw" name="mem_pw" class="form-control" maxlength="100" data-msg-required="비밀번호를 입력해주세요." value="" placeholder="비밀번호" >
+                                    <input type="password" id="mem_pw" name="mem_pw" class="form-control" maxlength="100" data-msg-required="비밀번호를 입력해주세요." value="" placeholder="비밀번호" onblur="pw_show()">
                                 	</div>
                                 </div>
                             </div>
@@ -85,7 +99,7 @@
                             <div class="form-group">
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="mem_pwCheck" name="mem_pwCheck" class="form-control" maxlength="100" data-msg-required="비밀번호를 한번 더 입력해주세요." value="" placeholder="비밀번호 확인" >
+                                    <input type="password" id="mem_pwCheck" name="mem_pwCheck" class="form-control" maxlength="100" data-msg-required="비밀번호를 한번 더 입력해주세요." value="" placeholder="비밀번호 확인" style="display: none;" onblur="pw_check()">
                                 	</div>
                                 </div>
                                 <div class="col-lg-12 ">
