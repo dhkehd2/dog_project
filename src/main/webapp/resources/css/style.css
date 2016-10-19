@@ -2144,6 +2144,13 @@ h4.comment-author a{color:#555}
     margin-right: 150px;
 }
 
+.middleLeft_checkBox {
+	position: relative;
+    text-align: left;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
 .expMiddle {
 	margin-left: 150px;
 	margin-bottom: 30px;

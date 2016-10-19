@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="../../top_bottom/top.jsp"%>
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" class="no-js" lang="en"> <![endif]-->
@@ -48,6 +49,17 @@
     	}
     	    
     %>
+    <%
+    String str="";
+    Cookie cookies[] = request.getCookies();
+	for(int i = 0; i <cookies.length; i++){
+		if(cookies[i].getName().equals("mem_id")){
+			str = cookies[i].getValue();
+		}
+	}
+	//jstl core 의 test문장에서 사용하기 위해 영역객체에 저장한다
+	request.setAttribute("str",str);
+    %>
 </head>
 <body>
 
@@ -83,12 +95,24 @@
                             <div class="form-group">
                                 <div class="col-lg-12 ">
                                 	<div class="middle">
-                                    <input type="text" id="mem_id" name="mem_id" class="form-control" maxlength="100" data-msg-required="Please enter your name."placeholder="아이디" >
+                                    <input type="text" id="mem_id" name="mem_id" class="form-control" maxlength="100" data-msg-required="Please enter your name."placeholder="아이디" value="<%=str%>">
                                 	</div>
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
                                     <input type="text" id="mem_pw" name="mem_pw" class="form-control" maxlength="100" data-msg-required="Please enter your name."  placeholder="비밀번호" >
+           	
+                                	</div>
+                                	<div class="middleLeft_checkBox">
+                                	
+                                	<c:if test="${'' eq str}">
+	                                		<input type="checkbox" id="mem_checkId" name="mem_checkId" >&nbsp;아이디 저장
+	                                </c:if>
+	                              
+	                                <c:if test="${'' ne str}">
+	                                		<input type="checkbox" id="mem_checkId" name="mem_checkId" checked>&nbsp;아이디 저장
+	                                </c:if>
+                                	
                                 	</div>
                                 </div>
                             </div>
