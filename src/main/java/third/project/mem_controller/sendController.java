@@ -21,7 +21,7 @@ public class sendController {
 	public void send(SendInfo si) {
 	
 		System.out.println("sendController.inputsend sql(si)");
-		 sendDAO.inputsend(si);
+		 //sendDAO.inputsend(si);
 		 System.out.println(si);
 		
 	}

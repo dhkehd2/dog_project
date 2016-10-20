@@ -50,6 +50,7 @@ String now_id = (String)session.getAttribute("mem_id");
 	<!-- normal top menu -->
 	<%@ include file="../top_bottom/top.jsp"%>
 <%} %>
+
 <br>
 
 <a href="info_up">회원정보수정</a>

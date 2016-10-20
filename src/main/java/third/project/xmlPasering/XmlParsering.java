@@ -18,20 +18,20 @@ import org.w3c.dom.Node;
  
 public class XmlParsering {
    String key = "MjOcp7r0zWThoEX%2BdW0edQi4Qcpjoa5HpSS%2FmDN7EikCFSMWjlgCH4V5HvgduYtXB0fhUY5b%2BE3jLawrAG4I8A%3D%3D";
-   //���⵿����ȸ ��ȸ������ '�õ�'������ ������ �� �ִ�.
+   //sido list
    String sido = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/sido?"
          + "ServiceKey="
          + key 
          + "&numOfRows=999&pageSize=999&pageNo=1&startPage=1";
    
-   //���⵿����ȸ ��ȸ������ '�ñ���'������ ������ �� �ִ�.
+   //sigungu list
    String sigungu = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/sigungu?"
          + "upr_cd="
          + "6480000"
          + "&ServiceKey="
          + key;
    
-   //���⵿����ȸ ��ȸ������ '��ȣ��'������ ������ �� �ִ�.
+   //animal shelter list
    String shelter = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/shelter?"
          + "upr_cd="
          + "6110000"
@@ -40,53 +40,25 @@ public class XmlParsering {
          + "0&ServiceKey="
          + key;
    
-   //���⵿����ȸ ��ȸ������ 'ǰ��'������ ������ �� �ִ�.
-   /*
-   �����ڵ�
-    - �� : 417000
-    - ����� : 422400
-    - ��Ÿ : 429900
-   */
+   //animal kind list
    String kind = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/kind?"
          + "up_kind_cd="
          + "417000"
          + "&ServiceKey="
          + key;
    
-   //���⵿�� ������ ��ȸ�Ѵ�.
+   //animal list Q
    String abandonmentPublic = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/abandonmentPublic?"
          + "bgnde="
-         + "20160301"//���⳯¥(�˻�������)
+         + "20160301"//start day
          + "&endde="
-         + "20160430"//���⳯¥(�˻� ������)
+         + "20160430"//end day
          + "&pageNo="
          + "1"
          + "&numOfRows="
-         + "30"//�˻���
+         + "30"//down list cnt
          + "&ServiceKey="
          + key;
-   
- /*   public static void main(String[] args) {
- 
-        try{
- 
-           XmlParsering xmlParsering = new XmlParsering();
-           
-           //xmlParsering.start(xmlParsering.sido);
-           
-           //xmlParsering.start(xmlParsering.sigungu);
-           
-           //xmlParsering.start2(xmlParsering.shelter);
-           
-           //xmlParsering.start3(xmlParsering.kind);
-           
-           xmlParsering.start4(xmlParsering.abandonmentPublic);
-           
-        }catch (Exception e){
-            e.printStackTrace();
-        }
- 
-    } */
     
     private void start(String str) throws Exception{
         URL url = new URL(str);
@@ -97,7 +69,7 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //ù��° �ڽ��� �������� ���������� ���� ������ ����
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){
  
                 if(node.getNodeName().equals("orgCd")){
                     System.out.println(node.getTextContent());
@@ -121,7 +93,7 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //ù��° �ڽ��� �������� ���������� ���� ������ ����
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ 
  
                 if(node.getNodeName().equals("careNm")){
                     System.out.println(node.getTextContent());
@@ -142,7 +114,7 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //ù��° �ڽ��� �������� ���������� ���� ������ ����
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){
  
                 if(node.getNodeName().equals("KNm")){
                     System.out.println(node.getTextContent());
@@ -156,7 +128,7 @@ public class XmlParsering {
     
     public List<AnimalInfo> start4(String str) throws Exception{
        System.out.println("XmlParsering.start4()");
-       //api���� �������ִ� ��� ������������ ���°�'��ȣ��'�� �͸� �����´�.
+       
         URL url = new URL(str);
         URLConnection connection = url.openConnection();
  
@@ -166,119 +138,119 @@ public class XmlParsering {
         List<AnimalInfo> list = new ArrayList<AnimalInfo>();
        
         
-        String desertionNo; //�����ȣ
-       String filename; //Thumbnail Image
-       String happenDt; //������
-       String happenPlace; //�߰����
-       String kindCd; //ǰ��
-       String colorCd; //����
-       String age; //����
-       String weight; //ü��
-       String noticeNo; //�����ȣ
-       String noticeSdt; //���������
-       String noticeEdt; //���� ������
-       String popfile; //���� Image
-       String processState; //����
-       String sexCd; //����
-       String neuterYn; //�߼�ȭ����
-       String specialMark; //Ư¡
-       String careNm; //��ȣ���̸�
-       String careTel; //��ȣ����ȭ��ȣ
-       String careAddr; //��ȣ���
-       String orgNm; //���ұ��
-       String chargeNm; //�����
-       String officetel; //����ڿ���ó
-       String noticeComment; //Ư�̻���
+        String desertionNo; 
+       String filename;
+       String happenDt;
+       String happenPlace;
+       String kindCd;
+       String colorCd; 
+       String age; 
+       String weight;
+       String noticeNo;
+       String noticeSdt; 
+       String noticeEdt;
+       String popfile;
+       String processState; 
+       String sexCd;
+       String neuterYn; 
+       String specialMark; 
+       String careNm;
+       String careTel; 
+       String careAddr;
+       String orgNm;
+       String chargeNm;
+       String officetel;
+       String noticeComment; 
         
         for(int i=0; i<descNodes.getLength();i++){
            
            AnimalInfo info = new AnimalInfo();
            
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //ù��° �ڽ��� �������� ���������� ���� ������ ����
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ 
                
                
                 
-               if(node.getNodeName().equals("desertionNo")){//�����ȣ
+               if(node.getNodeName().equals("desertionNo")){
                    desertionNo = node.getTextContent();
                     info.setDesertionNo(desertionNo);
-                }else if(node.getNodeName().equals("filename")){//Thumbnail Image
+                }else if(node.getNodeName().equals("filename")){
                    filename = node.getTextContent();
                    info.setFilename(filename);
-                }else if(node.getNodeName().equals("happenDt")){//������
+                }else if(node.getNodeName().equals("happenDt")){
                    happenDt = node.getTextContent();
                    info.setHappenDt(happenDt);
-                }else if(node.getNodeName().equals("happenPlace")){//�߰����
+                }else if(node.getNodeName().equals("happenPlace")){
                    happenPlace = node.getTextContent();
                    info.setHappenPlace(happenPlace);
-                }else if(node.getNodeName().equals("kindCd")){//ǰ��
+                }else if(node.getNodeName().equals("kindCd")){
                    kindCd = node.getTextContent();
                    info.setKindCd(kindCd);
-                }else if(node.getNodeName().equals("colorCd")){//����
+                }else if(node.getNodeName().equals("colorCd")){
                    colorCd = node.getTextContent();
                    info.setColorCd(colorCd);
-                }else if(node.getNodeName().equals("age")){//����
+                }else if(node.getNodeName().equals("age")){
                    age = node.getTextContent();
                    info.setAge(age);
-                }else if(node.getNodeName().equals("weight")){//ü��
+                }else if(node.getNodeName().equals("weight")){
                    weight = node.getTextContent();
                    info.setWeight(weight);
-                }else if(node.getNodeName().equals("noticeNo")){//�����ȣ
+                }else if(node.getNodeName().equals("noticeNo")){
                    noticeNo = node.getTextContent();
                    info.setNoticeNo(noticeNo);
-                }else if(node.getNodeName().equals("noticeSdt")){//���������
+                }else if(node.getNodeName().equals("noticeSdt")){
                    noticeSdt = node.getTextContent();
                    info.setNoticeSdt(noticeSdt);
-                }else if(node.getNodeName().equals("noticeEdt")){//���� ������
+                }else if(node.getNodeName().equals("noticeEdt")){
                    noticeEdt = node.getTextContent();
                    info.setNoticeEdt(noticeEdt);
-                }else if(node.getNodeName().equals("popfile")){//���� Image
+                }else if(node.getNodeName().equals("popfile")){
                    popfile = node.getTextContent();
                    info.setPopfile(popfile);
-                }else if(node.getNodeName().equals("processState")){//����
+                }else if(node.getNodeName().equals("processState")){
                    processState = node.getTextContent();
                    info.setProcessState(processState);
-                }else if(node.getNodeName().equals("sexCd")){//����
+                }else if(node.getNodeName().equals("sexCd")){
                    sexCd = node.getTextContent();
                    info.setSexCd(sexCd);
-                }else if(node.getNodeName().equals("neuterYn")){//�߼�ȭ����
+                }else if(node.getNodeName().equals("neuterYn")){
                    neuterYn = node.getTextContent();
                    info.setNeuterYn(neuterYn);
-                }else if(node.getNodeName().equals("specialMark")){//Ư¡
+                }else if(node.getNodeName().equals("specialMark")){
                    specialMark = node.getTextContent();
                    info.setSpecialMark(specialMark);
-                }else if(node.getNodeName().equals("careNm")){//��ȣ���̸�
+                }else if(node.getNodeName().equals("careNm")){
                    careNm = node.getTextContent();
                    info.setCareNm(careNm);
-                }else if(node.getNodeName().equals("careTel")){//��ȣ����ȭ��ȣ
+                }else if(node.getNodeName().equals("careTel")){
                    careTel = node.getTextContent();
                    info.setCareTel(careTel);
-                }else if(node.getNodeName().equals("careAddr")){//��ȣ���
+                }else if(node.getNodeName().equals("careAddr")){
                    careAddr = node.getTextContent();
                    info.setCareAddr(careAddr);
-                }else if(node.getNodeName().equals("orgNm")){//���ұ��
+                }else if(node.getNodeName().equals("orgNm")){
                    orgNm = node.getTextContent();
                    info.setOrgNm(orgNm);
-                }else if(node.getNodeName().equals("chargeNm")){//�����
+                }else if(node.getNodeName().equals("chargeNm")){
                    chargeNm = node.getTextContent();
                    info.setChargeNm(chargeNm);
-                }else if(node.getNodeName().equals("officetel")){//����ڿ���ó
+                }else if(node.getNodeName().equals("officetel")){
                    officetel = node.getTextContent();
                    info.setOfficetel(officetel);
-                }else if(node.getNodeName().equals("noticeComment")){//Ư�̻���
+                }else if(node.getNodeName().equals("noticeComment")){
                    noticeComment = node.getTextContent();
                    info.setNoticeComment(noticeComment);
                 } 
             }
             if(info.getProcessState().contains("보호중")){
-               //System.out.println(info.toString());
+               
                list.add(info);
                info = null;
-               System.out.println("[��ȣ���� ���� ��] : "+list.size());
+               System.out.println("[받아온 리스트 수] : "+list.size());
                System.out.println("=======================================================");
             }else{
-               //System.out.println("[�Ծ� or �ȶ���]");
+               
             }
-            //System.out.println("["+i+"]");
+            
             
         }
         

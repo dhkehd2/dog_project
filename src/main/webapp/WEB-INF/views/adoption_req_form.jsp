@@ -64,8 +64,9 @@
 				<p><h2>유기견 분양 신청서 양식 입니다. 빠짐없이 작성해 주세요.</h2></p>
 				<div class="row sub_content">
 					<div class="col-lg-12 col-md-12 col-sm-12">
-						<div class="dividerHeading">
-							<span><form id="contactForm" action="adoption_req_send"
+						<!-- <div class="dividerHeading">
+							<span>
+							<form id="contactForm" action="adoption_req_send"
 									novalidate="novalidate">
 									<div class="row">
 										<div class="form-group">
@@ -79,10 +80,14 @@
 									</div>
 
 								</form></span>
-						</div>
+						</div> -->
 
 
-						<div class="alert alert-success hidden alert-dismissable"
+						
+
+						<%-- <form id="contactForm" action="adoption_req_send" novalidate="novalidate">
+							
+							<div class="alert alert-success hidden alert-dismissable"
 							id="contactSuccess">
 							<button type="button" class="close" data-dismiss="alert"
 								aria-hidden="true">&times;</button>
@@ -94,10 +99,17 @@
 								aria-hidden="true">&times;</button>
 							<strong>Error!</strong> There was an error sending your message.
 						</div>
-
-						<form id="contactForm" action="" novalidate="novalidate">
+						
 							<div class="row">
 								<div class="form-group">
+									
+									<div class="col-md-12">
+												제목 <input type="text" id="send_title" name="send_title"
+													class="form-control" maxlength="100"
+													data-msg-required="Please enter the subject." value=""
+													placeholder="제목을 입력하세요.">
+									</div>
+									
 									<div class="col-lg-6 ">
 										신청자 이름 <input type="text" id="send_name" name="send_name"
 											class="form-control" maxlength="100"
@@ -162,8 +174,31 @@
 							</div>
 						</form>
 					</div>
-
-
+ --%>
+					
+					
+					<form action="adoption_req_send">
+						<input type="hidden" name="a" value="수향">
+						
+						제목 <input type="text" id="send_title" name="send_title" value="${now_id}">
+						<br>
+						신청자 이름 <input type="text" id="send_name" name="send_name">
+						<br>
+						e-mail <input type="email" id="send_email" name="send_email">
+						<br>
+						전화번호 <input type="text" id="send_tel" name="send_tel">
+						<br>
+						입양지역 <input type="text" id="send_arae" name="send_arae">
+						<br>
+						유기번호 <input type="text" id="send_desertionNo" name="send_desertionNo" value="${num}">
+						<br>
+						보육환경을 설명해주세요. <input type="text" id="send_how" name="send_how">
+						<br>
+						입양신청이유<textarea id="send_why" class="form-control" name="send_why"></textarea>
+						<br>
+						<input type="submit" value="gogo">
+					</form>
+					
 
 				</div>
 			</div>

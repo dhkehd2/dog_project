@@ -87,7 +87,7 @@
                                 </ul>
                             </li>
 
-                            <li class="active"><a href="#"><span class="data-hover" data-hover="animals">animals</span></a></li>
+                             <li><a href="list"><span class="data-hover" data-hover="animals">animals</span></a></li>
 
                             <li><a href="faq"><span class="data-hover" data-hover="faq">faq</span></a></li>
                             

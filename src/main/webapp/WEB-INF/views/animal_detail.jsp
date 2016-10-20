@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../top_bottom/top.jsp"%>
 
+
+
 	<!--start wrapper-->
 	<section class="wrapper">
 		<section class="page_head">

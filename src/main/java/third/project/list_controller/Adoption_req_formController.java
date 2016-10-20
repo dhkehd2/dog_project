@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,7 @@ public class Adoption_req_formController {
 	MemberDAO memdao;
 	
 	@RequestMapping(value = "/adoption_req_form", method = RequestMethod.GET)
-	public ModelAndView info_up(String id,String num, Model model) {
+	public ModelAndView info_up(String id,String num, Model model,HttpServletRequest request) {
 		System.out.println("신청자 아이디 = "+id);
 		MemberBean m = new MemberBean();
 		m.setMem_id(id);
@@ -35,6 +37,9 @@ public class Adoption_req_formController {
 		System.out.println("Adoption_req_formController.adoption_req_form()");
 		model.addAttribute("num",num);
 		System.out.println("신청유기번호 = "+num);
+		
+		request.setAttribute("now_id", id);
+		
 		return new ModelAndView("adoption_req_form","memberInfo", memberInfo);
 	}
 	
