@@ -3,11 +3,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+
 
 <%@ include file="../top_bottom/top.jsp"%>
 
-list
 <%
 	int listcount = ((Integer) request.getAttribute("listcount")).intValue(); //동물 수
 	int nowpage = ((Integer) request.getAttribute("nowpage")).intValue();//현재페이지 수
@@ -18,7 +17,30 @@ list
 	String sido_code = (String) request.getAttribute("sido_code");//현재 페이지의 시도 코드
 	String sido_name = (String) request.getAttribute("sido_name");//현재 페이지의 시도 이름
 	String gungu_name = (String) request.getAttribute("gungu_name");//현재 페이지의 시군구 이름
+	String id = null;
+	String mem_checkId = (String)session.getAttribute("mem_checkId");
+	   if(mem_checkId != null ){
+	      //아이디저장 체크시 쿠키에 저장
+	      if(mem_checkId.equals("on")){
+	         
+	         id = (String)session.getAttribute("mem_id");
+	         Cookie cookie = new Cookie("mem_id", id);
+	         cookie.setMaxAge(60*60*24);
+	         response.addCookie(cookie);
+	      }
+	   }else {
+	      //아이디 저장 체크해제시 쿠키에 공백 저장
+	      Cookie cookie = new Cookie("mem_id", "");
+	      
+	      cookie.setMaxAge(60*60*24);
+	      response.addCookie(cookie);
+	   }
+	
 %>
+
+
+
+<%=(String)session.getAttribute("mem_id") %>
 
 <br>
 
@@ -98,8 +120,8 @@ list
 											<a href="animal_detail?desertionNo=${vo.desertionNo }"
 												class="fa fa-link"></a> <a href="${vo.popfile}"
 												class="fa fa-search mfp-image"></a>
-											<p style="color: white;">${vo.kindCd}</p>
-											<p style="color: white;">${vo.orgNm}</p>
+											<p style="color: white; font-size: 13px;">${vo.kindCd}</p>
+											<p style="color: white; font-size: 13px;">${vo.orgNm}</p>
 										</div>
 
 									</figure>
