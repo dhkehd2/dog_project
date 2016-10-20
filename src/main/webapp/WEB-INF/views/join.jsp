@@ -93,18 +93,72 @@
 		var answer = document.getElementById('mem_a').value;
 		var exp = document.getElementById('mem_exp').value;
 		
+		
+		//공백검증
+		if(id.length == 0) {
+			alert("아이디를 입력해주세요.");
+			//document.getElementById('mem_id').focus();
+			return;
+		}
+		
+		if(pw.length==0){
+			alert("비밀번호를 입력해 주세요.");
+			//document.getElementById('mem_pw').focus();
+			return;
+		}
+		
+		if(name.length ==0) {
+			alert("이름을 입력해 주세요.");
+			//document.getElementById('mem_name').focus();
+			return;
+		}
+		
 		var ex_tel = /^\d{3}-\d{4}-\d{4}$/;
 		
 		if(tel.match(ex_tel)){
-			alert("전화번호 형식에 맞습니다.");
 			
 		}else{
 			alert("전화번호 형식에 맞지 않습니다.");
-			document.getElementById('mem_tel').focus();
+			//document.getElementById('mem_tel').focus();
+			return;
 		}
 		
+		if(email.length==0) {
+			alert("이메일을 입력해 주세요.");
+			//document.getElementById('mem_email').focus();
+			return;
+		}
 		
-		//document.getElementById('contactForm').submit();
+		if(add.length==0){
+			alert("주소를 입력해 주세요.");
+			//document.getElementById('mem_add').focus();
+			return;
+		}
+		
+		if(bir.length==0){
+			alert("생일을 입력해 주세요.");
+			//document.getElementById('mem_bir').focus();
+			return;
+		}
+		if(gen.length==0){
+			alert("성별을 입력해 주세요.");
+			//document.getElementById('mem_gen').focus();
+			return;
+		}
+		
+		if(answer.length==0){
+			alert("답변을 입력해 주세요.");
+			//document.getElementById('mem_a')s.focus();
+			return;
+		}
+		
+		if(exp.length==0){
+			alert("동물을 키워본 경험을 체크해 주세요.");
+			//document.getElementById('mem_exp').focus();
+			return;
+		}
+		
+		document.getElementById('contactForm').submit();
 	}; 
 	</script>
 </head>

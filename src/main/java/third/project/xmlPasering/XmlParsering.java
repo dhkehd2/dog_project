@@ -18,20 +18,20 @@ import org.w3c.dom.Node;
  
 public class XmlParsering {
    String key = "MjOcp7r0zWThoEX%2BdW0edQi4Qcpjoa5HpSS%2FmDN7EikCFSMWjlgCH4V5HvgduYtXB0fhUY5b%2BE3jLawrAG4I8A%3D%3D";
-   //���⵿����ȸ ��ȸ������ '�õ�'������ ������ �� �ִ�.
+   //占쏙옙占썩동占쏙옙占쏙옙회 占쏙옙회占쏙옙占쏙옙占쏙옙 '占시듸옙'占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙 占쌍댐옙.
    String sido = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/sido?"
          + "ServiceKey="
          + key 
          + "&numOfRows=999&pageSize=999&pageNo=1&startPage=1";
    
-   //���⵿����ȸ ��ȸ������ '�ñ���'������ ������ �� �ִ�.
+   //占쏙옙占썩동占쏙옙占쏙옙회 占쏙옙회占쏙옙占쏙옙占쏙옙 '占시깍옙占쏙옙'占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙 占쌍댐옙.
    String sigungu = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/sigungu?"
          + "upr_cd="
          + "6480000"
          + "&ServiceKey="
          + key;
    
-   //���⵿����ȸ ��ȸ������ '��ȣ��'������ ������ �� �ִ�.
+   //占쏙옙占썩동占쏙옙占쏙옙회 占쏙옙회占쏙옙占쏙옙占쏙옙 '占쏙옙호占쏙옙'占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙 占쌍댐옙.
    String shelter = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/shelter?"
          + "upr_cd="
          + "6110000"
@@ -40,12 +40,12 @@ public class XmlParsering {
          + "0&ServiceKey="
          + key;
    
-   //���⵿����ȸ ��ȸ������ 'ǰ��'������ ������ �� �ִ�.
+   //占쏙옙占썩동占쏙옙占쏙옙회 占쏙옙회占쏙옙占쏙옙占쏙옙 '품占쏙옙'占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙 占쌍댐옙.
    /*
-   �����ڵ�
-    - �� : 417000
-    - ����� : 422400
-    - ��Ÿ : 429900
+   占쏙옙占쏙옙占쌘듸옙
+    - 占쏙옙 : 417000
+    - 占쏙옙占쏙옙占� : 422400
+    - 占쏙옙타 : 429900
    */
    String kind = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/kind?"
          + "up_kind_cd="
@@ -53,16 +53,16 @@ public class XmlParsering {
          + "&ServiceKey="
          + key;
    
-   //���⵿�� ������ ��ȸ�Ѵ�.
+   //占쏙옙占썩동占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙회占싼댐옙.
    String abandonmentPublic = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/abandonmentPublic?"
          + "bgnde="
-         + "20160301"//���⳯¥(�˻�������)
+         + "20160301"//占쏙옙占썩날짜(占싯삼옙占쏙옙占쏙옙占쏙옙)
          + "&endde="
-         + "20160430"//���⳯¥(�˻� ������)
+         + "20160430"//占쏙옙占썩날짜(占싯삼옙 占쏙옙占쏙옙占쏙옙)
          + "&pageNo="
          + "1"
          + "&numOfRows="
-         + "30"//�˻���
+         + "30"//占싯삼옙占쏙옙
          + "&ServiceKey="
          + key;
    
@@ -97,7 +97,7 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //ù��° �ڽ��� �������� ���������� ���� ������ ����
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //첫占쏙옙째 占쌘쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
  
                 if(node.getNodeName().equals("orgCd")){
                     System.out.println(node.getTextContent());
@@ -121,7 +121,7 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //ù��° �ڽ��� �������� ���������� ���� ������ ����
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //첫占쏙옙째 占쌘쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
  
                 if(node.getNodeName().equals("careNm")){
                     System.out.println(node.getTextContent());
@@ -142,7 +142,7 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //ù��° �ڽ��� �������� ���������� ���� ������ ����
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //첫占쏙옙째 占쌘쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
  
                 if(node.getNodeName().equals("KNm")){
                     System.out.println(node.getTextContent());
@@ -156,7 +156,7 @@ public class XmlParsering {
     
     public List<AnimalInfo> start4(String str) throws Exception{
        System.out.println("XmlParsering.start4()");
-       //api���� �������ִ� ��� ������������ ���°�'��ȣ��'�� �͸� �����´�.
+       //api占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쌍댐옙 占쏙옙占� 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占승곤옙'占쏙옙호占쏙옙'占쏙옙 占싶몌옙 占쏙옙占쏙옙占승댐옙.
         URL url = new URL(str);
         URLConnection connection = url.openConnection();
  
@@ -166,105 +166,105 @@ public class XmlParsering {
         List<AnimalInfo> list = new ArrayList<AnimalInfo>();
        
         
-        String desertionNo; //�����ȣ
+        String desertionNo; //占쏙옙占쏙옙占싫�
        String filename; //Thumbnail Image
-       String happenDt; //������
-       String happenPlace; //�߰����
-       String kindCd; //ǰ��
-       String colorCd; //����
-       String age; //����
-       String weight; //ü��
-       String noticeNo; //�����ȣ
-       String noticeSdt; //���������
-       String noticeEdt; //���� ������
-       String popfile; //���� Image
-       String processState; //����
-       String sexCd; //����
-       String neuterYn; //�߼�ȭ����
-       String specialMark; //Ư¡
-       String careNm; //��ȣ���̸�
-       String careTel; //��ȣ����ȭ��ȣ
-       String careAddr; //��ȣ���
-       String orgNm; //���ұ��
-       String chargeNm; //�����
-       String officetel; //����ڿ���ó
-       String noticeComment; //Ư�̻���
+       String happenDt; //占쏙옙占쏙옙占쏙옙
+       String happenPlace; //占쌩곤옙占쏙옙占�
+       String kindCd; //품占쏙옙
+       String colorCd; //占쏙옙占쏙옙
+       String age; //占쏙옙占쏙옙
+       String weight; //체占쏙옙
+       String noticeNo; //占쏙옙占쏙옙占싫�
+       String noticeSdt; //占쏙옙占쏙옙占쏙옙占쏙옙占�
+       String noticeEdt; //占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+       String popfile; //占쏙옙占쏙옙 Image
+       String processState; //占쏙옙占쏙옙
+       String sexCd; //占쏙옙占쏙옙
+       String neuterYn; //占쌩쇽옙화占쏙옙占쏙옙
+       String specialMark; //특징
+       String careNm; //占쏙옙호占쏙옙占싱몌옙
+       String careTel; //占쏙옙호占쏙옙占쏙옙화占쏙옙호
+       String careAddr; //占쏙옙호占쏙옙占�
+       String orgNm; //占쏙옙占쌀깍옙占�
+       String chargeNm; //占쏙옙占쏙옙占�
+       String officetel; //占쏙옙占쏙옙悶占쏙옙占시�
+       String noticeComment; //특占싱삼옙占쏙옙
         
         for(int i=0; i<descNodes.getLength();i++){
            
            AnimalInfo info = new AnimalInfo();
            
-            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //ù��° �ڽ��� �������� ���������� ���� ������ ����
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //첫占쏙옙째 占쌘쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
                
                
                 
-               if(node.getNodeName().equals("desertionNo")){//�����ȣ
+               if(node.getNodeName().equals("desertionNo")){//占쏙옙占쏙옙占싫�
                    desertionNo = node.getTextContent();
                     info.setDesertionNo(desertionNo);
                 }else if(node.getNodeName().equals("filename")){//Thumbnail Image
                    filename = node.getTextContent();
                    info.setFilename(filename);
-                }else if(node.getNodeName().equals("happenDt")){//������
+                }else if(node.getNodeName().equals("happenDt")){//占쏙옙占쏙옙占쏙옙
                    happenDt = node.getTextContent();
                    info.setHappenDt(happenDt);
-                }else if(node.getNodeName().equals("happenPlace")){//�߰����
+                }else if(node.getNodeName().equals("happenPlace")){//占쌩곤옙占쏙옙占�
                    happenPlace = node.getTextContent();
                    info.setHappenPlace(happenPlace);
-                }else if(node.getNodeName().equals("kindCd")){//ǰ��
+                }else if(node.getNodeName().equals("kindCd")){//품占쏙옙
                    kindCd = node.getTextContent();
                    info.setKindCd(kindCd);
-                }else if(node.getNodeName().equals("colorCd")){//����
+                }else if(node.getNodeName().equals("colorCd")){//占쏙옙占쏙옙
                    colorCd = node.getTextContent();
                    info.setColorCd(colorCd);
-                }else if(node.getNodeName().equals("age")){//����
+                }else if(node.getNodeName().equals("age")){//占쏙옙占쏙옙
                    age = node.getTextContent();
                    info.setAge(age);
-                }else if(node.getNodeName().equals("weight")){//ü��
+                }else if(node.getNodeName().equals("weight")){//체占쏙옙
                    weight = node.getTextContent();
                    info.setWeight(weight);
-                }else if(node.getNodeName().equals("noticeNo")){//�����ȣ
+                }else if(node.getNodeName().equals("noticeNo")){//占쏙옙占쏙옙占싫�
                    noticeNo = node.getTextContent();
                    info.setNoticeNo(noticeNo);
-                }else if(node.getNodeName().equals("noticeSdt")){//���������
+                }else if(node.getNodeName().equals("noticeSdt")){//占쏙옙占쏙옙占쏙옙占쏙옙占�
                    noticeSdt = node.getTextContent();
                    info.setNoticeSdt(noticeSdt);
-                }else if(node.getNodeName().equals("noticeEdt")){//���� ������
+                }else if(node.getNodeName().equals("noticeEdt")){//占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
                    noticeEdt = node.getTextContent();
                    info.setNoticeEdt(noticeEdt);
-                }else if(node.getNodeName().equals("popfile")){//���� Image
+                }else if(node.getNodeName().equals("popfile")){//占쏙옙占쏙옙 Image
                    popfile = node.getTextContent();
                    info.setPopfile(popfile);
-                }else if(node.getNodeName().equals("processState")){//����
+                }else if(node.getNodeName().equals("processState")){//占쏙옙占쏙옙
                    processState = node.getTextContent();
                    info.setProcessState(processState);
-                }else if(node.getNodeName().equals("sexCd")){//����
+                }else if(node.getNodeName().equals("sexCd")){//占쏙옙占쏙옙
                    sexCd = node.getTextContent();
                    info.setSexCd(sexCd);
-                }else if(node.getNodeName().equals("neuterYn")){//�߼�ȭ����
+                }else if(node.getNodeName().equals("neuterYn")){//占쌩쇽옙화占쏙옙占쏙옙
                    neuterYn = node.getTextContent();
                    info.setNeuterYn(neuterYn);
-                }else if(node.getNodeName().equals("specialMark")){//Ư¡
+                }else if(node.getNodeName().equals("specialMark")){//특징
                    specialMark = node.getTextContent();
                    info.setSpecialMark(specialMark);
-                }else if(node.getNodeName().equals("careNm")){//��ȣ���̸�
+                }else if(node.getNodeName().equals("careNm")){//占쏙옙호占쏙옙占싱몌옙
                    careNm = node.getTextContent();
                    info.setCareNm(careNm);
-                }else if(node.getNodeName().equals("careTel")){//��ȣ����ȭ��ȣ
+                }else if(node.getNodeName().equals("careTel")){//占쏙옙호占쏙옙占쏙옙화占쏙옙호
                    careTel = node.getTextContent();
                    info.setCareTel(careTel);
-                }else if(node.getNodeName().equals("careAddr")){//��ȣ���
+                }else if(node.getNodeName().equals("careAddr")){//占쏙옙호占쏙옙占�
                    careAddr = node.getTextContent();
                    info.setCareAddr(careAddr);
-                }else if(node.getNodeName().equals("orgNm")){//���ұ��
+                }else if(node.getNodeName().equals("orgNm")){//占쏙옙占쌀깍옙占�
                    orgNm = node.getTextContent();
                    info.setOrgNm(orgNm);
-                }else if(node.getNodeName().equals("chargeNm")){//�����
+                }else if(node.getNodeName().equals("chargeNm")){//占쏙옙占쏙옙占�
                    chargeNm = node.getTextContent();
                    info.setChargeNm(chargeNm);
-                }else if(node.getNodeName().equals("officetel")){//����ڿ���ó
+                }else if(node.getNodeName().equals("officetel")){//占쏙옙占쏙옙悶占쏙옙占시�
                    officetel = node.getTextContent();
                    info.setOfficetel(officetel);
-                }else if(node.getNodeName().equals("noticeComment")){//Ư�̻���
+                }else if(node.getNodeName().equals("noticeComment")){//특占싱삼옙占쏙옙
                    noticeComment = node.getTextContent();
                    info.setNoticeComment(noticeComment);
                 } 
@@ -273,10 +273,10 @@ public class XmlParsering {
                //System.out.println(info.toString());
                list.add(info);
                info = null;
-               System.out.println("[��ȣ���� ���� ��] : "+list.size());
+               System.out.println("[占쏙옙호占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙] : "+list.size());
                System.out.println("=======================================================");
             }else{
-               //System.out.println("[�Ծ� or �ȶ���]");
+               //System.out.println("[占쌉억옙 or 占싫띰옙占쏙옙]");
             }
             //System.out.println("["+i+"]");
             
