@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
-<%@ include file="../../top_bottom/top.jsp"%>
+<%@ include file="../top_bottom/top.jsp"%>
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" class="no-js" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
@@ -72,6 +72,7 @@
 						//회원답변 히든으로 등록해놓기
 						var html = '';
 		                html += '<input type="hidden" id="cli_a" name="cli_a" value="'+respdata.mem_a+'">';
+		                html += '<input type="hidden" id="mem_pw" name="mem_pw" value="'+respdata.mem_pw+'">';
 		                $("#hidden").append(html);
 					}else{
 						alert('다시 입력해주세요')
@@ -212,5 +213,5 @@
 </body>
 </html>
 
-<%@ include file="../../top_bottom/bottom.jsp"%>
+<%@ include file="../top_bottom/bottom.jsp"%>
 

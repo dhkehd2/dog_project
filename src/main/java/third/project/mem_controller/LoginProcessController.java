@@ -21,6 +21,7 @@ public class LoginProcessController {
 	public String loginProcess(MemberBean mb,HttpSession session,HttpServletResponse response,String mem_checkId) {
 		System.out.println("LoginProcessController.loginProcess()");
 		session.setAttribute("mem_checkId", mem_checkId);
+		System.out.println(mem_checkId);
 		boolean isCorrectPw = svc.execute(mb);
 		if(isCorrectPw){
 			//로그인이 성공

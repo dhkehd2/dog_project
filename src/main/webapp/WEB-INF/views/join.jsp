@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="../top_bottom/top.jsp"%>
 
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" class="no-js" lang="en"> <![endif]-->
@@ -50,6 +51,34 @@
 			document.getElementById("mem_pwCheck").value="";
 		}
 	}
+
+	
+	$(function() {	
+		//frm 폼이 전송시 전송이벤트 처리
+		$('#id_check').click(function(e){ //e = 이벤트 객체
+			
+			e.preventDefault(); //섭밋 기본이벤트 처리 방지
+			
+			params={id:$("#mem_id").val()}; 
+			
+			
+			$.ajax("/app/id_dupCheck", {			 
+				type:'get', //요청방식
+				data:params, //요청파라미터 전송
+				//data:'id=hong&name='+encodeURIComponent('홍길동'), //쿼리스트링
+				//정상처리
+				success : function(respdata) { //respdata=응답데이터
+					if(respdata=="true"){
+						alert("아이디가 이미 존재합니다");
+					}else {
+						alert("아이디를 생성할 수 있습니다");
+					}
+					
+				} // ---end success
+			}); //---end ajax()
+		});//-- end function(e)
+		
+	});
 	</script>
 </head>
 <body>
@@ -83,11 +112,13 @@
                     <form id="contactForm" action="joinProcess" novalidate="novalidate">
                         <div class="row">
                             <div class="form-group">
-                                <div class="col-lg-12 ">
-                                	<div class="middle">
+                                <div class="col-lg-9 ">
+                                	<div class="middleLeft_margin">
                                     <input type="text" id="mem_id" name="mem_id" class="form-control" maxlength="100" data-msg-required="아이디를 입력해주세요." value="" placeholder="아이디" >
                                 	</div>
                                 </div>
+					     		<input type="button" id="id_check" data-loading-text="Loading..." class="btn btn-default btn-lg" value="아이디 중복체크" >
+
                                 <div class="col-lg-12 ">
                                     <div class="middle">
                                     <input type="password" id="mem_pw" name="mem_pw" class="form-control" maxlength="100" data-msg-required="비밀번호를 입력해주세요." value="" placeholder="비밀번호" onblur="pw_show()">
@@ -190,7 +221,8 @@
                             <div class="col-md-11 text-right">
                                 <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="회원가입"
                                 onclick="document.getElementById('contactForm').submit();">
-                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="로그인 화면으로">
+                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="로그인 화면으로"
+                                onclick="location='login'">
                             </div>
                         </div>
                     </form>
@@ -290,4 +322,4 @@
 <!-- End Style Switcher -->
 </body>
 </html>
-
+<%@ include file="../top_bottom/join_bottom.jsp"%>

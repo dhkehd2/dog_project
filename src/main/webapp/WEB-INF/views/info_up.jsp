@@ -3,6 +3,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
+<%@ include file="../top_bottom/top.jsp"%>
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" class="no-js" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
@@ -73,9 +74,9 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
                 	<div class="headingCenter">
                     <div class="dividerHeading">
-                        <h4><span>회원가입</span></h4>
+                        <h4><span>회원정보수정</span></h4>
                     </div>
-                    <p>회원가입란을 작성해 주세요.</p>
+                    <p>회원정보수정란을 작성해 주세요.</p>
 					</div>
 					
                     <div class="alert alert-success hidden alert-dismissable" id="contactSuccess">
@@ -198,7 +199,7 @@
                             <div class="col-md-11 text-right">
                                 <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="회원정보수정"
                                 onclick="document.getElementById('contactForm').submit();">
-                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="로그인 화면으로">
+                                <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="로그인 화면으로" onclick="location='login'">
                             </div>
                         </div>
                     </form>
@@ -300,4 +301,4 @@
 <!-- End Style Switcher -->
 </body>
 </html>
-
+<%@ include file="../top_bottom/join_bottom.jsp"%>

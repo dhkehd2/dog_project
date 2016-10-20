@@ -26,7 +26,7 @@
         <div class="container">
             <div class="row">
                 <div class="hidden-xs col-lg-7 col-sm-5 top-info">
-                    <a href="logout_process"><span style="color: white;"><i class="fa fa-sign-out"><strong> logout</strong></i></span></a>
+                    
                     <a href="#"><span style="color: white;"><i class="fa fa-desktop"><strong> my page</strong></i></span></a>
                     
 

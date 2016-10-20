@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../../top_bottom/top.jsp"%>
+<%@ include file="../top_bottom/top.jsp"%>
 
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" class="no-js" lang="en"> <![endif]-->
@@ -206,4 +206,4 @@
 	<!-- End Style Switcher -->
 </body>
 </html>
-<%@ include file="../../top_bottom/bottom.jsp"%>
+<%@ include file="../top_bottom/bottom.jsp"%>

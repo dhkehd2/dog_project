@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ include file="../../top_bottom/top.jsp"%>
+<%@ include file="../top_bottom/login_top.jsp"%>
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie ie8" class="no-js" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
@@ -26,18 +26,22 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <%
+    	//이름과 전화번호로 아이디 찾기- 아이디 출력
     	String id = (String)request.getAttribute("mem_id");
     	if(id != null){
-    		out.println("<script>alert('"+id+"');</script>");
+    		out.println("<script type='text/javascript'>");
+			out.println("alert('아이디: "+id+"')");
+			out.println("</script>");
     	}
     	
-    	
+    	String pw = (String)request.getAttribute("mem_pw");
     	Boolean isEqual = (Boolean)request.getAttribute("isCorrectAnswer");
     	if(isEqual != null){
     		if(isEqual){
     			//답변이 정확하다
     			out.println("<script type='text/javascript'>");
-    			out.println("alert('정확하다')");
+    			out.println("alert('비밀번호: "+pw+"')");
+    			
     			out.println("</script>");
     		}else{
     			//답변이 틀리다
@@ -100,7 +104,7 @@
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="mem_pw" name="mem_pw" class="form-control" maxlength="100" data-msg-required="Please enter your name."  placeholder="비밀번호" >
+                                    <input type="password" id="mem_pw" name="mem_pw" class="form-control" maxlength="100" data-msg-required="Please enter your name."  placeholder="비밀번호" >
            	
                                 	</div>
                                 	<div class="middleLeft_checkBox">
@@ -170,4 +174,4 @@
 </body>
 </html>
 
-<%@ include file="../../top_bottom/bottom.jsp"%>
+<%@ include file="../top_bottom/bottom.jsp"%>

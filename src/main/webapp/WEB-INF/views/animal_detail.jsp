@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../../top_bottom/top.jsp"%>
+<%@ include file="../top_bottom/top.jsp"%>
 
 	<!--start wrapper-->
 	<section class="wrapper">
@@ -112,4 +112,4 @@
 	</section>
 	<!--end wrapper-->
 
-<%@ include file="../../top_bottom/bottom.jsp"%>
+<%@ include file="../top_bottom/bottom.jsp"%>

@@ -48,4 +48,9 @@ public class MemberDAO {
 		return updateByDB;
 	}
 	
+	public String id_check(String id) {
+		String selectId = sqlSessionTemplate.selectOne("Member_ns.selectIdById", id);
+		return selectId;
+	}
+	
 }

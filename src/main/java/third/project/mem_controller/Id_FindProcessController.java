@@ -19,7 +19,7 @@ public class Id_FindProcessController {
 	@RequestMapping(value = "/id_findProcess", method = RequestMethod.GET)
 	public String id_findProcess(MemberBean mb,HttpServletRequest request) {
 		System.out.println("Id_FindProcessController.id_findProcess()");
-		System.out.println(mb);
+
 		String id = svc.execute(mb);
 
 		request.setAttribute("mem_id", id);

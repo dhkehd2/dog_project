@@ -2,5 +2,6 @@ eclipse.preferences.version=1
 encoding//sql/Member_tb.sql=UTF-8
 encoding//src/main/java/third/project/mem/svc/Pw_FindProcessSvc.java=UTF-8
 encoding//src/main/java/third/project/mem_controller/ListController.java=UTF-8
+encoding//src/main/java/third/project/mem_controller/Pw_FindProcessController.java=UTF-8
 encoding//src/main/java/third/project/mem_dao/MemberDAO.java=UTF-8
 encoding//src/main/webapp/resources/css/style.css=UTF-8

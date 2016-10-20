@@ -2144,6 +2144,13 @@ h4.comment-author a{color:#555}
     margin-right: 150px;
 }
 
+.middleLeft_margin {
+	position: relative;
+    text-align: center;
+    margin-left: 150px;
+
+}
+
 .middleLeft_checkBox {
 	position: relative;
     text-align: left;
@@ -2335,7 +2342,7 @@ a.back_home {
     margin-top:30px;
 
 }
-input[type="submit"]{color:#fff !important;}
+/* input[type="submit"]{color:#fff !important;} */
 
     /* Forms
 =========================== */
