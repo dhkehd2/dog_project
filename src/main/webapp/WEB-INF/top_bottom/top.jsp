@@ -89,7 +89,7 @@
 
                             <li class="active"><a href="#"><span class="data-hover" data-hover="animals">animals</span></a></li>
 
-                            <li><a href="faq.html"><span class="data-hover" data-hover="faq">faq</span></a></li>
+                            <li><a href="faq"><span class="data-hover" data-hover="faq">faq</span></a></li>
                                                          
                         </ul>
                     </div>
