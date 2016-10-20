@@ -17,6 +17,8 @@
 	String sido_code = (String) request.getAttribute("sido_code");//현재 페이지의 시도 코드
 	String sido_name = (String) request.getAttribute("sido_name");//현재 페이지의 시도 이름
 	String gungu_name = (String) request.getAttribute("gungu_name");//현재 페이지의 시군구 이름
+	
+	
 	String id = null;
 	String mem_checkId = (String)session.getAttribute("mem_checkId");
 	   if(mem_checkId != null ){

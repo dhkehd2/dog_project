@@ -79,6 +79,33 @@
 		});//-- end function(e)
 		
 	});
+	
+	function checkNumeric(){
+		
+		var id = document.getElementById('mem_id').value;
+		var pw = document.getElementById('mem_pw').value;
+		var name = document.getElementById('mem_name').value;
+		var tel = document.getElementById('mem_tel').value;
+		var email = document.getElementById('mem_email').value;
+		var add = document.getElementById('mem_add').value;
+		var bir = document.getElementById('mem_bir').value;
+		var gen = document.getElementById('mem_gen').value;
+		var answer = document.getElementById('mem_a').value;
+		var exp = document.getElementById('mem_exp').value;
+		
+		var ex_tel = /^\d{3}-\d{4}-\d{4}$/;
+		
+		if(tel.match(ex_tel)){
+			alert("전화번호 형식에 맞습니다.");
+			
+		}else{
+			alert("전화번호 형식에 맞지 않습니다.");
+			document.getElementById('mem_tel').focus();
+		}
+		
+		
+		//document.getElementById('contactForm').submit();
+	}; 
 	</script>
 </head>
 <body>
@@ -149,7 +176,7 @@
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="mem_email" name="mem_email" class="form-control" maxlength="100" data-msg-required="이메일 주소를 입력해주세요." value="" placeholder="이메일" >
+                                    <input type="email" id="mem_email" name="mem_email" class="form-control" maxlength="100" data-msg-required="이메일 주소를 입력해주세요." value="" placeholder="이메일" >
                                 	</div>
                                 </div>
                             </div>
@@ -166,7 +193,7 @@
                                 </div>
                                 <div class="col-lg-12 ">
                                     <div class="middle">
-                                    <input type="text" id="mem_bir" name="mem_bir" class="form-control" maxlength="100" data-msg-required="생년월일을 입력해주세요." value="" placeholder="생년월일" onchange="rearrange_bir()">
+                                    <input type="text" id="mem_bir" name="mem_bir" class="form-control" maxlength="100" data-msg-required="생년월일을 입력해주세요." value="" placeholder="생년월일" onchange="rearrange_bir()" readonly>
                                 	</div>
                                 </div>
                             </div>
@@ -176,8 +203,8 @@
                                 <div class="col-lg-12 ">
                                    <div class="expMiddle">
 	                                   <h3>성별을 체크해 주세요. &nbsp;
-		                                   <input type="radio" name="mem_gen" value="male">&nbsp;남성&nbsp;
-		                                   <input type="radio" name="mem_gen" value="female">&nbsp;여성
+		                                   <input type="radio" id="mem_gen" name="mem_gen" value="male">&nbsp;남성&nbsp;
+		                                   <input type="radio" id="mem_gen" name="mem_gen" value="female">&nbsp;여성
 	                                   </h3>
                                    </div>
                                 </div>
@@ -210,8 +237,8 @@
                                 <div class="col-lg-12 ">
                                    <div class="expMiddle">
 	                                   <h3>동물을 키워 본 경험이 있습니까? &nbsp;
-		                                   <input type="radio" name="mem_exp" value="yes">&nbsp;예&nbsp;
-		                                   <input type="radio" name="mem_exp" value="no">&nbsp;아니오
+		                                   <input type="radio" id="mem_exp" name="mem_exp" value="yes">&nbsp;예&nbsp;
+		                                   <input type="radio" id="mem_exp" name="mem_exp" value="no">&nbsp;아니오
 	                                   </h3>
                                    </div>
                                 </div>
@@ -220,7 +247,7 @@
                         <div class="row">
                             <div class="col-md-11 text-right">
                                 <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="회원가입"
-                                onclick="document.getElementById('contactForm').submit();">
+                                onclick="checkNumeric();">
                                 <input type="button" data-loading-text="Loading..." class="btn btn-default btn-lg" value="로그인 화면으로"
                                 onclick="location='login'">
                             </div>
