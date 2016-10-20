@@ -415,7 +415,7 @@ CREATE TABLE animals_info_tb(
 desertionNo VARCHAR2(100) PRIMARY KEY,
 filename VARCHAR2(800),
 happenDt VARCHAR2(100),
-happenPlace VARCHAR2(100),
+happenPlace VARCHAR2(800),
 kindCd VARCHAR2(100),
 colorCd VARCHAR2(100),
 age VARCHAR2(100),

@@ -22,17 +22,19 @@ public class Animal_info_insert {
 
 	// 유기동물 정보를 조회한다.
 	String abandonmentPublic = "http://openapi.animal.go.kr/openapi/service/rest/abandonmentPublicSrvc/abandonmentPublic?"
-			+ "bgnde=" + "20160301"// 유기날짜(검색시작일)
-			+ "&endde=" + "20160430"// 유기날짜(검색 종료일)
+			+ "bgnde=" + "20160101"// 유기날짜(검색시작일)
+			+ "&endde=" + "20161010"// 유기날짜(검색 종료일)
 			+ "&pageNo=" + "1" 
-			+ "&numOfRows=" + "500"// 검색수
+			+ "&numOfRows=" + "20000"// 검색수
 			+ "&ServiceKey=" + key;
 
 	@RequestMapping(value = "/animal_info_insert")
 	public String animal_info_insert() {
 
 		System.out.println("ListController.animal_info_insert()");
-
+		
+		dogDAO.animal_info_all_delete();
+		
 		XmlParsering xmlParsering = new XmlParsering();
 		List<AnimalInfo> list = null;
 		try {
