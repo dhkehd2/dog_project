@@ -101,12 +101,10 @@ public class ListController {
 				}
 			}
 		}
-		
-		
-		
-		System.out.println("현재 시도코드 : "+sido_code);
+				
+		/*System.out.println("현재 시도코드 : "+sido_code);
 		System.out.println("현재 시도이름 : "+sido_name);
-		System.out.println("현재 시군구 : "+gungu_name);
+		System.out.println("현재 시군구 : "+gungu_name);*/
 		
 		request.setAttribute("sido_code", sido_code);
 		request.setAttribute("sido_name", sido_name);
@@ -123,7 +121,7 @@ public class ListController {
 		//품종 전체 DB에서 가져옴
 		List<KindInfo> kindList = dogDAO.kind_list();
 		
-		System.out.println("현재견종 : "+now_kind);
+		//System.out.println("현재견종 : "+now_kind);
 		
 		request.setAttribute("kindList", kindList); //품종 리스트 전달
 		request.setAttribute("now_kind", now_kind);//현재 품종 전달
@@ -189,7 +187,7 @@ public class ListController {
 
  		if (endpage> maxpage) endpage= maxpage;
 		
- 		System.out.println("현제 페이지 번호 : "+nowpage);
+ 		//System.out.println("현제 페이지 번호 : "+nowpage);
  		
  		request.setAttribute("nowpage", nowpage); //현재 페이지 번호
  		request.setAttribute("maxpage", maxpage); //최대 페이지 번호

@@ -4,9 +4,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
-<%@ include file="../top_bottom/top.jsp"%>
-
 <%
 	int listcount = ((Integer) request.getAttribute("listcount")).intValue(); //동물 수
 	int nowpage = ((Integer) request.getAttribute("nowpage")).intValue();//현재페이지 수
@@ -18,14 +15,13 @@
 	String sido_name = (String) request.getAttribute("sido_name");//현재 페이지의 시도 이름
 	String gungu_name = (String) request.getAttribute("gungu_name");//현재 페이지의 시군구 이름
 	
-	
-	String id = null;
+
 	String mem_checkId = (String)session.getAttribute("mem_checkId");
 	   if(mem_checkId != null ){
 	      //아이디저장 체크시 쿠키에 저장
 	      if(mem_checkId.equals("on")){
 	         
-	         id = (String)session.getAttribute("mem_id");
+	    	 String id = (String)session.getAttribute("mem_id");
 	         Cookie cookie = new Cookie("mem_id", id);
 	         cookie.setMaxAge(60*60*24);
 	         response.addCookie(cookie);
@@ -42,8 +38,18 @@
 
 
 
-<%=(String)session.getAttribute("mem_id") %>
+<% 
+//now login ID
+String now_id = (String)session.getAttribute("mem_id"); 
+%>
 
+<%if(now_id.equals("admin")){ %>
+	<!-- admin top menu -->
+	<%@ include file="../top_bottom/admin_top.jsp"%>
+<%}else{ %>
+	<!-- normal top menu -->
+	<%@ include file="../top_bottom/top.jsp"%>
+<%} %>
 <br>
 
 <a href="info_up">회원정보수정</a>
@@ -58,11 +64,8 @@
 
 <br>
 
-<a href="animal_info_insert">동물 정보 DB저장</a>
 
-<br>
-
-
+<!-- 리스트 메인 영역 시작 -->
 <section class="wrapper">
 	<section class="page_head">
 		<div class="container">
@@ -215,6 +218,9 @@
 		</section>
 	</section>
 </section>
+<!-- 리스트 메인 영역 끝 -->
+
+
 <script type="text/javascript" src="./resources/js/jquery-1.10.2.min.js"></script>
 <script src="./resources/js/bootstrap.min.js"></script>
 <script src="./resources/js/jquery.easing.1.3.js"></script>

@@ -36,4 +36,9 @@ public class DogDAO {
 
 	}
 	
+	public void animal_info_all_delete(){//동물 정보 전체 삭제
+		System.out.println("animal_info_all_delete()");
+		sqlSessionTemplate.delete("AnimalInfo_ns.deleteAllInfo");
+	}
+	
 }

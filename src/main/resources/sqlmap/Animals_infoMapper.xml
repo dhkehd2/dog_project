@@ -55,6 +55,11 @@
 		where desertionNo=#{desertionNo}
 	</select>
 	
+	<!-- 동물정보 지우기 -->
+	<delete id="deleteAllInfo">
+		delete from animals_info_tb
+	</delete>
+	
 	<!-- 동물정보 DB insert -->
 	<insert id="insertAnimalInfo" parameterType="AnimalInfo">
 	<!-- <selectKey keyProperty="desertionNo"> #{desertionNo} </selectKey> -->
