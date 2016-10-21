@@ -28,16 +28,16 @@ public class Pw_FindProcessSvc {
 		return mbByDB;
 	}
 
-	public boolean isEqualAndPassEmail(String a, String b) {
+	public boolean isEqualAndPassEmail(String a, String b,String mem_pw,String mem_email) {
 		boolean res;
 
 		if (a.equals(b)) {
-			// �듬� �쇱���誘�濡� 鍮�諛�踰��� �대��쇰� 蹂대�대�� 肄��� ����
+			// 비밀번호가 일치하므로 비밀번호를 메일로 보내준다.
 			MimeMessage msg = mailSender.createMimeMessage();
 			try{
-				msg.setSubject("hahaha");
-				msg.setText("hihi");
-				msg.setRecipient(RecipientType.TO, new InternetAddress("gogoy2643@naver.com"));
+				msg.setSubject("Password");
+				msg.setText("Your Password : "+ mem_pw);
+				msg.setRecipient(RecipientType.TO, new InternetAddress(mem_email));
 			}catch(Exception e){
 				
 			}
@@ -45,7 +45,7 @@ public class Pw_FindProcessSvc {
 			mailSender.send(msg);
 			res = true;
 		} else {
-			// �듬� 遺��쇱���誘�濡� 鍮�諛�踰��몃�� �대��쇰� 蹂대�댁� ������.
+			// 비밀버호가 불일치하므로 메일로 보낼 필요가 없다.
 			res = false;
 		}
 

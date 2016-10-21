@@ -73,6 +73,7 @@
 						var html = '';
 		                html += '<input type="hidden" id="cli_a" name="cli_a" value="'+respdata.mem_a+'">';
 		                html += '<input type="hidden" id="mem_pw" name="mem_pw" value="'+respdata.mem_pw+'">';
+		                html += '<input type="hidden" id="mem_email" name="mem_email" value="'+respdata.mem_email+'">';
 		                $("#hidden").append(html);
 					}else{
 						alert('다시 입력해주세요')
