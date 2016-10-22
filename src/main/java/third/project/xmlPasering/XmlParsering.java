@@ -94,9 +94,13 @@ public class XmlParsering {
  
         for(int i=0; i<descNodes.getLength();i++){
  
+<<<<<<< HEAD
 
             for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ 
 
+=======
+            for(Node node = descNodes.item(i).getFirstChild(); node!=null; node=node.getNextSibling()){ //첫占쏙옙째 占쌘쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
+>>>>>>> c9a9c12229c5df631f2f264b98e1c38089e97b44
  
                 if(node.getNodeName().equals("careNm")){
                     System.out.println(node.getTextContent());

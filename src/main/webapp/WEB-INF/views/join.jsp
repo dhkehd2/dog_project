@@ -34,7 +34,8 @@
 		         changeMonth: true, 
 		         changeYear: true,
 		         nextText: '다음 달',
-		         prevText: '이전 달' 
+		         prevText: '이전 달',
+		         yearRange: 'c-100:c+0'
 		  });
 		});
 	

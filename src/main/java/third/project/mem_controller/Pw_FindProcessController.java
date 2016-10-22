@@ -31,11 +31,11 @@ public class Pw_FindProcessController {
 	
 	//�ъ�⑹�� �듬� 留���吏� ���명���� 而⑦�몃·��
 	@RequestMapping(value = "/pw_findProcess_final", method = RequestMethod.GET)
-	public String isCorrectAnswer(String mem_a,String cli_a,String mem_pw, HttpServletRequest request) {
+	public String isCorrectAnswer(String mem_a,String cli_a,String mem_pw,String mem_email, HttpServletRequest request) {
 		System.out.println("Pw_FindProcessController.isCorrectAnswer()");
 		
 		
-		boolean isEqual = svc.isEqualAndPassEmail(mem_a, cli_a);
+		boolean isEqual = svc.isEqualAndPassEmail(mem_a, cli_a,mem_pw,mem_email);
 		
 		request.setAttribute("isCorrectAnswer", new Boolean(isEqual));
 		
