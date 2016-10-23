@@ -26,7 +26,7 @@ public class SampleController {
 	public String sample(Locale locale, Model model) {
 
 		System.out.println("SampleController.sample()");
-		return "sample";
+		return "test";
 	}
 	
 }

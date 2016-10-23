@@ -2,16 +2,22 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../top_bottom/top.jsp"%>
 
-
-
 	<!--start wrapper-->
 	<section class="wrapper">
 		<section class="page_head">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12">
+						<nav id="breadcrumbs">
+							<ul>
+
+								<li><a href="index.html">Home</a></li>
+								<li>Portfolio</li>
+							</ul>
+						</nav>
+
 						<div class="page_title">
-							<h2>동물 상세정보</h2>
+							<h2>Portfolio single</h2>
 						</div>
 					</div>
 				</div>
@@ -106,4 +112,37 @@
 	</section>
 	<!--end wrapper-->
 
+	
+
+	<script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/jquery.easing.1.3.js"></script>
+	<script src="resources/js/retina-1.1.0.min.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.cookie.js"></script>
+	<!-- jQuery cookie -->
+	<script type="text/javascript" src="resources/js/styleswitch.js"></script>
+	<!-- Style Colors Switcher -->
+	<script type="text/javascript"
+		src="resources/js/jquery.smartmenus.min.js"></script>
+	<script type="text/javascript"
+		src="resources/js/jquery.smartmenus.bootstrap.min.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.jcarousel.js"></script>
+	<script type="text/javascript" src="resources/js/jflickrfeed.js"></script>
+	<script type="text/javascript"
+		src="resources/js/jquery.magnific-popup.min.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.isotope.min.js"></script>
+	<script type="text/javascript" src="resources/js/swipe.js"></script>
+	<script type="text/javascript"
+		src="resources/js/jquery-scrolltofixed-min.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="resources/js/view.contact.js"></script>
+	<script type="text/javascript" src="resources/js/jquery.gmap.js"></script>
+
+	<script src="js/main.js"></script>
+
+	<!-- Start Style Switcher -->
+	<div class="switcher"></div>
+	<!-- End Style Switcher -->
+</body>
+</html>
 <%@ include file="../top_bottom/bottom.jsp"%>

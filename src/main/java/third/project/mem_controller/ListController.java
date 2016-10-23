@@ -187,7 +187,7 @@ public class ListController {
 
  		if (endpage> maxpage) endpage= maxpage;
 		
- 		//System.out.println("현제 페이지 번호 : "+nowpage);
+ 		System.out.println("현제 페이지 번호 : "+nowpage);
  		
  		request.setAttribute("nowpage", nowpage); //현재 페이지 번호
  		request.setAttribute("maxpage", maxpage); //최대 페이지 번호

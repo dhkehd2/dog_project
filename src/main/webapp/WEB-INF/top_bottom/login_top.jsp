@@ -25,31 +25,11 @@
     <div class="header-top">
         <div class="container">
             <div class="row">
-                <div class="hidden-xs col-lg-7 col-sm-5 top-info">
-                    
-                    <a href="#"><span style="color: white;"><i class="fa fa-desktop"><strong> my page</strong></i></span></a>
-                    
 
-                </div>
                 
                 <!-- 페이스북, 트위터, 구글 등 사이트 이동 -->
                 <div class="col-lg-5 col-sm-7 top-info clearfix">
-                    <ul>
-                        <li><a class="my-facebook" href=""><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="my-tweet" href=""><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="my-pint" href=""><i class="fa fa-pinterest"></i></a></li>
-                        <li><a class="my-rss" href=""><i class="fa fa-rss"></i></a></li>
-                        <li><a class="my-skype" href=""><i class="fa fa-skype"></i></a></li>
-                        <li><a class="my-google" href=""><i class="fa fa-google-plus"></i></a></li>
-                        <li>
-                            <form class="search-bar">
-                                <label for="search" class="search-label">
-                                    <button class="search-button"><i class="fa fa-search"></i></button><!-- Fix the break-row-bug
-                                    --><input type="text" id="search" class="search-input" />
-                                </label>
-                            </form>
-                        </li>
-                    </ul>
+                   
                 </div>
             </div>
         </div>
@@ -78,17 +58,7 @@
                     <!-- 홈화면 이동 -->
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                        	<!-- data-hover 속성도 같이 바꾸어 주어야함 -->
-          
-                            <li><a href="#" ><span class="data-hover" data-hover="shelters">shelter</span></a>
-                                <ul class="dropdown-menu">
-                                   <li><a href="#">shelter 1</a></li>
-                                   <li><a href="#">shelter 2</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="active"><a href="#"><span class="data-hover" data-hover="animals">animals</span></a></li>
-
+ 
                             <li><a href="faq.html"><span class="data-hover" data-hover="faq">faq</span></a></li>
                                                          
                         </ul>

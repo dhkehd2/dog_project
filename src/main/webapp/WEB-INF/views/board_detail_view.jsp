@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ include file="../top_bottom/top.jsp"%>
-
-<body>
-
+<%@ page import="third.project.board_bean.*" %>
+<%
+	BoardBean board = (BoardBean)request.getAttribute("board");
+%>
 
 	<!--start wrapper-->
 	<section class="wrapper">
@@ -12,95 +12,90 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						<div class="page_title">
-							<h2>입양신청</h2>
-							<!--<span class="sub_heading">We are here for you 24/7</span>-->
+							<h2>신청상세</h2>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="content contact">
+		<section class="content portfolio_single">
 			<div class="container">
-				<p><h2>유기견 입양 신청서 양식 입니다. 빠짐없이 작성해 주세요.</h2></p>
 				<div class="row sub_content">
 					<div class="col-lg-12 col-md-12 col-sm-12">
-						
-
-					<%-- <form id="contactForm" action="adoption_req_send" novalidate="novalidate">
+					
+						<!-- <form id="contactForm" action="" novalidate="novalidate">
 
                             <div class="row">
                                 <div class="form-group">
-                                	<!-- 제목 -->
+                                	제목
                                		<div class="col-lg-6 ">
                                         <input type="text" id="BOARD_SUBJECT" name="BOARD_SUBJECT" class="form-control" maxlength="100" value="" placeholder="제목" >
                                     </div>
                                     
-                                    <!-- 신청자 아이디 -->
+                                    신청자 아이디
                                     <div class="col-lg-6 ">
-                                        <input type="text" id="BOARD_ID" name="BOARD_ID" class="form-control" maxlength="100" value="${now_id}" placeholder="신청자 아이디" >
+                                        <input type="text" id="BOARD_ID" name="BOARD_ID" class="form-control" maxlength="100" value="" placeholder="신청자 아이디" >
                                     </div>
                                     
-                                    <!-- 이메일 -->
+                                    이메일
                                     <div class="col-lg-6 ">
                                         <input type="email" id="BOARD_EMAIL" name="BOARD_EMAIL" class="form-control" maxlength="100" value="" placeholder="E-mail" >
                                     </div>
                                     
-                                    <!-- 전화번호 -->
+                                    전화번호
                                     <div class="col-lg-6 ">
                                         <input type="text" id="BOARD_TEL" name="BOARD_TEL" class="form-control" maxlength="100" value="" placeholder="전화번호" >
                                     </div>
                                     
-                                    <!-- 입양지역 -->
+                                    입양지역
                                     <div class="col-lg-6 ">
                                         <input type="text" id="BOARD_ARAE" name="BOARD_ARAE" class="form-control" maxlength="100" value="" placeholder="입양지역" >
                                     </div>
                                     
-                                    <!-- 유기번호 -->
+                                    입양지역
                                     <div class="col-lg-6 ">
-                                        <input type="text" id="BOARD_desertionNo" name="BOARD_desertionNo" class="form-control" maxlength="100" value="${num}" placeholder="유기번호" >
+                                        <input type="text" id="BOARD_desertionNo" name="BOARD_desertionNo" class="form-control" maxlength="100" value="" placeholder="유기번호" >
                                     </div>
-                                    <!-- 보육 환경 -->   
-                            <div class="col-lg-6">
-								<div class="widget_title">
-									<h4>
-										<span>보육 환경</span>
-									</h4>
-								</div>
-							</div>	                  
-                            <div class="col-lg-6">
-                               <textarea id="BOARD_HOW" class="form-control" name="BOARD_HOW" rows="10" cols="50" maxlength="5000" placeholder="보육환경">
-                                        
-                               </textarea>
-    						</div>
+                                </div>
+                            </div>
                             
-                            <!-- 신청 이유 -->
-                            <div class="col-lg-6">
-								<div class="widget_title">
-									<h4>
-										<span>신청 이유</span>
-									</h4>
-								</div>
-							</div>	
-                            <div class="col-lg-6">
-                                <textarea id="BOARD_WHY" class="form-control" name="BOARD_WHY" rows="10" cols="50" maxlength="5000" placeholder="신청이유">
+                            보육환경                          
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                    
+                                        <textarea id="BOARD_HOW" class="form-control" name="BOARD_HOW" rows="10" cols="50" maxlength="5000" placeholder="보육환경">
                                         
-                                </textarea>
-							</div>
+                                        </textarea>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            신청 이유
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                       
+                                        <textarea id="BOARD_WHY" class="form-control" name="BOARD_WHY" rows="10" cols="50" maxlength="5000" placeholder="신청이유">
+                                        
+                                        </textarea>
+
+                                    </div>
+                                </div>
+                            </div>
                             
                             <div class="row">
                                 <div class="col-md-12">
-                                    <input type="submit" class="btn btn-default btn-lg" value="신청하기">
+                                    <input type="submit" data-loading-text="Loading..." class="btn btn-default btn-lg" value="수정하기">
                                 </div>
                             </div>
-                                    
-                          </div>
-                        </div>
-                      </form> --%>
-					
-					<form action="adoption_req_send" >
-											
-						제목 <input class="col-lg-6" type="text" id="BOARD_SUBJECT" name="BOARD_SUBJECT" >
+						</form> -->
+						
+				<%-- 	<form action="adoption_req_send">
+												
+						제목 <input type="text" id="BOARD_SUBJECT" name="BOARD_SUBJECT" >
 						<br>
 						신청자 아이디 <input type="text" id="BOARD_ID" name="BOARD_ID" value="${now_id}">
 						<br>
@@ -118,19 +113,60 @@
 						입양신청이유<textarea id="BOARD_WHY" class="form-control" name="BOARD_WHY"></textarea>
 						<br>
 						<input type="submit" value="신청하기">
+					</form> --%>
 						
-					</form>
 					
+						<div class="project_details">
+							<div class="widget_title">
+								<h4>
+									<span><%=board.getBOARD_SUBJECT() %></span>
+								</h4>
+							</div>
+							<ul class="details">
+								<li><span>신청아이디 :</span><%=board.getBOARD_ID() %></li>
+								<li><span>이메일 :</span> <%=board.getBOARD_EMAIL() %></li>
+								<li><span>전화번호 :</span> <%=board.getBOARD_TEL() %></li>
+								<li><span>신청시간 :</span> <%=board.getBOARD_DAY() %></li>
+								<li><span>신청지역 :</span> <%=board.getBOARD_ARAE() %></li>
+								<li><span>유기번호 :</span> <%=board.getBOARD_desertionNo() %></li>
+							</ul>
+						</div>
+						
+						<div class="project_description">
+							<div class="widget_title">
+								<h4>
+									<span>보유환경</span>
+								</h4>
+							</div>
+
+							<p><%=board.getBOARD_HOW()%></p>
+							
+						</div>
+						
+						<div class="project_description">
+							<div class="widget_title">
+								<h4>
+									<span>신청이유</span>
+								</h4>
+							</div>
+
+							<p><%=board.getBOARD_WHY() %></p>
+							
+						</div>
+						
+						<a href="board_up?BOARD_NUM=<%=board.getBOARD_NUM() %>" class="btn btn-default btn-lg">수정하러가기</a>
+						
+						<a href="board_delete?BOARD_NUM=<%=board.getBOARD_NUM() %>" class="btn btn-default btn-lg">신청취소</a>
+						
+						<a href="my_adoption_list" class="btn btn-default btn-lg">신청 리스트로 이동</a>
+						
 					</div>
 				</div>
 			</div>
+			
 		</section>
 	</section>
 	<!--end wrapper-->
-
-
-
-
 
 	<script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>

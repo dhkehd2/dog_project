@@ -8,7 +8,8 @@
 		<typeAlias type="third.project.dog.bean.KindInfo" alias="KindInfo" />
 		
 		<typeAlias type="third.project.bean.MemberBean" alias="MemberBean" />
-		<typeAlias type="third.project.send.bean.SendInfo" alias="SendInfo" />
+		
+		<typeAlias type="third.project.board_bean.BoardBean" alias="BoardBean" />
 	</typeAliases>
 
 	<!-- 환경 구성 -->

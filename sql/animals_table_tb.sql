@@ -442,19 +442,26 @@ select * from animals_info_tb;
 delete from animals_info_tb;
 drop table animals_info_tb;
 
--- ------------------------------------------------이 이후로 아직 만들면 안됨
-create table tblBoard(
-SEQ NUMBER  primary key,
-TITLE VARCHAR2(200),
-CONTENT VARCHAR2(2000),
-WRITER VARCHAR2(100),
-REGDATE VARCHAR2(14),
-HITCOUNT NUMBER,
-PASSWORD VARCHAR2(10),
-bref number DEFAULT 0, --참조원글번호
-bstep number DEFAULT 0,--글순번
-blevel number DEFAULT 0,--글 들여쓰기 수준
-uploadPath VARCHAR2(100)
+-- ------------------------------------------------[입양신청테이블]
+CREATE TABLE BOARD_TB(
+	BOARD_NUM NUMBER,--글번호
+	BOARD_SUBJECT VARCHAR2(100),--제목
+	BOARD_ID VARCHAR2(20),--아이디
+	BOARD_EMAIL VARCHAR2(80),--이메일
+	BOARD_TEL VARCHAR2(20),--전화번호
+	BOARD_ARAE VARCHAR2(800), --입양지역
+	BOARD_desertionNo VARCHAR2(100), --유기번호
+	BOARD_HOW Clob,--보육환경 설명
+	BOARD_WHY Clob,--입양신청 이유
+
+	BOARD_RE_REF NUMBER DEFAULT 0,--참조되는 글 번호
+	BOARD_RE_LEV NUMBER DEFAULT 0,--들여쓰기 수준
+	BOARD_RE_SEQ NUMBER DEFAULT 0,-- 글 순번
+	BOARD_READCOUNT NUMBER DEFAULT 0,--조회수
+	BOARD_DAY VARCHAR2(50), --날짜
+	PRIMARY KEY(BOARD_NUM)
 );
 -- 글번호 SEQ
 create sequence seq_board;
+
+DROP sequence seq_board;

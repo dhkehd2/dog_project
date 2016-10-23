@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="hidden-xs col-lg-7 col-sm-5 top-info">
                     <a href="logout_process"><span style="color: white;"><i class="fa fa-sign-out"><strong> logout</strong></i></span></a>
-                    <a href="#"><span style="color: white;"><i class="fa fa-desktop"><strong> my page</strong></i></span></a>
+                    <a href="myPage"><span style="color: white;"><i class="fa fa-desktop"><strong> my page</strong></i></span></a>
                     
 
                 </div>
@@ -80,19 +80,12 @@
                         <ul class="nav navbar-nav">
                         	<!-- data-hover 속성도 같이 바꾸어 주어야함 -->
           
-                            <li><a href="#" ><span class="data-hover" data-hover="shelters">shelter</span></a>
-                                <ul class="dropdown-menu">
-                                   <li><a href="#">shelter 1</a></li>
-                                   <li><a href="#">shelter 2</a></li>
-                                </ul>
-                            </li>
-
-                             <li><a href="list"><span class="data-hover" data-hover="animals">animals</span></a></li>
+                            <li><a href="list"><span class="data-hover" data-hover="animals">animals</span></a></li>
 
                             <li><a href="faq"><span class="data-hover" data-hover="faq">faq</span></a></li>
                             
                             <!-- animal List Update -->
-                            <li><a href="animal_info_insert"><span class="data-hover" data-hover="UpdateList">UpdateList</span></a></li>
+                            <!-- <li><a href="animal_info_insert"><span class="data-hover" data-hover="UpdateList">UpdateList</span></a></li> -->
                                                          
                         </ul>
                     </div>

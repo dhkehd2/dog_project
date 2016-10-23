@@ -1,32 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page import="java.util.*"%>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="third.project.board_bean.*" %>
+
 <%@ include file="../top_bottom/top.jsp"%>
-<!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" class="no-js" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Edge Responsive Multipurpose Template</title>
-	<meta name="description" content="">
 
-    <!-- CSS FILES -->
-    <link rel="stylesheet" href="resources/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="resources/css/style.css">
-    <link rel="stylesheet" type="text/css" href="resources/css/style.css" media="screen" data-name="skins">
-    <link rel="stylesheet" href="resources/css/layout/wide.css" data-name="layout">
+<%
+	List board_List=(List)request.getAttribute("board_List");//글 목록 리스트
+	int listcount=((Integer)request.getAttribute("listcount")).intValue(); //글 수
+	int nowpage=((Integer)request.getAttribute("page")).intValue();//현재페이지 수
+	int maxpage=((Integer)request.getAttribute("maxpage")).intValue();//최대 페이지 수
+	int startpage=((Integer)request.getAttribute("startpage")).intValue();//현재 페이지에 표시할 첫 페이지 수
+	int endpage=((Integer)request.getAttribute("endpage")).intValue(); //현재 페이지에 표시할 끝 페이지 수
+%>
 
-    <link rel="stylesheet" type="text/css" href="css/switcher.css" media="screen" />
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
 <body>
 	<!--start wrapper-->
 	<section class="wrapper">
@@ -34,15 +23,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                   <nav id="breadcrumbs">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li>Pages</li>
-                        </ul>
-                    </nav>
+
 
                     <div class="page_title">
-                        <h2>MY PAGE</h2>
+                        <h2>입양신청 내역</h2>
                     </div>
                 </div>
             </div>
@@ -54,7 +38,7 @@
         <div class="row sub_content">
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="dividerHeading">
-                    <h4><span>입양신청내역</span></h4>
+                    <h4><span>목록</span></h4>
                 </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -62,6 +46,7 @@
 	                <table class="table table-striped table-hover">
 	                    <thead>
 	                    <tr>
+	                        
 	                        <th>번호</th>
 	                        <th>제목</th>
 	                        <th>날짜</th>
@@ -69,45 +54,91 @@
 	                    </tr>
 	                    </thead>
 	                    <tbody>
-	                    <tr>
-	                        <td>1</td>
-	                        <td><a href="index.html">The Shawshank Redemption</a></td>
-	                        <td>1994</td>
-	                       
-	                    </tr>
-	                    <tr>
-	                        <td>2</td>
-	                        <td>The Godfather</td>
-	                        <td>1972</td>
-	                       
-	                    </tr>
-	                    <tr>
-	                        <td>3</td>
-	                        <td>The Godfather: Part II</td>
-	                        <td>1974</td>
+	                    
+	                    <% 
+						for(int i=0;i<board_List.size();i++){
+						BoardBean board=(BoardBean)board_List.get(i);
+						%>
+	                    	
+	                    	<tr>
 	                        
-	                    </tr>
-	                    <tr>
-	                        <td>4</td>
-	                        <td>Pulp Fiction</td>
-	                        <td>1994</td>
+	                        <!-- 글번호 -->
+	                         <td><%=i+1 %></td>
+	                       <%--  <td><%=board.getBOARD_NUM() %></td> --%>
 	                        
-	                    </tr>
-	                    <tr>
-	                        <td>5</td>
-	                        <td>The Good, the Bad and the Ugly</td>
-	                        <td>1966</td>
+	                        <!-- 제목 -->
+	                        <td>
+	                        
+	                        <%if(board.getBOARD_RE_LEV()!=0){//댓글일 시? %>
+								<%for(int a=0;a<=board.getBOARD_RE_LEV()*2;a++){//댓글에 댓글일 수 록 더많이 들여쓰기 %>
+								&nbsp;&nbsp;
+								<%} %>
+							▶
+							<%}else{ %>
+							▶
+							<%} %>
+							<!-- 컨트롤러에 넘겨주었는데 못받음 -->
+	                        <a href="board_detail?BOARD_NUM=<%=board.getBOARD_NUM() %>"><%=board.getBOARD_SUBJECT() %></a>
 	                       
-	                    </tr>
+	                        </td>
+	                        
+	                        <!-- 날짜 -->
+	                        <td><%=board.getBOARD_DAY() %></td>
+	                       
+	                   		</tr>
+	                    <%} %>	
+	                    <%-- </c:forEach> --%>
+	                      
 	                    </tbody>
 	                </table>
                 </div>
             </div>
+            
+            	<!-- 페이징 시작 -->
+				<div class="col-sm-12 text-center">
+	
+					<ul class="pagination">
+		
+						<%if(nowpage<=1){ %>
+							<li><a>[이전]</a></li>
+						<%}else{%>
+							<li>
+							<a href="./my_adoption_list?page=<%=nowpage-1 %>">[이전]</a>&nbsp;
+							</li>
+						<%} %>
+			
+						<%for(int a=startpage;a<=endpage;a++){%>
+				
+							<%if(a==nowpage){%>
+								<li class="active">
+								<a>[<%=a %>]</a>
+								</li>
+							<%}else{%>
+								<li>
+								<a href="./my_adoption_list?page=<%=a %>">[<%=a %>]</a>&nbsp;
+								</li>
+							<%} %>
+						<%} %>
+			
+						<%if(nowpage>=maxpage){ %>
+							<li><a>[다음]</a></li>
+						<%}else{ %>	
+							<li>
+							<a href="./my_adoption_list?page=<%=nowpage+1 %>">[다음]</a>
+							</li>
+						<%} %>
+						
+					</ul>
+							
+				</div>
+				<!-- 페이징 끝-->
+            
+            
+            
         </div> <!--./row-->
         </div>
         </section>
-           
-	
+
 </body>
 </html>
 <%@ include file="../top_bottom/bottom.jsp"%>
