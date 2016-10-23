@@ -18,11 +18,11 @@ public class sendController {
 	SendDAO sendDAO;
 	
 	@RequestMapping(value = "/adoption_req_send", method = RequestMethod.GET)
-	public void send(SendInfo si) {
+	public void send(SendInfo sendInfo) {
 	
 		System.out.println("sendController.inputsend sql(si)");
-		 //sendDAO.inputsend(si);
-		 System.out.println(si);
+		 //sendDAO.inputsend(sendInfo);
+		 System.out.println(sendInfo);
 		
 	}
 }
