@@ -158,7 +158,7 @@
 						
 						<a href="board_delete?BOARD_NUM=<%=board.getBOARD_NUM() %>" class="btn btn-default btn-lg">신청취소</a>
 						
-						<a href="my_adoption_list" class="btn btn-default btn-lg">신청 리스트로 이동</a>
+						<a href="my_adoption_list?now_id=<%=board.getBOARD_ID() %>" class="btn btn-default btn-lg">신청 리스트로 이동</a>
 						
 						<a href="reple_form?BOARD_NUM=<%=board.getBOARD_NUM() %>" class="btn btn-default btn-lg">답변</a>
 						

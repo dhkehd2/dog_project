@@ -27,7 +27,7 @@
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						
 						
-						<form action="adoption_req_up">
+						<form action="adoption_req_send">
 						
 						<input type="hidden" id="BOARD_NUM" name="BOARD_NUM" value="${board.BOARD_NUM }">
 												
@@ -48,11 +48,11 @@
 						<br>
 						입양신청이유<textarea id="BOARD_WHY" class="form-control" name="BOARD_WHY">${board.BOARD_WHY}</textarea>
 						<br>
-						<input class="btn btn-default btn-lg" type="submit" value="수정하기">
+						<input class="btn btn-default btn-lg" type="submit" value="답변달기">
 						
 						</form>
 						
-						<a href="list" class="btn btn-default btn-lg">취소하기</a>
+						<a href="my_adoption_list?now_id=<%=board.getBOARD_ID() %>" class="btn btn-default btn-lg">취소하기</a>
 						
 					</div>
 				</div>
