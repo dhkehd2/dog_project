@@ -76,15 +76,16 @@ String now_id = (String)session.getAttribute("mem_id");
 					</form>
 					
 					<section class="page_head">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12">
-						<div class="page_title">
-							<h2>현재 검색 : 종류 : ${now_kind} 시도 : ${sido_name} 군구 :  ${gungu_name}</h2>
+			<div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="project_description">
+						<div class="widget_title">
+							<h4>
+								<span>종류 : ${now_kind} 시도 : ${sido_name} 군구 :  ${gungu_name}</span>
+							</h4>
 						</div>
 					</div>
-				</div>
 			</div>
+			
 		</section>
 					
 					
