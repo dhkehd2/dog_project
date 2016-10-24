@@ -31,22 +31,22 @@
 						
 						<input type="hidden" id="BOARD_NUM" name="BOARD_NUM" value="${board.BOARD_NUM }">
 												
-						제목 <input type="text" id="BOARD_SUBJECT" name="BOARD_SUBJECT" value="${board.BOARD_SUBJECT}">
+						제목 <input class="form-control" type="text" id="BOARD_SUBJECT" name="BOARD_SUBJECT" value="${board.BOARD_SUBJECT}">
 						<br>
-						신청자 아이디 <input type="text" id="BOARD_ID" name="BOARD_ID" value="${board.BOARD_ID}">
+						신청자 아이디 <input class="form-control" type="text" id="BOARD_ID" name="BOARD_ID" value="${board.BOARD_ID}">
 						<br>
-						e-mail <input type="email" id="BOARD_EMAIL" name="BOARD_EMAIL" value="${board.BOARD_EMAIL}">
+						e-mail <input class="form-control" type="email" id="BOARD_EMAIL" name="BOARD_EMAIL" value="${board.BOARD_EMAIL}">
 						<br>
-						전화번호 <input type="text" id="BOARD_TEL" name="BOARD_TEL" value="${board.BOARD_TEL}">
+						전화번호 <input class="form-control" type="text" id="BOARD_TEL" name="BOARD_TEL" value="${board.BOARD_TEL}">
 						<br>
-						입양지역 <input type="text" id="BOARD_ARAE" name="BOARD_ARAE" value="${board.BOARD_ARAE}">
+						입양지역 <input class="form-control" type="text" id="BOARD_ARAE" name="BOARD_ARAE" value="${board.BOARD_ARAE}">
 						<br>
-						유기번호 <input type="text" id="BOARD_desertionNo" name="BOARD_desertionNo" value="${board.BOARD_desertionNo}">
+						유기번호 <input class="form-control" type="text" id="BOARD_desertionNo" name="BOARD_desertionNo" value="${board.BOARD_desertionNo}">
 						<br>
-						보육환경을 설명해주세요. <textarea id="BOARD_HOW" class="form-control" name="BOARD_HOW">${board.BOARD_HOW}</textarea>
+						보육환경을 설명해주세요. <textarea class="form-control" id="BOARD_HOW" class="form-control" name="BOARD_HOW">${board.BOARD_HOW}</textarea>
 						
 						<br>
-						입양신청이유<textarea id="BOARD_WHY" class="form-control" name="BOARD_WHY">${board.BOARD_WHY}</textarea>
+						입양신청이유<textarea class="form-control" id="BOARD_WHY" class="form-control" name="BOARD_WHY">${board.BOARD_WHY}</textarea>
 						<br>
 						<input class="btn btn-default btn-lg" type="submit" value="수정하기">
 						

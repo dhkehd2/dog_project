@@ -31,11 +31,9 @@
 					
 					<form action="adoption_req_send" >
 											
-<<<<<<< HEAD
+
 						제목 <input class="form-control" type="text" id="BOARD_SUBJECT" name="BOARD_SUBJECT" >
-=======
-						제목 <input type="text" id="BOARD_SUBJECT" name="BOARD_SUBJECT" >
->>>>>>> 2587cfcede94ca4729584280808c9444f9785e4d
+
 						<br>
 						신청자 아이디 <input class="form-control" type="text" id="BOARD_ID" name="BOARD_ID" value="${now_id}">
 						<br>

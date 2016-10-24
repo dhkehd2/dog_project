@@ -25,13 +25,15 @@ public class Animal_info_insert {
 			+ "bgnde=" + "20160101"// 유기날짜(검색시작일)
 			+ "&endde=" + "20161010"// 유기날짜(검색 종료일)
 			+ "&pageNo=" + "1" 
-			+ "&numOfRows=" + "30000"// 검색수
+			+ "&numOfRows=" + "20000"// 검색수
 			+ "&ServiceKey=" + key;
 
 	@RequestMapping(value = "/animal_info_insert")
 	public String animal_info_insert() {
 
 		System.out.println("ListController.animal_info_insert()");
+		
+		System.out.println("[업데이트 중입니다. 기다려 주세요]");
 		
 		dogDAO.animal_info_all_delete();
 		
@@ -42,6 +44,8 @@ public class Animal_info_insert {
 		} catch (Exception e) {
 			System.out.println("리스트 못 받아옴");
 		}
+		
+		System.out.println("[업데이트 완료]");
 		System.out.println("받아온 list 사이즈 : "+list.size());
 		System.out.println("====================================");
 				
