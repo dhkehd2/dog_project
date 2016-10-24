@@ -1,73 +1,66 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page import="third.project.board_bean.*" %>
+<%
+	BoardBean board = (BoardBean)request.getAttribute("board");
+%>
 <%@ include file="../top_bottom/top.jsp"%>
 
-<body>
-
-
-	<!--start wrapper-->
+					
+					
+<!--start wrapper-->
 	<section class="wrapper">
 		<section class="page_head">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						<div class="page_title">
-							<h2>입양신청</h2>
-							<!--<span class="sub_heading">We are here for you 24/7</span>-->
+							<h2>신청수정</h2>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="content contact">
+		<section class="content portfolio_single">
 			<div class="container">
-				<p><h2>유기견 입양 신청서 양식 입니다. 빠짐없이 작성해 주세요.</h2></p>
 				<div class="row sub_content">
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						
-
-					
-					
-					<form action="adoption_req_send" >
-											
-<<<<<<< HEAD
-						제목 <input class="form-control" type="text" id="BOARD_SUBJECT" name="BOARD_SUBJECT" >
-=======
-						제목 <input type="text" id="BOARD_SUBJECT" name="BOARD_SUBJECT" >
->>>>>>> 2587cfcede94ca4729584280808c9444f9785e4d
+						
+						<form action="adoption_req_up">
+						
+						<input type="hidden" id="BOARD_NUM" name="BOARD_NUM" value="${board.BOARD_NUM }">
+												
+						제목 <input type="text" id="BOARD_SUBJECT" name="BOARD_SUBJECT" value="${board.BOARD_SUBJECT}">
 						<br>
-						신청자 아이디 <input class="form-control" type="text" id="BOARD_ID" name="BOARD_ID" value="${now_id}">
+						신청자 아이디 <input type="text" id="BOARD_ID" name="BOARD_ID" value="${board.BOARD_ID}">
 						<br>
-						e-mail <input class="form-control" type="email" id="BOARD_EMAIL" name="BOARD_EMAIL">
+						e-mail <input type="email" id="BOARD_EMAIL" name="BOARD_EMAIL" value="${board.BOARD_EMAIL}">
 						<br>
-						전화번호 <input class="form-control" type="text" id="BOARD_TEL" name="BOARD_TEL">
+						전화번호 <input type="text" id="BOARD_TEL" name="BOARD_TEL" value="${board.BOARD_TEL}">
 						<br>
-						입양지역 <input class="form-control" type="text" id="BOARD_ARAE" name="BOARD_ARAE">
+						입양지역 <input type="text" id="BOARD_ARAE" name="BOARD_ARAE" value="${board.BOARD_ARAE}">
 						<br>
-						유기번호 <input class="form-control" type="text" id="BOARD_desertionNo" name="BOARD_desertionNo" value="${num}">
+						유기번호 <input type="text" id="BOARD_desertionNo" name="BOARD_desertionNo" value="${board.BOARD_desertionNo}">
 						<br>
-						보육환경을 설명해주세요. <textarea id="BOARD_HOW" class="form-control" name="BOARD_HOW"></textarea>
+						보육환경을 설명해주세요. <textarea id="BOARD_HOW" class="form-control" name="BOARD_HOW">${board.BOARD_HOW}</textarea>
 						
 						<br>
-						입양신청이유<textarea id="BOARD_WHY" class="form-control" name="BOARD_WHY"></textarea>
+						입양신청이유<textarea id="BOARD_WHY" class="form-control" name="BOARD_WHY">${board.BOARD_WHY}</textarea>
 						<br>
-						<input type="submit" value="신청하기">
+						<input class="btn btn-default btn-lg" type="submit" value="수정하기">
 						
-					</form>
-					
+						</form>
+						
+						<a href="list" class="btn btn-default btn-lg">취소하기</a>
+						
 					</div>
 				</div>
-			</div>
+			</div>					
 		</section>
-	</section>
-	<!--end wrapper-->
-
-
-
-
-
-	<script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
+	</section>			
+					
+<script type="text/javascript" src="resources/js/jquery-1.10.2.min.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>
 	<script src="resources/js/jquery.easing.1.3.js"></script>
 	<script src="resources/js/retina-1.1.0.min.js"></script>

@@ -18,7 +18,7 @@ public class sendController {
 	SendDAO sendDAO;
 	
 	@RequestMapping(value = "/adoption_req_send", method = RequestMethod.GET)
-	public void send(BoardBean boardBean) {
+	public String send(BoardBean boardBean) {
 	
 		System.out.println("sendController.send()");
 		
@@ -33,6 +33,8 @@ public class sendController {
 		System.out.println(boardBean);
 		
 		sendDAO.inputsend(boardBean);
-		 
+		
+		return "redirect:/list";
+		
 	}
 }

@@ -46,7 +46,7 @@ public class My_adoption_req_listController {
 		
 		List<BoardBean> board_List  = null;
 		
-		if(now_id.equals("admin")){//관리자일때
+		if(now_id!=null && now_id.equals("admin")){//관리자일때
 			board_List = boardDAO.get_Board_List(page, limit);
 			listcount=boardDAO.get_Board_ListCount();//리스트 수 받아옴
 		}else{//일반 사용자일때
