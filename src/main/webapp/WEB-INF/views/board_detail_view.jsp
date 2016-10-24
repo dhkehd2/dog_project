@@ -160,6 +160,8 @@
 						
 						<a href="my_adoption_list" class="btn btn-default btn-lg">신청 리스트로 이동</a>
 						
+						<a href="reple_form?BOARD_NUM=<%=board.getBOARD_NUM() %>" class="btn btn-default btn-lg">답변</a>
+						
 					</div>
 				</div>
 			</div>

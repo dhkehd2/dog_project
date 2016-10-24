@@ -100,7 +100,7 @@
 					
 					<form action="adoption_req_send" >
 											
-						제목 <input class="col-lg-6" type="text" id="BOARD_SUBJECT" name="BOARD_SUBJECT" >
+						제목 <input type="text" id="BOARD_SUBJECT" name="BOARD_SUBJECT" >
 						<br>
 						신청자 아이디 <input type="text" id="BOARD_ID" name="BOARD_ID" value="${now_id}">
 						<br>

@@ -37,7 +37,7 @@ public class Board_Up_Controller {
 	
 	//update pro
 	@RequestMapping(value = "/adoption_req_up", method = RequestMethod.GET)
-	public String get_board_up_pro(BoardBean board) {
+	public String get_board_up_pro(HttpServletRequest request,BoardBean board) {
 		System.out.println("Board_Detail_Controller.get_board_up_pro()");
 		
 		//날짜 변경
@@ -51,7 +51,8 @@ public class Board_Up_Controller {
 		
 		sendDAO.board_upProcess(board);
 		
-		return "redirect:/my_adoption_list";
+		
+		return "redirect:/list";
 	}
 	
 	//delete pro
@@ -61,7 +62,7 @@ public class Board_Up_Controller {
 			
 			sendDAO.board_delete_Process(BOARD_NUM);
 			
-			return "redirect:/my_adoption_list";
+			return "redirect:/list";
 		}
 	
 	
