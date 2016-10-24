@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="hidden-xs col-lg-7 col-sm-5 top-info">
                     <a href="logout_process"><span style="color: white;"><i class="fa fa-sign-out"><strong> logout</strong></i></span></a>
-                    <a href="myPage"><span style="color: white;"><i class="fa fa-desktop"><strong> my page</strong></i></span></a>
+                    <a href="myPage"><span style="color: white;"><i class="fa fa-desktop"><strong>관리자메뉴</strong></i></span></a>
                     
 
                 </div>
@@ -79,8 +79,8 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                         	<!-- data-hover 속성도 같이 바꾸어 주어야함 -->
-          
-                            <li><a href="list"><span class="data-hover" data-hover="animals">animals</span></a></li>
+          					
+          					<li><a href="list"><span class="data-hover" data-hover="animals">animals</span></a></li>
 
                             <li><a href="faq"><span class="data-hover" data-hover="faq">faq</span></a></li>
                             

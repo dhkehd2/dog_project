@@ -17,7 +17,7 @@ String now_id = (String)session.getAttribute("mem_id");
 			<div class="widget widget_categories">
 				<div class="widget_title">
 					<h4>
-						<span>MyPage</span>
+						<span>관리자메뉴</span>
 					</h4>
 				</div>
 				
@@ -35,8 +35,8 @@ String now_id = (String)session.getAttribute("mem_id");
 				<div class="sidebar">
 				
 				<ul class="arrows_list list_style">
-					<li><a href="info_up"> 회원정보 수정 </a></li>
-					<li><a href="my_adoption_list?now_id=<%= now_id%>"> 입양신청 리스트 </a></li>
+					<li><a href="info_up"> 관리자 정보 수정 </a></li>
+					<li><a href="my_adoption_list?now_id=<%= now_id%>"> 모든 입양신청 리스트 </a></li>
 					
 					<%if(now_id.equals("admin")){ %>
 					<li><a href="animal_info_insert"><span class="data-hover" data-hover="UpdateList">동물리스트 업데이트</span></a></li>
