@@ -68,7 +68,7 @@ String now_id1 = (String)session.getAttribute("mem_id");
                  <div  class="col-lg-3 col-sm-3 ">
                     <div id="logo">
                     	
-                        <h1><a href="index.html"><span style="color: white;">3 조</span></a></h1>
+                        <h1><a href="index.jsp"><span style="color: white;">3 조</span></a></h1>
                     </div>
                 </div>
                 <!-- Navigation ================================================== -->
